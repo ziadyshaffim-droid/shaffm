@@ -3,234 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Products - Secure Checkout</title>
+    <title>Digital Products - Direct Purchase</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            background: #f9fafb;
+            color: #1f2937;
+            line-height: 1.5;
             padding: 20px;
+            font-size: 15px;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
         
         .header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 40px 20px;
             text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
         }
         
         .header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #00b4db, #0083b0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 1.8rem;
+            color: #111827;
+            margin-bottom: 8px;
+            font-weight: 600;
         }
         
         .header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            max-width: 600px;
+            font-size: 0.95rem;
+            color: #6b7280;
+            max-width: 500px;
             margin: 0 auto;
         }
         
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            padding: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
         }
         
         .product-card {
             background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-            position: relative;
+            border-radius: 12px;
             overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s ease;
+            border: 1px solid #e5e7eb;
         }
         
         .product-card:hover {
-            transform: translateY(-10px);
-            border-color: #667eea;
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+        .product-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid #e5e7eb;
+            background: #f3f4f6;
         }
         
-        .product-name {
-            font-size: 1.5rem;
-            color: #2d3748;
-            margin-bottom: 15px;
-            font-weight: 700;
+        .product-content {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            color: #111827;
+            margin-bottom: 12px;
+            font-weight: 600;
+            line-height: 1.3;
         }
         
         .product-description {
-            color: #718096;
+            color: #4b5563;
+            font-size: 0.95rem;
             margin-bottom: 20px;
-            line-height: 1.6;
-            min-height: 48px;
+            line-height: 1.5;
+            min-height: 80px;
         }
         
         .product-price {
-            font-size: 2.2rem;
-            color: #38b2ac;
-            font-weight: 800;
-            margin-bottom: 25px;
+            font-size: 1.6rem;
+            color: #059669;
+            font-weight: 700;
+            margin: 20px 0;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
         }
         
         .product-price::before {
             content: '$';
-            font-size: 1.5rem;
-            color: #38b2ac;
+            font-size: 1.2rem;
+            color: #059669;
         }
         
         .buy-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #2563eb;
             color: white;
             border: none;
-            padding: 18px 30px;
-            font-size: 1.1rem;
-            border-radius: 10px;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background 0.2s ease;
             width: 100%;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            font-weight: 600;
         }
         
         .buy-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+            background: #1d4ed8;
         }
         
-        .info-section {
-            background: #f7fafc;
-            padding: 40px;
-            border-top: 1px solid #e2e8f0;
-        }
-        
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .info-card {
+        .payment-section {
             background: white;
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .info-card i {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-        
-        .info-card h3 {
-            color: #2d3748;
-            margin-bottom: 10px;
-        }
-        
-        .info-card p {
-            color: #718096;
-            font-size: 0.95rem;
-        }
-        
-        .telegram-info {
-            background: linear-gradient(135deg, #0088cc, #006699);
-            color: white;
-            padding: 25px;
-            border-radius: 10px;
+            border-radius: 12px;
+            padding: 24px;
             margin-top: 30px;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
+            border: 1px solid #e5e7eb;
         }
         
-        .telegram-info a {
-            color: white;
+        .payment-section h3 {
+            color: #111827;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .payment-section p {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        
+        .telegram-section {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 24px;
+            text-align: center;
+        }
+        
+        .telegram-section a {
+            color: #0369a1;
+            font-weight: 600;
             text-decoration: none;
-            font-weight: 700;
-            background: rgba(255,255,255,0.2);
-            padding: 10px 20px;
-            border-radius: 50px;
-            transition: all 0.3s ease;
+            background: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 8px;
+            border: 1px solid #bae6fd;
+            font-size: 0.9rem;
         }
         
-        .telegram-info a:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
-        }
-        
-        .payment-info {
-            background: #f0fff4;
-            border: 2px solid #68d391;
-            border-radius: 10px;
-            padding: 25px;
-            margin-top: 30px;
-            text-align: center;
+        .telegram-section a:hover {
+            background: #f0f9ff;
         }
         
         @media (max-width: 768px) {
             .products-grid {
                 grid-template-columns: 1fr;
-                padding: 20px;
+                gap: 20px;
+            }
+            
+            body {
+                padding: 12px;
             }
             
             .header h1 {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
             
-            .info-grid {
-                grid-template-columns: 1fr;
+            .product-title {
+                font-size: 1.1rem;
+            }
+            
+            .product-description {
+                font-size: 0.9rem;
             }
         }
         
-        .tag {
-            display: inline-block;
-            background: #e6f7ff;
-            color: #1890ff;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-right: 8px;
-            margin-bottom: 10px;
+        .delivery-info {
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .empty-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-size: 0.9rem;
+            height: 180px;
+            background: #f9fafb;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -238,59 +221,26 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🚀 Digital Products Store</h1>
-            <p>Instant digital delivery • Secure PayPal checkout • Direct Telegram support after purchase</p>
+            <h1>Digital Products</h1>
+            <p>Select a product below to purchase securely via PayPal</p>
         </div>
         
         <div class="products-grid" id="productsContainer">
             <!-- Products will be loaded here -->
         </div>
         
-        <div class="info-section">
-            <h2 style="text-align: center; color: #2d3748; margin-bottom: 20px;">How It Works</h2>
-            
-            <div class="info-grid">
-                <div class="info-card">
-                    <i class="fas fa-shopping-cart" style="color: #667eea;"></i>
-                    <h3>1. Select Product</h3>
-                    <p>Choose from our premium digital products</p>
-                </div>
-                
-                <div class="info-card">
-                    <i class="fab fa-paypal" style="color: #003087;"></i>
-                    <h3>2. Secure Checkout</h3>
-                    <p>Complete payment via secure PayPal</p>
-                </div>
-                
-                <div class="info-card">
-                    <i class="fas fa-rocket" style="color: #38b2ac;"></i>
-                    <h3>3. Instant Access</h3>
-                    <p>Receive your product immediately after payment</p>
-                </div>
-                
-                <div class="info-card">
-                    <i class="fab fa-telegram" style="color: #0088cc;"></i>
-                    <h3>4. Telegram Support</h3>
-                    <p>Get direct support via Telegram after purchase</p>
-                </div>
-            </div>
-            
-            <div class="telegram-info">
-                <i class="fab fa-telegram fa-2x"></i>
-                <div>
-                    <h3>Need Help? Join Our Telegram</h3>
-                    <p>After purchase, you'll receive instructions to join our Telegram for support and updates</p>
-                    <a href="https://t.me/yourusername" target="_blank" id="telegramLink">
-                        <i class="fab fa-telegram"></i> @YourTelegramUsername
-                    </a>
-                </div>
-            </div>
-            
-            <div class="payment-info">
-                <i class="fas fa-shield-alt fa-2x" style="color: #68d391; margin-bottom: 15px;"></i>
-                <h3>💳 100% Secure Payment</h3>
-                <p>All payments are processed through PayPal's secure system. We never store your payment information.</p>
-            </div>
+        <div class="payment-section">
+            <h3><i class="fas fa-lock"></i> Secure Payment</h3>
+            <p>• All payments processed through PayPal</p>
+            <p>• Secure SSL encryption</p>
+            <p>• Instant digital delivery after payment</p>
+        </div>
+        
+        <div class="telegram-section">
+            <p><i class="fab fa-telegram"></i> Contact after purchase:</p>
+            <a href="#" id="telegramLink" target="_blank">
+                <i class="fab fa-telegram"></i> @YourUsername
+            </a>
         </div>
     </div>
 
@@ -298,78 +248,170 @@
         // CONFIGURATION - EDIT THESE VALUES
         const CONFIG = {
             paypalEmail: "your-email@paypal.com", // Your PayPal email
-            telegramUsername: "yourusername", // Your Telegram username (without @)
+            telegramUsername: "yourusername", // Your Telegram username
             currency: "USD",
-            language: "en_US", // Language code for PayPal
             
-            // Your products - Add/edit/remove here
+            // PRODUCTS LIST - EDIT/ADD PRODUCTS HERE
+            // For images: use direct image URLs or relative paths
             products: [
                 {
                     id: 1,
-                    name: "Complete Digital Marketing Course",
-                    price: 97.00,
-                    description: "Master digital marketing from beginner to advanced level",
-                    tags: ["Course", "Marketing", "Digital"]
+                    name: "Digital Marketing Guide",
+                    price: 47.00,
+                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+                    description: "Complete guide to digital marketing strategies. Covers SEO, social media, email marketing, and analytics. Perfect for beginners and professionals."
                 },
                 {
                     id: 2,
-                    name: "Premium WordPress Theme Bundle",
-                    price: 49.99,
-                    description: "10 professional WordPress themes + 1 year of updates",
-                    tags: ["WordPress", "Themes", "Bundle"]
+                    name: "WordPress Theme Pack",
+                    price: 59.99,
+                    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop",
+                    description: "Collection of 15 premium WordPress themes. Responsive designs, easy customization, and 1 year of updates included."
                 },
                 {
                     id: 3,
-                    name: "AI Content Generator Software",
-                    price: 29.99,
-                    description: "Generate high-quality content with AI technology",
-                    tags: ["AI", "Software", "Content"]
+                    name: "AI Content Generator",
+                    price: 34.99,
+                    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w-400&h=250&fit=crop",
+                    description: "Advanced AI software for content creation. Generate articles, social posts, and marketing copy instantly."
                 },
                 {
                     id: 4,
-                    name: "Social Media Templates Pack",
-                    price: 24.99,
-                    description: "500+ editable templates for Instagram, Facebook, Twitter",
-                    tags: ["Templates", "Social Media", "Design"]
+                    name: "Social Media Templates",
+                    price: 29.99,
+                    image: "https://images.unsplash.com/photo-1611926653458-09294b3142a7?w=400&h=250&fit=crop",
+                    description: "300+ editable templates for social media. Includes Instagram stories, Facebook posts, and Twitter headers."
                 },
                 {
                     id: 5,
-                    name: "E-commerce Masterclass",
-                    price: 147.00,
-                    description: "Build a profitable e-commerce business from scratch",
-                    tags: ["E-commerce", "Business", "Masterclass"]
+                    name: "E-commerce Blueprint",
+                    price: 97.00,
+                    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop",
+                    description: "Step-by-step guide to building a successful e-commerce business. Includes supplier contacts and marketing plans."
                 },
                 {
                     id: 6,
                     name: "Mobile App UI Kit",
-                    price: 34.99,
-                    description: "Complete UI kit for iOS and Android applications",
-                    tags: ["Mobile", "UI/UX", "Design"]
+                    price: 39.99,
+                    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop",
+                    description: "Complete UI design kit for mobile applications. Includes iOS and Android components in multiple formats."
+                },
+                {
+                    id: 7,
+                    name: "Video Editing Course",
+                    price: 67.00,
+                    image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400&h=250&fit=crop",
+                    description: "Professional video editing masterclass. Learn Premiere Pro, After Effects, and professional workflows."
+                },
+                {
+                    id: 8,
+                    name: "Stock Photo Bundle",
+                    price: 24.99,
+                    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=250&fit=crop",
+                    description: "500+ high-resolution stock photos for commercial use. Various categories including business and lifestyle."
+                },
+                {
+                    id: 9,
+                    name: "Crypto Investment Guide",
+                    price: 54.99,
+                    image: "https://images.unsplash.com/photo-1620336655055-bd87c8e4e8e8?w=400&h=250&fit=crop",
+                    description: "Advanced cryptocurrency investment strategies. Includes market analysis tools and risk management techniques."
+                },
+                {
+                    id: 10,
+                    name: "Fitness App Template",
+                    price: 79.99,
+                    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop",
+                    description: "Complete React Native template for fitness applications. Includes workout tracking and progress analytics."
+                },
+                {
+                    id: 11,
+                    name: "Python Scripts Collection",
+                    price: 32.99,
+                    image: "https://images.unsplash.com/photo-1526379879527-8559ecfcaec1?w=400&h=250&fit=crop",
+                    description: "50+ ready-to-use Python automation scripts. Includes web scraping, data processing, and file management."
+                },
+                {
+                    id: 12,
+                    name: "Podcast Toolkit",
+                    price: 44.99,
+                    image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=400&h=250&fit=crop",
+                    description: "Complete toolkit for podcast production. Audio templates, editing presets, and promotion strategies included."
+                },
+                {
+                    id: 13,
+                    name: "Real Estate Calculator",
+                    price: 19.99,
+                    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop",
+                    description: "Advanced Excel spreadsheet for real estate investment analysis. ROI calculations and property valuation tools."
+                },
+                {
+                    id: 14,
+                    name: "Instagram Growth System",
+                    price: 74.99,
+                    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&h=250&fit=crop",
+                    description: "Complete system for Instagram growth. Content planning, scheduling, and engagement automation."
+                },
+                {
+                    id: 15,
+                    name: "Finance Dashboard",
+                    price: 27.99,
+                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+                    description: "Interactive personal finance dashboard. Connects to banks and provides detailed spending analysis."
+                },
+                {
+                    id: 16,
+                    name: "Logo Design Collection",
+                    price: 49.99,
+                    image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=400&h=250&fit=crop",
+                    description: "1000+ logo templates in vector format. AI, EPS, and PSD files for all industries."
+                },
+                {
+                    id: 17,
+                    name: "SEO Masterclass",
+                    price: 89.99,
+                    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+                    description: "Complete SEO training course. Learn on-page optimization, link building, and technical SEO strategies."
+                },
+                {
+                    id: 18,
+                    name: "Web Design Templates",
+                    price: 36.99,
+                    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop",
+                    description: "Collection of 50+ modern web design templates. Fully responsive HTML/CSS templates for all industries."
+                },
+                {
+                    id: 19,
+                    name: "Email Marketing System",
+                    price: 42.99,
+                    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop",
+                    description: "Complete email marketing automation system. Includes templates, sequences, and analytics dashboard."
+                },
+                {
+                    id: 20,
+                    name: "Business Plan Template",
+                    price: 29.99,
+                    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop",
+                    description: "Professional business plan template with financial projections. Suitable for startups and established businesses."
                 }
             ]
         };
 
         // Function to generate PayPal link
         function generatePayPalLink(product) {
-            // Base PayPal URL
-            let baseURL = "https://www.paypal.com/cgi-bin/webscr";
-            
-            // Required parameters
-            let params = new URLSearchParams({
+            const baseURL = "https://www.paypal.com/cgi-bin/webscr";
+            const params = new URLSearchParams({
                 'cmd': '_xclick',
                 'business': CONFIG.paypalEmail,
                 'item_name': product.name,
                 'amount': product.price.toFixed(2),
                 'currency_code': CONFIG.currency,
                 'no_note': '1',
-                'no_shipping': '1', // Digital products don't need shipping
-                'lc': CONFIG.language,
+                'no_shipping': '1',
+                'lc': 'en_US',
                 'bn': 'PP-BuyNowBF',
-                // Custom field to track product ID (optional)
-                'custom': `product_id=${product.id}&telegram=${CONFIG.telegramUsername}`,
-                // Return URL (optional - can be your thank you page)
+                'custom': `product_id=${product.id}`,
                 'return': window.location.href + '?success=true',
-                // Cancel URL
                 'cancel_return': window.location.href + '?cancelled=true'
             });
             
@@ -385,33 +427,35 @@
                 const productCard = document.createElement('div');
                 productCard.className = 'product-card';
                 
-                // Generate tags HTML
-                let tagsHTML = '';
-                if (product.tags) {
-                    product.tags.forEach(tag => {
-                        tagsHTML += `<span class="tag">${tag}</span>`;
-                    });
+                // Create image HTML
+                let imageHTML = '';
+                if (product.image) {
+                    imageHTML = `<img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy">`;
+                } else {
+                    imageHTML = `<div class="empty-image">No image available</div>`;
                 }
                 
                 productCard.innerHTML = `
-                    ${tagsHTML}
-                    <h3 class="product-name">${product.name}</h3>
-                    <p class="product-description">${product.description}</p>
-                    <div class="product-price">${product.price.toFixed(2)}</div>
-                    <button class="buy-btn" onclick="buyProduct(${product.id})" 
-                            data-product="${product.name}" data-price="${product.price}">
-                        <i class="fab fa-paypal"></i> BUY NOW - $${product.price.toFixed(2)}
-                    </button>
-                    <p style="margin-top: 15px; font-size: 0.9rem; color: #718096;">
-                        <i class="fas fa-bolt"></i> Instant delivery after payment
-                    </p>
+                    ${imageHTML}
+                    <div class="product-content">
+                        <h3 class="product-title">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-price">${product.price.toFixed(2)}</div>
+                        <button class="buy-btn" onclick="buyProduct(${product.id})">
+                            Buy Now - $${product.price.toFixed(2)}
+                        </button>
+                        <div class="delivery-info">
+                            <i class="fas fa-bolt"></i> Instant delivery
+                        </div>
+                    </div>
                 `;
                 
                 container.appendChild(productCard);
             });
             
             // Update Telegram link
-            document.getElementById('telegramLink').href = `https://t.me/${CONFIG.telegramUsername}`;
+            document.getElementById('telegramLink').href = `https://t.me/${CONFIG.ellyseller}`;
+            document.getElementById('telegramLink').innerHTML = `<i class="fab fa-telegram"></i> @${ellyseller}`;
         }
 
         // Function to handle purchase
@@ -419,93 +463,91 @@
             const product = CONFIG.products.find(p => p.id === productId);
             if (!product) return;
             
-            // Track the purchase (optional)
-            trackPurchase(product);
-            
             // Show loading state
             const button = event.target;
             const originalText = button.innerHTML;
-            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Redirecting to PayPal...';
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
             button.disabled = true;
             
-            // Redirect to PayPal after short delay
+            // Redirect to PayPal
             setTimeout(() => {
                 window.location.href = generatePayPalLink(product);
-            }, 500);
+            }, 300);
         }
 
-        // Function to track purchases (optional)
-        function trackPurchase(product) {
-            // You can add Google Analytics, Facebook Pixel, or other tracking here
-            console.log(`Purchase started: ${product.name} - $${product.price}`);
-            
-            // Example for Google Analytics (if you have it)
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'begin_checkout', {
-                    'items': [{
-                        'id': product.id,
-                        'name': product.name,
-                        'price': product.price,
-                        'currency': CONFIG.currency
-                    }]
-                });
-            }
-        }
-
-        // Function to check URL parameters for success/cancel
+        // Function to check URL parameters
         function checkURLParameters() {
             const urlParams = new URLSearchParams(window.location.search);
             
             if (urlParams.has('success')) {
-                showSuccessMessage();
+                window.history.replaceState({}, document.title, window.location.pathname);
+                showNotification(
+                    "Purchase Successful",
+                    "✅ Product will be delivered to your email. Contact @YourUsername on Telegram for support.",
+                    "success"
+                );
             }
             
             if (urlParams.has('cancelled')) {
-                showCancellationMessage();
+                window.history.replaceState({}, document.title, window.location.pathname);
+                showNotification(
+                    "Purchase Cancelled",
+                    "⚠️ Purchase was cancelled. Contact us if you need help.",
+                    "warning"
+                );
             }
         }
 
-        // Show success message (when returning from PayPal)
-        function showSuccessMessage() {
-            // Remove URL parameters
-            window.history.replaceState({}, document.title, window.location.pathname);
+        // Show notification
+        function showNotification(title, message, type) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#d1fae5' : '#fef3c7'};
+                border-left: 4px solid ${type === 'success' ? '#10b981' : '#f59e0b'};
+                padding: 16px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                z-index: 1000;
+                max-width: 350px;
+                animation: slideIn 0.3s ease;
+            `;
             
-            // Show success notification
-            alert("✅ Thank you for your purchase! Please check your email for the download link. For support, join our Telegram: https://t.me/" + CONFIG.telegramUsername);
+            notification.innerHTML = `
+                <div style="font-weight: 600; margin-bottom: 6px; color: #111827;">${title}</div>
+                <div style="color: #4b5563; font-size: 0.9rem; margin-bottom: 12px;">${message}</div>
+                <button onclick="this.parentElement.remove()" style="background: #4b5563; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-size: 0.85rem; cursor: pointer;">
+                    Close
+                </button>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Auto remove after 8 seconds
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 8000);
         }
 
-        // Show cancellation message
-        function showCancellationMessage() {
-            window.history.replaceState({}, document.title, window.location.pathname);
-            alert("⚠️ Your purchase was cancelled. If you have any questions, contact us on Telegram.");
-        }
-
-        // Initialize everything when page loads
+        // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             renderProducts();
             checkURLParameters();
             
-            // Add PayPal logo to page
-            addPayPalLogo();
+            // Add CSS animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
         });
-
-        // Add PayPal logo for trust
-        function addPayPalLogo() {
-            const paymentInfo = document.querySelector('.payment-info');
-            if (paymentInfo) {
-                const paypalLogo = document.createElement('div');
-                paypalLogo.style.marginTop = '15px';
-                paypalLogo.innerHTML = `
-                    <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/pp-acceptance-small.png" 
-                         alt="PayPal Acceptance Mark" 
-                         style="height: 40px;">
-                    <p style="font-size: 0.8rem; color: #718096; margin-top: 5px;">
-                        Pay with credit card or PayPal balance
-                    </p>
-                `;
-                paymentInfo.appendChild(paypalLogo);
-            }
-        }
     </script>
 </body>
 </html>
