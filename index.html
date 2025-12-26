@@ -452,6 +452,17 @@
             min-height: 80px;
         }
         
+        .description-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+        
+        .description-item i {
+            color: #10b981;
+        }
+        
         .product-price {
             font-size: 1.6rem;
             color: #10b981;
@@ -750,21 +761,21 @@
                 }
             },
             
-            // Products
+            // Products - Formatado corretamente
             products: [
                 {
                     id: 1,
                     name: "MOM AND SON",
                     price: 29.99,
                     image: "https://i.postimg.cc/6pNWBrVQ/IMG_4462.jpg",
-                    description: "🔞MOM AND SON🔥
-
-✅REAL GIRLS
-✅YOUNG GIRLS
-✅MOM AND SON
-✅228 FILES 
-✅12. 45 GB
-. Instant access after purchase.",
+                    description: [
+                        "✅ REAL GIRLS",
+                        "✅ YOUNG GIRLS", 
+                        "✅ MOM AND SON",
+                        "✅ 228 FILES",
+                        "✅ 12.45 GB",
+                        "Instant access after purchase."
+                    ],
                     trending: true,
                     purchaseCount: 42
                 },
@@ -773,7 +784,13 @@
                     name: "Premium Adult Content Pack 2",
                     price: 39.99,
                     image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=250&fit=crop&blur=10",
-                    description: "Special collection with exclusive content. Multiple formats available. Private and secure delivery.",
+                    description: [
+                        "✅ Exclusive collection",
+                        "✅ Multiple formats",
+                        "✅ Private delivery",
+                        "✅ Secure access",
+                        "Special collection with exclusive content."
+                    ],
                     popular: true,
                     purchaseCount: 28
                 },
@@ -782,7 +799,13 @@
                     name: "VIP Adult Collection",
                     price: 49.99,
                     image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=250&fit=crop&blur=10",
-                    description: "VIP access to premium adult content. Regular updates included with purchase.",
+                    description: [
+                        "✅ VIP access",
+                        "✅ Regular updates",
+                        "✅ Premium content",
+                        "✅ Secure delivery",
+                        "VIP access to premium adult content."
+                    ],
                     purchaseCount: 56
                 },
                 {
@@ -790,7 +813,13 @@
                     name: "Exclusive Content Bundle",
                     price: 59.99,
                     image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=250&fit=crop&blur=10",
-                    description: "Bundle of exclusive adult content. Multiple categories and formats available.",
+                    description: [
+                        "✅ Multiple categories",
+                        "✅ Exclusive content",
+                        "✅ Various formats",
+                        "✅ Instant delivery",
+                        "Bundle of exclusive adult content."
+                    ],
                     trending: true,
                     purchaseCount: 73
                 },
@@ -799,7 +828,13 @@
                     name: "Private Collection #5",
                     price: 34.99,
                     image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=250&fit=crop&blur=10",
-                    description: "Private collection with unique content. Secure delivery via encrypted links.",
+                    description: [
+                        "✅ Private collection",
+                        "✅ Unique content",
+                        "✅ Encrypted links",
+                        "✅ Secure delivery",
+                        "Private collection with unique content."
+                    ],
                     purchaseCount: 19
                 },
                 {
@@ -807,7 +842,13 @@
                     name: "Deluxe Adult Pack",
                     price: 44.99,
                     image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=250&fit=crop&blur=10",
-                    description: "Deluxe package with extended content. Includes bonus materials and extras.",
+                    description: [
+                        "✅ Deluxe package",
+                        "✅ Extended content",
+                        "✅ Bonus materials",
+                        "✅ Special extras",
+                        "Deluxe package with extended content."
+                    ],
                     purchaseCount: 31
                 },
                 {
@@ -815,7 +856,13 @@
                     name: "Premium Access #7",
                     price: 54.99,
                     image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=250&fit=crop&blur=10",
-                    description: "Premium access to exclusive adult content library. Regular updates included.",
+                    description: [
+                        "✅ Premium access",
+                        "✅ Exclusive library",
+                        "✅ Regular updates",
+                        "✅ Secure platform",
+                        "Premium access to exclusive adult content library."
+                    ],
                     purchaseCount: 24
                 },
                 {
@@ -823,7 +870,13 @@
                     name: "Special Edition Bundle",
                     price: 64.99,
                     image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=250&fit=crop&blur=10",
-                    description: "Special edition bundle with limited content. One-time purchase opportunity.",
+                    description: [
+                        "✅ Special edition",
+                        "✅ Limited content",
+                        "✅ One-time purchase",
+                        "✅ Exclusive access",
+                        "Special edition bundle with limited content."
+                    ],
                     popular: true,
                     purchaseCount: 88
                 },
@@ -832,7 +885,13 @@
                     name: "Ultimate Collection",
                     price: 74.99,
                     image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=250&fit=crop&blur=10",
-                    description: "Ultimate adult content collection. Most comprehensive package available.",
+                    description: [
+                        "✅ Ultimate collection",
+                        "✅ Most comprehensive",
+                        "✅ Complete package",
+                        "✅ Full access",
+                        "Ultimate adult content collection."
+                    ],
                     purchaseCount: 36
                 },
                 {
@@ -840,7 +899,13 @@
                     name: "Exclusive VIP Access",
                     price: 84.99,
                     image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=250&fit=crop&blur=10",
-                    description: "VIP access to exclusive adult content. Includes personalized support.",
+                    description: [
+                        "✅ VIP access",
+                        "✅ Exclusive content",
+                        "✅ Personalized support",
+                        "✅ Priority delivery",
+                        "VIP access to exclusive adult content."
+                    ],
                     purchaseCount: 17
                 }
             ],
@@ -873,7 +938,9 @@
             // If verified within last 24 hours, show content
             if (ageVerified === 'true' && verificationTime && (now - parseInt(verificationTime)) < 24 * 60 * 60 * 1000) {
                 showContent();
+                return true;
             }
+            return false;
         }
 
         // Show main content
@@ -1076,7 +1143,7 @@
             return `${baseURL}?${params.toString()}`;
         }
 
-        // Function to render products
+        // Function to render products with formatted descriptions
         function renderProducts() {
             const container = document.getElementById('productsContainer');
             container.innerHTML = '';
@@ -1110,11 +1177,32 @@
                     `;
                 }
                 
+                // Create formatted description with checkmarks
+                let descriptionHTML = '';
+                if (Array.isArray(product.description)) {
+                    product.description.forEach(line => {
+                        if (line.startsWith('✅')) {
+                            descriptionHTML += `
+                                <div class="description-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>${line.substring(2)}</span>
+                                </div>
+                            `;
+                        } else {
+                            descriptionHTML += `<p style="margin-top: 10px;">${line}</p>`;
+                        }
+                    });
+                } else {
+                    descriptionHTML = `<p>${product.description}</p>`;
+                }
+                
                 productCard.innerHTML = `
                     ${mediaHTML}
                     <div class="product-content">
                         <h3 class="product-title">${product.name}</h3>
-                        <p class="product-description">${product.description}</p>
+                        <div class="product-description">
+                            ${descriptionHTML}
+                        </div>
                         <div class="product-price">${product.price.toFixed(2)}</div>
                         <button class="buy-btn" onclick="buyProduct(${product.id})">
                             <i class="fab fa-paypal"></i> Buy Now - $${product.price.toFixed(2)}
@@ -1251,6 +1339,9 @@
             console.log('- Age Restriction:', '18+ Required');
             console.log('- Total Products:', CONFIG.products.length);
         });
+
+        // Expose functions to global scope for button onclick
+        window.buyProduct = buyProduct;
     </script>
 </body>
 </html>
