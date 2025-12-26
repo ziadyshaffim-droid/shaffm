@@ -66,12 +66,48 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
-        .product-image {
+        .media-container {
             width: 100%;
-            height: 180px;
-            object-fit: cover;
+            height: 200px;
+            position: relative;
             border-bottom: 1px solid #e5e7eb;
             background: #f3f4f6;
+            overflow: hidden;
+        }
+        
+        .product-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .media-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+        
+        .video-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
         
         .product-content {
@@ -149,8 +185,8 @@
         }
         
         .telegram-section {
-            background: #f0f9ff;
-            border: 1px solid #bae6fd;
+            background: linear-gradient(135deg, #0088cc, #006699);
+            color: white;
             border-radius: 12px;
             padding: 20px;
             margin-top: 24px;
@@ -158,20 +194,23 @@
         }
         
         .telegram-section a {
-            color: #0369a1;
+            color: white;
             font-weight: 600;
             text-decoration: none;
-            background: white;
-            padding: 8px 16px;
-            border-radius: 6px;
-            display: inline-block;
-            margin-top: 8px;
-            border: 1px solid #bae6fd;
-            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
         .telegram-section a:hover {
-            background: #f0f9ff;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
         
         @media (max-width: 768px) {
@@ -195,6 +234,10 @@
             .product-description {
                 font-size: 0.9rem;
             }
+            
+            .media-container {
+                height: 180px;
+            }
         }
         
         .delivery-info {
@@ -206,24 +249,14 @@
             gap: 6px;
         }
         
-        .empty-image {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #9ca3af;
-            font-size: 0.9rem;
-            height: 180px;
-            background: #f9fafb;
-        }
-        
-        .telegram-instruction {
-            font-size: 0.85rem;
-            color: #4b5563;
+        .video-instructions {
+            font-size: 0.8rem;
+            color: #6b7280;
             margin-top: 8px;
             padding: 8px;
-            background: #fef3c7;
-            border-radius: 6px;
-            border-left: 3px solid #f59e0b;
+            background: #f0f9ff;
+            border-radius: 4px;
+            border-left: 3px solid #3b82f6;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -231,7 +264,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Digital Products</h1>
+            <h1>Digital Products Store</h1>
             <p>Select a product below to purchase securely via PayPal</p>
         </div>
         
@@ -247,13 +280,13 @@
         </div>
         
         <div class="telegram-section">
-            <p><i class="fab fa-telegram"></i> Contact after purchase:</p>
-            <a href="#" id="telegramLink" target="_blank">
-                <i class="fab fa-telegram"></i> Message me on Telegram
+            <p><i class="fab fa-telegram"></i> Contact me on Telegram for support:</p>
+            <a href="https://t.me/ellyseller" target="_blank">
+                <i class="fab fa-telegram"></i> @ellyseller
             </a>
-            <div class="telegram-instruction">
-                <strong>Note:</strong> Click the link above to start a private chat with me on Telegram
-            </div>
+            <p style="margin-top: 12px; font-size: 0.9rem; opacity: 0.9;">
+                After purchase, message me on Telegram for delivery and support
+            </p>
         </div>
     </div>
 
@@ -261,182 +294,175 @@
         // CONFIGURATION - EDIT THESE VALUES
         const CONFIG = {
             paypalEmail: "your-email@paypal.com", // Your PayPal email
-            telegramUsername: "@ellyseller", // Your Telegram username (WITHOUT @)
             currency: "USD",
             
-            // IMPORTANT: Choose the correct Telegram link format for your account:
-            // Option 1: Direct chat link (works for most accounts)
-            // Option 2: If you have a public channel/bot, use the appropriate link
-            telegramLinkFormat: "direct", // "direct" or "channel" or "bot"
-            
             // PRODUCTS LIST - EDIT/ADD PRODUCTS HERE
-            // For images: use direct image URLs or relative paths
+            // For videos: use YouTube/Vimeo embed URLs or direct video URLs
+            // For images: use direct image URLs
+            // Leave video empty ("") if you don't have a video preview
             products: [
                 {
                     id: 1,
-                    name: "Digital Marketing Guide",
-                    price: 47.00,
+                    name: "Digital Marketing Masterclass",
+                    price: 97.00,
                     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
-                    description: "Complete guide to digital marketing strategies. Covers SEO, social media, email marketing, and analytics."
+                    video: "", // Add YouTube embed URL here like: "https://www.youtube.com/embed/VIDEO_ID"
+                    description: "Complete digital marketing course covering SEO, social media, email marketing, and analytics. Perfect for beginners and professionals."
                 },
                 {
                     id: 2,
-                    name: "WordPress Theme Pack",
+                    name: "Premium WordPress Theme Bundle",
                     price: 59.99,
                     image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop",
-                    description: "Collection of 15 premium WordPress themes. Responsive designs, easy customization."
+                    video: "",
+                    description: "Collection of 15 premium WordPress themes with responsive designs, easy customization, and 1 year of updates."
                 },
                 {
                     id: 3,
-                    name: "AI Content Generator",
+                    name: "AI Content Generator Pro",
                     price: 34.99,
-                    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w-400&h=250&fit=crop",
-                    description: "Advanced AI software for content creation. Generate articles, social posts, and marketing copy."
+                    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop",
+                    video: "",
+                    description: "Advanced AI software for content creation. Generate articles, social media posts, and marketing copy instantly."
                 },
                 {
                     id: 4,
-                    name: "Social Media Templates",
+                    name: "Social Media Templates Pack",
                     price: 29.99,
                     image: "https://images.unsplash.com/photo-1611926653458-09294b3142a7?w=400&h=250&fit=crop",
-                    description: "300+ editable templates for social media. Includes Instagram, Facebook, and Twitter."
+                    video: "",
+                    description: "300+ editable templates for Instagram, Facebook, Twitter, and LinkedIn. Includes stories, posts, and banners."
                 },
                 {
                     id: 5,
-                    name: "E-commerce Blueprint",
-                    price: 97.00,
+                    name: "E-commerce Business Blueprint",
+                    price: 147.00,
                     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop",
-                    description: "Step-by-step guide to building a successful e-commerce business."
+                    video: "",
+                    description: "Step-by-step blueprint for launching a profitable e-commerce store. Includes supplier contacts and marketing strategies."
                 },
                 {
                     id: 6,
-                    name: "Mobile App UI Kit",
+                    name: "Mobile App UI/UX Kit",
                     price: 39.99,
                     image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop",
-                    description: "Complete UI design kit for mobile applications. iOS and Android components."
+                    video: "",
+                    description: "Complete UI/UX design kit for iOS and Android applications. Includes 200+ screens, icons, and components."
                 },
                 {
                     id: 7,
-                    name: "Video Editing Course",
+                    name: "Video Editing Masterclass",
                     price: 67.00,
-                    image: "https://images.unsplash.com/phone-1593359677879-a4bb92f829d1?w=400&h=250&fit=crop",
-                    description: "Professional video editing masterclass. Learn Premiere Pro and After Effects."
+                    image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400&h=250&fit=crop",
+                    video: "",
+                    description: "Professional video editing course covering Premiere Pro, After Effects, and DaVinci Resolve."
                 },
                 {
                     id: 8,
-                    name: "Stock Photo Bundle",
+                    name: "Stock Photo Bundle - Premium",
                     price: 24.99,
                     image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=250&fit=crop",
-                    description: "500+ high-resolution stock photos for commercial use. Various categories."
+                    video: "",
+                    description: "Bundle of 500+ high-resolution stock photos for commercial use. Categories include business, technology, and lifestyle."
                 },
                 {
                     id: 9,
-                    name: "Crypto Investment Guide",
+                    name: "Cryptocurrency Investment Guide",
                     price: 54.99,
                     image: "https://images.unsplash.com/photo-1620336655055-bd87c8e4e8e8?w=400&h=250&fit=crop",
-                    description: "Advanced cryptocurrency investment strategies. Market analysis and risk management."
+                    video: "",
+                    description: "Advanced guide to cryptocurrency investing and trading. Includes market analysis tools and risk management strategies."
                 },
                 {
                     id: 10,
-                    name: "Fitness App Template",
+                    name: "Fitness App Development Template",
                     price: 79.99,
                     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop",
-                    description: "Complete React Native template for fitness applications with tracking features."
+                    video: "",
+                    description: "Complete React Native template for fitness applications. Includes workout tracking, nutrition logging, and progress analytics."
                 },
                 {
                     id: 11,
-                    name: "Python Scripts Collection",
+                    name: "Python Automation Scripts",
                     price: 32.99,
                     image: "https://images.unsplash.com/photo-1526379879527-8559ecfcaec1?w=400&h=250&fit=crop",
-                    description: "50+ ready-to-use Python automation scripts for various tasks."
+                    video: "",
+                    description: "Collection of 50+ ready-to-use Python scripts for automation. Includes web scraping, data processing, and file management."
                 },
                 {
                     id: 12,
-                    name: "Podcast Toolkit",
+                    name: "Podcast Production Toolkit",
                     price: 44.99,
                     image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=400&h=250&fit=crop",
-                    description: "Complete toolkit for podcast production with audio templates and presets."
+                    video: "",
+                    description: "Complete toolkit for podcast production. Includes audio templates, editing presets, show notes templates, and promotion strategies."
                 },
                 {
                     id: 13,
-                    name: "Real Estate Calculator",
+                    name: "Real Estate Investment Calculator",
                     price: 19.99,
                     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop",
-                    description: "Advanced Excel spreadsheet for real estate investment analysis."
+                    video: "",
+                    description: "Advanced Excel spreadsheet for analyzing real estate investments. Includes ROI calculation and property valuation tools."
                 },
                 {
                     id: 14,
-                    name: "Instagram Growth System",
+                    name: "Instagram Growth Automation",
                     price: 74.99,
                     image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&h=250&fit=crop",
-                    description: "Complete system for Instagram growth with content planning and scheduling."
+                    video: "",
+                    description: "Complete system for Instagram growth automation. Includes content planning, scheduling, engagement strategies, and analytics."
                 },
                 {
                     id: 15,
-                    name: "Finance Dashboard",
+                    name: "Personal Finance Dashboard",
                     price: 27.99,
                     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
-                    description: "Interactive personal finance dashboard for tracking and analysis."
+                    video: "",
+                    description: "Interactive dashboard for tracking personal finances. Connects to banks and provides detailed spending analysis."
                 },
                 {
                     id: 16,
-                    name: "Logo Design Collection",
+                    name: "Logo Design Master Pack",
                     price: 49.99,
                     image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=400&h=250&fit=crop",
-                    description: "1000+ logo templates in vector format for all industries."
+                    video: "",
+                    description: "Collection of 1000+ logo templates in vector format. Includes AI, EPS, and PSD files for all industries."
                 },
                 {
                     id: 17,
-                    name: "SEO Masterclass",
+                    name: "SEO Masterclass 2024",
                     price: 89.99,
                     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
-                    description: "Complete SEO training course with optimization and link building strategies."
+                    video: "",
+                    description: "Complete SEO training course with latest 2024 updates. Learn on-page optimization, link building, and technical SEO."
                 },
                 {
                     id: 18,
-                    name: "Web Design Templates",
+                    name: "Web Design Templates Pack",
                     price: 36.99,
                     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop",
-                    description: "Collection of 50+ modern web design templates for all industries."
+                    video: "",
+                    description: "Collection of 50+ modern web design templates. Fully responsive HTML/CSS templates for all business types."
                 },
                 {
                     id: 19,
                     name: "Email Marketing System",
                     price: 42.99,
                     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop",
-                    description: "Complete email marketing automation system with templates and analytics."
+                    video: "",
+                    description: "Complete email marketing automation system. Includes templates, sequences, and analytics dashboard."
                 },
                 {
                     id: 20,
-                    name: "Business Plan Template",
+                    name: "Business Plan Template Pro",
                     price: 29.99,
                     image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop",
-                    description: "Professional business plan template with financial projections."
+                    video: "",
+                    description: "Professional business plan template with financial projections. Suitable for startups and established businesses."
                 }
             ]
         };
-
-        // Function to generate Telegram link based on account type
-        function generateTelegramLink() {
-            const username = CONFIG.telegramUsername;
-            
-            // Remove @ if user included it
-            const cleanUsername = username.replace('@', '');
-            
-            // Choose the correct link format
-            switch(CONFIG.telegramLinkFormat) {
-                case 'bot':
-                    // For bots: opens chat with bot
-                    return `https://t.me/ellyseller?start`;
-                case 'channel':
-                    // For public channels: opens channel
-                    return `https://t.me/ellyseller`;
-                case 'direct':
-                default:
-                    // For personal accounts: tries to open direct chat
-                    // This works if user has "Allow messages from non-contacts" enabled
-                    return `https://t.me/ellyseller`;
-            }
-        }
 
         // Function to generate PayPal link
         function generatePayPalLink(product) {
@@ -459,6 +485,84 @@
             return `${baseURL}?${params.toString()}`;
         }
 
+        // Function to render product media (video or image)
+        function renderProductMedia(product) {
+            let mediaHTML = '';
+            
+            if (product.video && product.video.trim() !== '') {
+                // Check if it's a YouTube URL
+                if (product.video.includes('youtube.com') || product.video.includes('youtu.be')) {
+                    // Convert YouTube URL to embed URL
+                    let videoId = '';
+                    if (product.video.includes('youtube.com/watch?v=')) {
+                        videoId = product.video.split('v=')[1];
+                        const ampersandPosition = videoId.indexOf('&');
+                        if (ampersandPosition !== -1) {
+                            videoId = videoId.substring(0, ampersandPosition);
+                        }
+                    } else if (product.video.includes('youtu.be/')) {
+                        videoId = product.video.split('youtu.be/')[1];
+                        const questionMarkPosition = videoId.indexOf('?');
+                        if (questionMarkPosition !== -1) {
+                            videoId = videoId.substring(0, questionMarkPosition);
+                        }
+                    }
+                    
+                    if (videoId) {
+                        mediaHTML = `
+                            <div class="media-container">
+                                <iframe 
+                                    class="product-video" 
+                                    src="https://www.youtube.com/embed/${videoId}?autoplay=0&controls=1&modestbranding=1&rel=0"
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                                <div class="video-badge">
+                                    <i class="fas fa-play"></i> Video Preview
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        mediaHTML = `
+                            <div class="media-container">
+                                <img src="${product.image}" alt="${product.name}" class="product-image">
+                            </div>
+                        `;
+                    }
+                } else {
+                    // Assume it's a direct video URL or other embed URL
+                    mediaHTML = `
+                        <div class="media-container">
+                            <video class="product-video" controls>
+                                <source src="${product.video}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-badge">
+                                <i class="fas fa-play"></i> Video Preview
+                            </div>
+                        </div>
+                    `;
+                }
+            } else if (product.image && product.image.trim() !== '') {
+                mediaHTML = `
+                    <div class="media-container">
+                        <img src="${product.image}" alt="${product.name}" class="product-image">
+                    </div>
+                `;
+            } else {
+                mediaHTML = `
+                    <div class="media-container">
+                        <div class="media-placeholder">
+                            <i class="fas fa-image"></i> No preview available
+                        </div>
+                    </div>
+                `;
+            }
+            
+            return mediaHTML;
+        }
+
         // Function to render products
         function renderProducts() {
             const container = document.getElementById('productsContainer');
@@ -468,16 +572,10 @@
                 const productCard = document.createElement('div');
                 productCard.className = 'product-card';
                 
-                // Create image HTML
-                let imageHTML = '';
-                if (product.image) {
-                    imageHTML = `<img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy">`;
-                } else {
-                    imageHTML = `<div class="empty-image">No image available</div>`;
-                }
+                const mediaHTML = renderProductMedia(product);
                 
                 productCard.innerHTML = `
-                    ${imageHTML}
+                    ${mediaHTML}
                     <div class="product-content">
                         <h3 class="product-title">${product.name}</h3>
                         <p class="product-description">${product.description}</p>
@@ -486,22 +584,14 @@
                             Buy Now - $${product.price.toFixed(2)}
                         </button>
                         <div class="delivery-info">
-                            <i class="fas fa-bolt"></i> Instant delivery
+                            <i class="fas fa-bolt"></i> Instant delivery after payment
                         </div>
+                        ${product.video ? '<div class="video-instructions"><i class="fas fa-info-circle"></i> Watch video preview above</div>' : ''}
                     </div>
                 `;
                 
                 container.appendChild(productCard);
             });
-            
-            // Update Telegram link with the correct format
-            const telegramLink = generateTelegramLink();
-            document.getElementById('telegramLink').href = telegramLink;
-            document.getElementById('telegramLink').innerHTML = `<i class="fab fa-telegram"></i> Message me on Telegram`;
-            
-            // Log the link for debugging
-            console.log('Telegram Link:', telegramLink);
-            console.log('Note: Make sure your Telegram privacy settings allow messages from everyone');
         }
 
         // Function to handle purchase
@@ -528,8 +618,8 @@
             if (urlParams.has('success')) {
                 window.history.replaceState({}, document.title, window.location.pathname);
                 showNotification(
-                    "Purchase Successful",
-                    `✅ Product will be delivered to your email. For support, message me on Telegram: <a href="${generateTelegramLink()}" target="_blank">Click here to open Telegram</a>`,
+                    "Purchase Successful!",
+                    `✅ Thank you for your purchase! The product will be delivered to your email. For support, contact me on <a href="https://t.me/ellyseller" target="_blank" style="color: #2563eb; font-weight: 600;">Telegram @ellyseller</a>.`,
                     "success"
                 );
             }
@@ -538,7 +628,7 @@
                 window.history.replaceState({}, document.title, window.location.pathname);
                 showNotification(
                     "Purchase Cancelled",
-                    "⚠️ Purchase was cancelled. Contact us if you need help.",
+                    "⚠️ Your purchase was cancelled. If you need assistance, contact me on Telegram.",
                     "warning"
                 );
             }
@@ -594,11 +684,12 @@
             `;
             document.head.appendChild(style);
             
-            // Check Telegram link format
-            console.log('Telegram Configuration:');
-            console.log('- Username:', CONFIG.telegramUsername);
-            console.log('- Link Format:', CONFIG.telegramLinkFormat);
-            console.log('- Generated Link:', generateTelegramLink());
+            // Log configuration
+            console.log('Store Configuration:');
+            console.log('- PayPal Email:', CONFIG.paypalEmail);
+            console.log('- Currency:', CONFIG.currency);
+            console.log('- Telegram:', 'https://t.me/ellyseller');
+            console.log('- Total Products:', CONFIG.products.length);
         });
     </script>
 </body>
