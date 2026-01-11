@@ -1499,9 +1499,9 @@
             }
         }
 
-        // Function to generate PayPal checkout URL
+        // Function to generate PayPal checkout URL - CORRIGIDA
         function generatePayPalUrl(product) {
-            // Create PayPal checkout URL
+            // URL correta para checkout do PayPal com parâmetros de pagamento
             const params = new URLSearchParams({
                 cmd: '_xclick',
                 business: CONFIG.paypalEmail,
@@ -1510,8 +1510,8 @@
                 currency_code: CONFIG.currency,
                 no_shipping: 1,
                 no_note: 1,
-                return: window.location.href + '?success=true',
-                cancel_return: window.location.href + '?cancelled=true',
+                return: window.location.origin + window.location.pathname + '?success=true',
+                cancel_return: window.location.origin + window.location.pathname + '?cancelled=true',
                 bn: 'PP-BuyNowBF:btn_buynow_LG.gif:NonHosted'
             });
             
@@ -1541,7 +1541,7 @@
             return url && url.includes('uguu.se/');
         }
 
-        // Function to render products with Uguu preview support
+        // Function to render products with Uguu preview support - ATUALIZADA para "Buy Now"
         function renderProducts() {
             const container = document.getElementById('productsContainer');
             container.innerHTML = '';
@@ -1645,6 +1645,7 @@
                 // Generate PayPal URL for this product
                 const paypalUrl = generatePayPalUrl(product);
                 
+                // Botão alterado para "Buy Now" sem preço
                 productCard.innerHTML = `
                     ${mediaHTML}
                     <div class="product-content">
@@ -1654,7 +1655,7 @@
                         </div>
                         <div class="product-price">${product.price.toFixed(2)}</div>
                         <button class="buy-btn" onclick="buyProduct(${product.id}, this)">
-                            <i class="fab fa-paypal"></i> Buy Now with PayPal - $${product.price.toFixed(2)}
+                            <i class="fab fa-paypal"></i> Buy Now
                         </button>
                         <div class="purchase-count">
                             <i class="fas fa-shopping-cart"></i> ${product.purchaseCount} recent purchases
@@ -1670,7 +1671,7 @@
             });
         }
 
-        // Function to handle purchase via PayPal
+        // Function to handle purchase via PayPal - CORRIGIDA
         function buyProduct(productId, buttonElement) {
             // Double-check age verification
             const ageVerified = localStorage.getItem('ageVerified18plus');
@@ -1700,16 +1701,16 @@
             // Generate PayPal URL
             const paypalUrl = button.dataset.paypalUrl || generatePayPalUrl(product);
             
-            // Redirect to PayPal checkout
+            // Abrir PayPal em nova aba - CORREÇÃO
             setTimeout(() => {
-                window.open(paypalUrl, '_blank');
+                window.open(paypalUrl, '_blank', 'noopener,noreferrer');
                 
-                // Reset button after 2 seconds
+                // Reset button after 3 seconds
                 setTimeout(() => {
                     button.innerHTML = originalText;
                     button.disabled = false;
-                }, 2000);
-            }, 300);
+                }, 3000);
+            }, 500);
         }
 
         // Function to check URL parameters
