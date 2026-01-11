@@ -428,14 +428,14 @@
             display: block;
         }
         
-        .streamtape-video {
+        .uguu-video {
             width: 100%;
             height: 100%;
             display: none;
             border: none;
         }
         
-        .streamtape-video.active {
+        .uguu-video.active {
             display: block;
         }
         
@@ -544,7 +544,7 @@
         }
         
         .buy-btn {
-            background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+            background: linear-gradient(135deg, #0070ba, #003087);
             color: white;
             border: none;
             padding: 12px 20px;
@@ -560,11 +560,16 @@
         
         .buy-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 112, 186, 0.4);
+            background: linear-gradient(135deg, #003087, #0070ba);
         }
         
         .buy-btn:active {
             transform: translateY(0);
+        }
+        
+        .buy-btn i {
+            margin-right: 8px;
         }
         
         .purchase-count {
@@ -597,7 +602,7 @@
             margin-bottom: 8px;
         }
         
-        .whop-section {
+        .paypal-section {
             background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
             border: 1px solid #333;
             border-radius: 12px;
@@ -606,15 +611,24 @@
             text-align: center;
         }
         
-        .whop-section p {
+        .paypal-section p {
             color: #aaa;
             margin-bottom: 15px;
         }
         
-        .whop-logo {
-            color: #8B5CF6;
+        .paypal-logo {
+            color: #0070ba;
             font-weight: bold;
             font-size: 1.2rem;
+        }
+        
+        .paypal-badge {
+            background: #003087;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-left: 8px;
         }
         
         .telegram-section {
@@ -806,16 +820,17 @@
         <!-- Payment Section -->
         <div class="payment-section">
             <h3><i class="fas fa-lock"></i> Secure & Private Payment</h3>
-            <p>• All payments processed through <span class="whop-logo">Whop</span> secure checkout</p>
+            <p>• All payments processed through <span class="paypal-logo">PayPal</span> secure checkout</p>
             <p>• Your privacy is protected - no data sharing</p>
             <p>• Discreet billing on your statement</p>
             <p>• Instant delivery after payment</p>
         </div>
         
-        <!-- Whop Section -->
-        <div class="whop-section">
-            <h3><i class="fas fa-shield-alt"></i> Secure Checkout via Whop</h3>
-            <p>All purchases are processed through Whop's secure platform for maximum safety and privacy.</p>
+        <!-- PayPal Section -->
+        <div class="paypal-section">
+            <h3><i class="fab fa-paypal"></i> Secure Checkout via PayPal</h3>
+            <p>All purchases are processed through PayPal's secure platform for maximum safety and privacy.</p>
+            <p><i class="fas fa-envelope"></i> PayPal Email: <strong>abrahamsamw@gmail.com</strong></p>
         </div>
         
         <!-- Telegram Section -->
@@ -825,7 +840,7 @@
                 <i class="fab fa-telegram"></i> @naysellery
             </a>
             <p style="margin-top: 12px; font-size: 0.9rem; color: #888;">
-                After purchase, message me on Telegram for delivery
+                After purchase, message me on Telegram with your transaction ID for instant delivery
             </p>
         </div>
         
@@ -835,10 +850,11 @@
     </div>
 
     <script>
-        // CONFIGURAÇÃO PARA STREAMTAPE
+        // CONFIGURAÇÃO PARA UGUU.SE E PAYPAL
         const CONFIG = {
             currency: "USD",
             telegram: "@naysellery",
+            paypalEmail: "abrahamsamw@gmail.com",
             
             // Activity simulation
             activity: {
@@ -855,14 +871,14 @@
                 }
             },
             
-            // Products - AGORA COM STREAMTAPE
+            // Products - AGORA COM UGUU.SE
             products: [
                 {
                     id: 1,
                     name: "MOM AND SON😋💜",
                     price: 25,
                     image: "https://imagizer.imageshack.com/img922/1129/46KdQI.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_1", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_1.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ REAL GIRLS",
                         "✅ YOUNG BOY", 
@@ -872,15 +888,14 @@
                         "Instant access after purchase."
                     ],
                     trending: true,
-                    purchaseCount: 42,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
+                    purchaseCount: 42
                 },
                 {
                     id: 2,
                     name: "LIZZY AND BRO🔥",
                     price: 25,
                     image: "https://imagizer.imageshack.com/img921/5505/LKytJu.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_2", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_2.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ BLACKMAIL VIDEOS",
                         "✅ TRAINING VIDEOS",
@@ -888,15 +903,14 @@
                         "Special collection with exclusive content."
                     ],
                     popular: true,
-                    purchaseCount: 28,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
+                    purchaseCount: 28
                 },
                 {
                     id: 3,
                     name: "ALL CP COLLETION",
                     price: 75,
                     image: "https://i.postimg.cc/P5WhHpSj/IMG_4458.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_3", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_3.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ CP 2GB",
                         "✅ CP 4GB",
@@ -904,15 +918,14 @@
                         "✅ CP VIP 8GB",
                         "VIP access to premium adult content."
                     ],
-                    purchaseCount: 56,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_HXq9mf6Jtc7Rd"
+                    purchaseCount: 56
                 },
                 {
                     id: 4,
                     name: "ALL TEENS COLLETION😈",
                     price: 55,
                     image: "https://i.postimg.cc/rpGnDhMS/IMG_4450.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_4", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_4.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ OVER 1867 VIDEOS",
                         "✅ MORE THAN 200 SUBFOLDERS",
@@ -921,15 +934,14 @@
                         "Bundle of exclusive adult content."
                     ],
                     trending: true,
-                    purchaseCount: 73,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_XmciDYQgdPtM6"
+                    purchaseCount: 73
                 },
                 {
                     id: 5,
                     name: "SNAPGOD FULL EDITION",
                     price: 35,
                     image: "https://i.postimg.cc/3xfMYXg5/IMG_4451.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_5", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_5.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ BLACKMAIL VIDEOS",
                         "✅ INCEST TEENS",
@@ -937,15 +949,14 @@
                         "✅ TRAINING AND SEXY",
                         "Private collection with unique content."
                     ],
-                    purchaseCount: 19,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_A5TWEcyU2Iqg4"
+                    purchaseCount: 19
                 },
                 {
                     id: 6,
                     name: "OMEGLE FULL💜",
                     price: 35,
                     image: "https://imagizer.imageshack.com/img924/1222/5M0MZ5.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_6", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_6.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ 140GB+",
                         "✅ FULL CONTENT",
@@ -953,30 +964,28 @@
                         "✅ OMEGLE VIDEOS UPDATE",
                         "Deluxe package with extended content."
                     ],
-                    purchaseCount: 31,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_A5TWEcyU2Iqg4"
+                    purchaseCount: 31
                 },
                 {
                     id: 7,
                     name: "AYUMI TEEN😋",
                     price: 25,
                     image: "https://i.postimg.cc/Sx6q42gb/IMG_4701.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_7", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_7.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ Premium folder",
                         "✅ REAL TEEN",
                         "✅ 32GB",
                         "Premium access to exclusive adult content library."
                     ],
-                    purchaseCount: 24,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
+                    purchaseCount: 24
                 },
                 {
                     id: 8,
                     name: "ALL VIP 9 PYT CHANNELS‼️",
                     price: 55,
                     image: "https://imagizer.imageshack.com/img924/5912/ZSvQcH.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_8", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_8.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ HIGH SCHOOL",
                         "✅ LATINAS",
@@ -985,15 +994,14 @@
                         "Special edition bundle with limited content."
                     ],
                     popular: true,
-                    purchaseCount: 88,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_XmciDYQgdPtM6"
+                    purchaseCount: 88
                 },
                 {
                     id: 9,
                     name: "IZZY AND DOG🔥‼️",
                     price: 20,
                     image: "https://i.postimg.cc/Mp7xwM9x/IMG_4472.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_9", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_9.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ BLACKMAIL",
                         "✅ REAL GIRL",
@@ -1001,15 +1009,14 @@
                         "✅ Full access",
                         "Ultimate adult content collection."
                     ],
-                    purchaseCount: 36,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_eBKqLe9FoNiUL"
+                    purchaseCount: 36
                 },
                 {
                     id: 10,
                     name: "DARKZEID🔞",
                     price: 25,
                     image: "https://i.postimg.cc/PxWCswbd/IMG_4473.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_10", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_10.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ ALL BM VIDEOS",
                         "✅ ALL CAMERAS UPLOADS",
@@ -1017,15 +1024,14 @@
                         "✅ FULL NUDE CONTENT",
                         "VIP access to exclusive adult content."
                     ],
-                    purchaseCount: 17,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
+                    purchaseCount: 17
                 },
                 {
                     id: 11,
                     name: "SNAPCHAT FULL🔥",
                     price: 30,
                     image: "https://i.postimg.cc/ydVfcF8D/IMG_4444.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_11", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_11.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ 500+ VIDEOS",
                         "✅ AGES 16-19",
@@ -1034,15 +1040,14 @@
                         "Limited time offer for premium teen content."
                     ],
                     trending: true,
-                    purchaseCount: 29,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_ur7GjWrGF5Nz7"
+                    purchaseCount: 29
                 },
                 {
                     id: 12,
                     name: "INVAKA💀",
                     price: 25,
                     image: "https://i.postimg.cc/d1r6TSZW/IMG-4779.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_12", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_12.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ 300+ VIDS",
                         "✅ REAL GIRL",
@@ -1050,15 +1055,14 @@
                         "✅ 15GB TOTAL",
                         "Complete blackmail video collection."
                     ],
-                    purchaseCount: 41,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
+                    purchaseCount: 41
                 },
                 {
                     id: 13,
                     name: "ALL CONTENT 12TB😍",
                     price: 150,
                     image: "https://imageshack.com/i/placeholder_13",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_13", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_13.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ MOTHER/SON",
                         "✅ FATHER/DAUGHTER",
@@ -1067,15 +1071,14 @@
                         "Most complete incest collection available."
                     ],
                     popular: true,
-                    purchaseCount: 37,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_mlMVhDzmXbax0"
+                    purchaseCount: 37
                 },
                 {
                     id: 15,
                     name: "MONKEYAPP🎓",
                     price: 35,
                     image: "https://i.postimg.cc/t4v0p3hj/IMG_4453.jpg",
-                    videoPreview: "https://streamtape.com/e/7957098895770219499", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_14.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ AGES 13-17",
                         "✅ DORM ROOM VIDEOS",
@@ -1083,15 +1086,14 @@
                         "✅ 20GB COLLECTION",
                         "Exclusive college girl content."
                     ],
-                    purchaseCount: 22,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_A5TWEcyU2Iqg4"
+                    purchaseCount: 22
                 },
                 {
                     id: 16,
                     name: "VIP CHANNELS",
                     price: 30,
                     image: "https://i.postimg.cc/LhdskTfj/IMG-5027.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_15", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_15.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ 10 VIP CHANNELS YOUR CHOICE",
                         "✅ PRIVATE SHOWS",
@@ -1100,15 +1102,14 @@
                         "Never before seen Omegle recordings."
                     ],
                     trending: true,
-                    purchaseCount: 45,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_ur7GjWrGF5Nz7"
+                    purchaseCount: 45
                 },
                 {
                     id: 17,
                     name: "BLACKMAIIL FULL💦",
                     price: 25,
                     image: "https://i.postimg.cc/jSHKTwZ3/IMG_4699.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_16", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_16.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ AGES 14-17",
                         "✅ 870+ VIDS",
@@ -1116,15 +1117,14 @@
                         "✅ 200GB COLLECTION",
                         "Young teen solo content collection."
                     ],
-                    purchaseCount: 58,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
+                    purchaseCount: 58
                 },
                 {
                     id: 19,
                     name: "HIGH SCHOOL",
                     price: 25,
                     image: "https://i.postimg.cc/HxwrDy0Y/IMG_4471.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_17", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_17.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ 100% YOUNG HIGH SCHOOL",
                         "✅ LOCKER ROOM VIDS",
@@ -1133,15 +1133,14 @@
                         "High school locker room recordings."
                     ],
                     popular: true,
-                    purchaseCount: 49,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
+                    purchaseCount: 49
                 },
                 {
                     id: 20,
                     name: "NEW ALL CONTENT 8TB🌟",
                     price: 100,
                     image: "https://imageshack.com/i/placeholder_20",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_18", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_18.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ ACCESS TO ALL CONTENT",
                         "✅ LIFETIME UPDATES",
@@ -1151,15 +1150,14 @@
                     ],
                     trending: true,
                     popular: true,
-                    purchaseCount: 27,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_JzNFcWjVK6Mry"
+                    purchaseCount: 27
                 },
                 {
                     id: 21,
                     name: "AMELIA BLONDE🔥",
                     price: 30,
                     image: "https://i.postimg.cc/CKCPRvSB/IMG_4953.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_19", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_19.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ 500+ EXCLUSIVE VIDEOS",
                         "✅ AGES 12",
@@ -1170,15 +1168,14 @@
                     ],
                     trending: true,
                     popular: true,
-                    purchaseCount: 38,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_ur7GjWrGF5Nz7"
+                    purchaseCount: 38
                 },
                 {
                     id: 22,
                     name: "TEENS AND DOG😈",
                     price: 30,
                     image: "https://i.postimg.cc/9fP8DxCM/IMG_4957.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_20", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_20.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ GIRLS AND DOG",
                         "✅ AGES 13-17",
@@ -1189,15 +1186,14 @@
                     ],
                     trending: false,
                     popular: true,
-                    purchaseCount: 24,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_ur7GjWrGF5Nz7"
+                    purchaseCount: 24
                 },
                 {
                     id: 23,
                     name: "R@PE TEEN🫨",
                     price: 25,
                     image: "https://i.postimg.cc/jd5Sv91V/IMG-4810.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_21", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_21.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ BEST RAPE TEEN",
                         "✅ HIGH QUALITY",
@@ -1208,15 +1204,14 @@
                     ],
                     trending: true,
                     popular: false,
-                    purchaseCount: 42,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
+                    purchaseCount: 42
                 },
                 {
                     id: 24,
                     name: "BLACK TEEN",
                     price: 20,
                     image: "https://i.postimg.cc/BnkNYrQx/IMG_4952.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_22", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_22.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ AGES 13-16 ",
                         "✅ BEST",
@@ -1227,15 +1222,14 @@
                     ],
                     trending: false,
                     popular: false,
-                    purchaseCount: 19,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_eBKqLe9FoNiUL"
+                    purchaseCount: 19
                 },
                 {
                     id: 25,
                     name: "REAL INCEST 💀",
                     price: 25,
                     image: "https://i.postimg.cc/yNhQDfsS/IMG_4812.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_23", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_23.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ 1000+ ",
                         "✅ ALL AGES 9y",
@@ -1246,15 +1240,14 @@
                     ],
                     trending: true,
                     popular: true,
-                    purchaseCount: 57,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
+                    purchaseCount: 57
                 },
                 {
                     id: 26,
                     name: "XIMENA TEEN🌟",
                     price: 35,
                     image: "https://i.postimg.cc/0NGWztPm/IMG_4811.jpg",
-                    videoPreview: "https://streamtape.com/e/SEU_ID_STREAMTAPE_24", // SUBSTITUA COM SEU ID STREAMTAPE
+                    videoPreview: "https://uguu.se/SEU_ID_UGUU_24.mp4", // SUBSTITUA COM SEU LINK UGUU
                     description: [
                         "✅ RARE TEEN",
                         "✅ BEST STUFF",
@@ -1265,8 +1258,7 @@
                     ],
                     trending: true,
                     popular: true,
-                    purchaseCount: 31,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_A5TWEcyU2Iqg4"
+                    purchaseCount: 31
                 }
             ],
             
@@ -1490,7 +1482,7 @@
         // Function to handle tab switching
         function switchMediaTab(productId, tabType) {
             const image = document.querySelector(`#product-${productId} .product-image`);
-            const video = document.querySelector(`#product-${productId} .streamtape-video`);
+            const video = document.querySelector(`#product-${productId} .uguu-video`);
             const imageTab = document.querySelector(`#product-${productId} .media-tab[data-tab="image"]`);
             const videoTab = document.querySelector(`#product-${productId} .media-tab[data-tab="video"]`);
             
@@ -1507,31 +1499,49 @@
             }
         }
 
-        // Function to generate Streamtape URL
-        function generateStreamtapeUrl(videoPreview) {
+        // Function to generate PayPal checkout URL
+        function generatePayPalUrl(product) {
+            // Create PayPal checkout URL
+            const params = new URLSearchParams({
+                cmd: '_xclick',
+                business: CONFIG.paypalEmail,
+                item_name: product.name,
+                amount: product.price.toFixed(2),
+                currency_code: CONFIG.currency,
+                no_shipping: 1,
+                no_note: 1,
+                return: window.location.href + '?success=true',
+                cancel_return: window.location.href + '?cancelled=true',
+                bn: 'PP-BuyNowBF:btn_buynow_LG.gif:NonHosted'
+            });
+            
+            return `https://www.paypal.com/cgi-bin/webscr?${params.toString()}`;
+        }
+
+        // Function to generate Uguu video URL
+        function generateUguuUrl(videoPreview) {
             if (!videoPreview) return null;
             
-            // Se já for uma URL completa do Streamtape, retorna como está
-            if (videoPreview.includes('streamtape.com/e/')) {
+            // Se já for uma URL completa do Uguu, retorna como está
+            if (videoPreview.includes('uguu.se/')) {
                 return videoPreview;
             }
             
             // Se for apenas um ID, monta a URL completa
-            // Remove qualquer caractere não numérico/alphanumérico para obter o ID
             const id = videoPreview.replace(/[^a-zA-Z0-9]/g, '');
             if (id) {
-                return `https://streamtape.com/e/${id}`;
+                return `https://uguu.se/${id}.mp4`;
             }
             
             return null;
         }
 
-        // Function to check if it's a Streamtape URL
-        function isStreamtapeUrl(url) {
-            return url && (url.includes('streamtape.com/e/') || url.includes('streamtape.com/'));
+        // Function to check if it's a Uguu URL
+        function isUguuUrl(url) {
+            return url && url.includes('uguu.se/');
         }
 
-        // Function to render products with Streamtape preview support
+        // Function to render products with Uguu preview support
         function renderProducts() {
             const container = document.getElementById('productsContainer');
             container.innerHTML = '';
@@ -1541,13 +1551,13 @@
                 productCard.className = 'product-card';
                 productCard.id = `product-${product.id}`;
                 
-                // Generate Streamtape URL
-                const streamtapeUrl = generateStreamtapeUrl(product.videoPreview);
-                const hasStreamtapePreview = streamtapeUrl !== null;
+                // Generate Uguu URL
+                const uguuUrl = generateUguuUrl(product.videoPreview);
+                const hasUguuPreview = uguuUrl !== null;
                 
                 // Create media tabs only if we have both image and video
                 let mediaTabsHTML = '';
-                if (product.image && hasStreamtapePreview) {
+                if (product.image && hasUguuPreview) {
                     mediaTabsHTML = `
                         <div class="media-tabs">
                             <button class="media-tab active" data-tab="image" onclick="switchMediaTab(${product.id}, 'image')">
@@ -1566,9 +1576,12 @@
                         <div class="media-container">
                             ${mediaTabsHTML}
                             <div class="media-content">
-                                <img src="${product.image}" alt="${product.name}" class="product-image ${hasStreamtapePreview ? 'active' : ''}">
-                                ${hasStreamtapePreview ? 
-                                    `<iframe src="${streamtapeUrl}" class="streamtape-video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>` :
+                                <img src="${product.image}" alt="${product.name}" class="product-image ${hasUguuPreview ? 'active' : ''}">
+                                ${hasUguuPreview ? 
+                                    `<video controls class="uguu-video" preload="metadata">
+                                        <source src="${uguuUrl}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>` :
                                     `<div class="media-placeholder ${!product.image ? 'active' : ''}">
                                         <i class="fas fa-video-slash"></i>
                                         <span>No preview available</span>
@@ -1590,8 +1603,11 @@
                                 <div class="media-placeholder active">
                                     <i class="fas fa-image"></i> No Image Available
                                 </div>
-                                ${hasStreamtapePreview ? 
-                                    `<iframe src="${streamtapeUrl}" class="streamtape-video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>` :
+                                ${hasUguuPreview ? 
+                                    `<video controls class="uguu-video" preload="metadata">
+                                        <source src="${uguuUrl}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>` :
                                     `<div class="media-placeholder">
                                         <i class="fas fa-video-slash"></i>
                                         <span>No preview available</span>
@@ -1626,6 +1642,9 @@
                     descriptionHTML = `<p>${product.description}</p>`;
                 }
                 
+                // Generate PayPal URL for this product
+                const paypalUrl = generatePayPalUrl(product);
+                
                 productCard.innerHTML = `
                     ${mediaHTML}
                     <div class="product-content">
@@ -1634,8 +1653,8 @@
                             ${descriptionHTML}
                         </div>
                         <div class="product-price">${product.price.toFixed(2)}</div>
-                        <button class="buy-btn" onclick="buyProduct(${product.id})">
-                            <i class="fas fa-shopping-cart"></i> Buy Now - $${product.price.toFixed(2)}
+                        <button class="buy-btn" onclick="buyProduct(${product.id}, this)">
+                            <i class="fab fa-paypal"></i> Buy Now with PayPal - $${product.price.toFixed(2)}
                         </button>
                         <div class="purchase-count">
                             <i class="fas fa-shopping-cart"></i> ${product.purchaseCount} recent purchases
@@ -1644,11 +1663,15 @@
                 `;
                 
                 container.appendChild(productCard);
+                
+                // Store PayPal URL in button for quick access
+                const buyBtn = productCard.querySelector('.buy-btn');
+                buyBtn.dataset.paypalUrl = paypalUrl;
             });
         }
 
-        // Function to handle purchase via Whop
-        function buyProduct(productId) {
+        // Function to handle purchase via PayPal
+        function buyProduct(productId, buttonElement) {
             // Double-check age verification
             const ageVerified = localStorage.getItem('ageVerified18plus');
             if (ageVerified !== 'true') {
@@ -1661,14 +1684,8 @@
             const product = CONFIG.products.find(p => p.id === productId);
             if (!product) return;
             
-            // Check if Whop checkout link exists
-            if (!product.whopCheckoutLink || product.whopCheckoutLink === "https://whop.com/checkout/") {
-                alert('Checkout link not configured for this product.');
-                return;
-            }
-            
             // Show loading state
-            const button = event.target;
+            const button = buttonElement;
             const originalText = button.innerHTML;
             button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
             button.disabled = true;
@@ -1680,9 +1697,12 @@
                 }, 500);
             }
             
-            // Redirect to Whop checkout
+            // Generate PayPal URL
+            const paypalUrl = button.dataset.paypalUrl || generatePayPalUrl(product);
+            
+            // Redirect to PayPal checkout
             setTimeout(() => {
-                window.open(product.whopCheckoutLink, '_blank');
+                window.open(paypalUrl, '_blank');
                 
                 // Reset button after 2 seconds
                 setTimeout(() => {
@@ -1700,7 +1720,7 @@
                 window.history.replaceState({}, document.title, window.location.pathname);
                 showNotification(
                     "Purchase Successful!",
-                    `✅ Thank you for your purchase! You will receive your content via secure delivery. Contact @ellyseller on Telegram for support.`,
+                    `✅ Thank you for your purchase! Please check your email for confirmation and message @naysellery on Telegram with your transaction ID for instant delivery.`,
                     "success"
                 );
                 
@@ -1768,9 +1788,47 @@
                     to { transform: translateX(0); opacity: 1; }
                 }
                 
-                /* Estilos para melhorar a aparência do Streamtape */
-                .streamtape-video {
+                /* Estilos para melhorar a aparência do vídeo */
+                .uguu-video {
                     position: relative;
+                    background: #000;
+                }
+                
+                /* PayPal button animation */
+                .buy-btn {
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                .buy-btn:after {
+                    content: '';
+                    position: absolute;
+                    top: -50%;
+                    left: -60%;
+                    width: 20%;
+                    height: 200%;
+                    opacity: 0;
+                    transform: rotate(30deg);
+                    background: rgba(255, 255, 255, 0.13);
+                    background: linear-gradient(
+                        to right,
+                        rgba(255, 255, 255, 0.13) 0%,
+                        rgba(255, 255, 255, 0.13) 77%,
+                        rgba(255, 255, 255, 0.5) 92%,
+                        rgba(255, 255, 255, 0.0) 100%
+                    );
+                }
+                
+                .buy-btn:hover:after {
+                    opacity: 1;
+                    left: 130%;
+                    transition-property: left, top, opacity;
+                    transition-duration: 0.7s, 0.7s, 0.15s;
+                    transition-timing-function: ease;
+                }
+                
+                .buy-btn:active:after {
+                    opacity: 0;
                 }
             `;
             document.head.appendChild(style);
@@ -1780,25 +1838,20 @@
             
             // Log configuration (for debugging)
             console.log('Adult Content Store Configuration:');
-            console.log('- Payment Gateway: Whop (Direct Checkout Links)');
-            console.log('- Video Platform: Streamtape (Menos anúncios)');
+            console.log('- Payment Gateway: PayPal (Automatic Checkout)');
+            console.log('- PayPal Email:', CONFIG.paypalEmail);
+            console.log('- Video Platform: Uguu.se');
             console.log('- Currency:', CONFIG.currency);
             console.log('- Telegram:', 'https://t.me/naysellery');
             console.log('- Age Restriction:', '18+ Required');
             console.log('- Total Products:', CONFIG.products.length);
             
-            // Count products with Streamtape preview
-            const streamtapeProducts = CONFIG.products.filter(p => {
-                const url = generateStreamtapeUrl(p.videoPreview);
+            // Count products with Uguu preview
+            const uguuProducts = CONFIG.products.filter(p => {
+                const url = generateUguuUrl(p.videoPreview);
                 return url !== null;
             });
-            console.log('- Products with Streamtape preview:', streamtapeProducts.length);
-            
-            // Warning for missing checkout links
-            const missingLinks = CONFIG.products.filter(p => !p.whopCheckoutLink || p.whopCheckoutLink === "https://whop.com/checkout/");
-            if (missingLinks.length > 0) {
-                console.warn('Missing Whop checkout links for products:', missingLinks.map(p => p.name));
-            }
+            console.log('- Products with Uguu preview:', uguuProducts.length);
         });
 
         // Expose functions to global scope for button onclick
