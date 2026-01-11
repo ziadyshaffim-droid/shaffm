@@ -443,7 +443,7 @@
             gap: 10px;
         }
         
-        .drive-preview-link {
+        .preview-link {
             color: #1a73e8;
             text-decoration: none;
             background: rgba(26, 115, 232, 0.1);
@@ -454,7 +454,7 @@
             transition: all 0.2s ease;
         }
         
-        .drive-preview-link:hover {
+        .preview-link:hover {
             background: rgba(26, 115, 232, 0.2);
         }
         
@@ -603,26 +603,6 @@
             color: #aaa;
             font-size: 0.9rem;
             margin-bottom: 8px;
-        }
-        
-        .whop-section {
-            background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 24px;
-            text-align: center;
-        }
-        
-        .whop-section p {
-            color: #aaa;
-            margin-bottom: 15px;
-        }
-        
-        .whop-logo {
-            color: #8B5CF6;
-            font-weight: bold;
-            font-size: 1.2rem;
         }
         
         .telegram-section {
@@ -803,7 +783,7 @@
         <!-- Header -->
         <div class="header">
             <h1>PREMIUM RARE CONTENTS💎 <span class="age-badge">18+</span></h1>
-            <p> IF YOU WANT TO SEE THE MENU DM • Secure purchases • Instant delivery</p>
+            <p>IF YOU WANT TO SEE THE MENU DM • Secure purchases • Instant delivery</p>
         </div>
         
         <!-- Products Grid -->
@@ -814,26 +794,21 @@
         <!-- Payment Section -->
         <div class="payment-section">
             <h3><i class="fas fa-lock"></i> Secure & Private Payment</h3>
-            <p>• All payments processed through <span class="whop-logo">Whop</span> secure checkout</p>
+            <p>• All payments processed directly via Telegram</p>
             <p>• Your privacy is protected - no data sharing</p>
             <p>• Discreet billing on your statement</p>
             <p>• Instant delivery after payment</p>
         </div>
         
-        <!-- Whop Section -->
-        <div class="whop-section">
-            <h3><i class="fas fa-shield-alt"></i> Secure Checkout via Whop</h3>
-            <p>All purchases are processed through Whop's secure platform for maximum safety and privacy.</p>
-        </div>
-        
         <!-- Telegram Section -->
         <div class="telegram-section">
-            <p><i class="fab fa-telegram"></i> Contact for support and delivery:</p>
-            <a href="https://t.me/ellyseller" target="_blank">
+            <h3><i class="fab fa-telegram"></i> Contact for Purchase & Support</h3>
+            <p>Click any "Buy Now" button to contact me directly on Telegram for purchase.</p>
+            <a href="https://t.me/naysellery" target="_blank">
                 <i class="fab fa-telegram"></i> @naysellery
             </a>
             <p style="margin-top: 12px; font-size: 0.9rem; color: #888;">
-                After purchase, message me on Telegram for delivery
+                Click "Buy Now" on any product to message me for purchase
             </p>
         </div>
         
@@ -843,10 +818,9 @@
     </div>
 
     <script>
-        // CONFIGURATION - Updated for Whop
+        // CONFIGURATION
         const CONFIG = {
-            // Whop configuration
-            currency: "USD",
+            // Telegram configuration
             telegram: "@naysellery",
             
             // Activity simulation
@@ -864,16 +838,15 @@
                 }
             },
             
-            // Products - Updated with 26 products (20 original + 6 new)
-            // CADA PRODUTO TEM SEU PRÓPRIO LINK DE CHECKOUT DA WHOP
+            // Products - Updated with catbox support
             products: [
                 // Original Products (1-10)
                 {
                     id: 1,
                     name: "MOM AND SON😋💜",
                     price: 25,
-                    image: "https://imagizer.imageshack.com/img922/1129/46KdQI.jpg",
-                    videoPreview: "https://drive.google.com/file/d/14O08pELRaU_RGdn7yKGQIrEXpSg6sH5N/preview",
+                    image: "https://files.catbox.moe/example1.jpg", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/example1.mp4", // Substitua com seu link catbox
                     description: [
                         "✅ REAL GIRLS",
                         "✅ YOUNG BOY", 
@@ -883,15 +856,14 @@
                         "PAY 1 GET 2 FREE🔥."
                     ],
                     trending: true,
-                    purchaseCount: 42,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M" // SUBSTITUIR COM SEU LINK REAL
+                    purchaseCount: 42
                 },
                 {
                     id: 2,
                     name: "LIZZY AND BRO🔥",
                     price: 25,
-                    image: "https://imagizer.imageshack.com/img921/5505/LKytJu.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1NWg-ys77m10g7y7Xy19NQkw47EvfxAiM/preview",
+                    image: "https://files.catbox.moe/example2.jpg",
+                    videoPreview: "https://files.catbox.moe/example2.mp4",
                     description: [
                         "✅ BLACKMAIL VIDEOS",
                         "✅ TRAINING VIDEOS",
@@ -899,15 +871,14 @@
                         "PAY 1 GET 2 FREE🔥."
                     ],
                     popular: true,
-                    purchaseCount: 28,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M" // SUBSTITUIR COM SEU LINK REAL
+                    purchaseCount: 28
                 },
                 {
                     id: 3,
                     name: "ALL CP COLLETION",
                     price: 75,
-                    image: "https://files.catbox.moe/v6gcc8.jpeg",
-                    videoPreview: "https://drive.google.com/file/d/1O7zKfEFfMIlgKROuOqt9TSDikxgTXQ0J/preview",
+                    image: "https://files.catbox.moe/example3.jpg",
+                    videoPreview: "https://files.catbox.moe/example3.mp4",
                     description: [
                         "✅ CP 2GB",
                         "✅ CP 4GB",
@@ -915,15 +886,14 @@
                         "✅ CP VIP 8GB",
                         "🔥."
                     ],
-                    purchaseCount: 56,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_HXq9mf6Jtc7Rd" // SUBSTITUIR COM SEU LINK REAL
+                    purchaseCount: 56
                 },
                 {
                     id: 4,
                     name: "ALL TEENS COLLETION😈",
                     price: 55,
-                    image: "https://i.postimg.cc/rpGnDhMS/IMG_4450.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1aLfjPfwykcgmigX7NkudKKah1UPQY6kf/preview",
+                    image: "https://files.catbox.moe/example4.jpg",
+                    videoPreview: "https://files.catbox.moe/example4.mp4",
                     description: [
                         "✅ OVER 1867 VIDEOS",
                         "✅ MORE THAN 200 SUBFOLDERS",
@@ -932,15 +902,14 @@
                         "🔥."
                     ],
                     trending: true,
-                    purchaseCount: 73,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_XmciDYQgdPtM6" // SUBSTITUIR COM SEU LINK REAL
+                    purchaseCount: 73
                 },
                 {
                     id: 5,
                     name: "SNAPGOD FULL EDITION",
                     price: 35,
-                    image: "https://imagizer.imageshack.com/img921/9696/oQEkoe.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1xra314JgFxhZ0qO0Pp8PlLqNG3fk0dVT/preview",
+                    image: "https://files.catbox.moe/example5.jpg",
+                    videoPreview: "https://files.catbox.moe/example5.mp4",
                     description: [
                         "✅ BLACKMAIL VIDEOS",
                         "✅ INCEST TEENS",
@@ -948,15 +917,14 @@
                         "✅ TRAINING AND SEXY",
                         "PAY 1 GET 2 FREE🔥."
                     ],
-                    purchaseCount: 19,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_A5TWEcyU2Iqg4" // SUBSTITUIR COM SEU LINK REAL
+                    purchaseCount: 19
                 },
                 {
                     id: 6,
                     name: "OMEGLE FULL💜",
                     price: 35,
-                    image: "https://imagizer.imageshack.com/img924/1222/5M0MZ5.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1Zw3uxr5pFZ2xBX1QAkD2S8qnACjs5FsU/preview",
+                    image: "https://files.catbox.moe/example6.jpg",
+                    videoPreview: "https://files.catbox.moe/example6.mp4",
                     description: [
                         "✅ 140GB+",
                         "✅ FULL CONTENT",
@@ -964,30 +932,28 @@
                         "✅ OMEGLE VIDEOS UPDATE",
                         "PAY 1 GET 2 FREE🔥."
                     ],
-                    purchaseCount: 31,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_A5TWEcyU2Iqg4" // SUBSTITUIR COM SEU LINK REAL
+                    purchaseCount: 31
                 },
                 {
                     id: 7,
                     name: "NEW STUFF PYT",
                     price: 25,
-                    image: "https://i.postimg.cc/fTXrP052/Imagem_20.webp",
-                    videoPreview: "https://drive.google.com/file/d/1WnhEuvyESMNdfLEERpO69ON9KaF3WLC0/preview",
+                    image: "https://files.catbox.moe/example7.jpg",
+                    videoPreview: "https://files.catbox.moe/example7.mp4",
                     description: [
                         "✅ Premium folder",
                         "✅ 13-17",
                         "✅ 32GB",
                         "PAY 1 GET 2 FREE🔥."
                     ],
-                    purchaseCount: 24,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M" // SUBSTITUIR COM SEU LINK REAL
+                    purchaseCount: 24
                 },
                 {
                     id: 8,
                     name: "HIGH SCHOOL THOTS",
                     price: 35,
-                    image: "https://i.postimg.cc/SxhvbNtd/Imagem_17.webp",
-                    videoPreview: "https://drive.google.com/file/d/1s2LYuZJyzlrziD0_F5RxZoGv8NCD2bq5/preview",
+                    image: "https://files.catbox.moe/example8.jpg",
+                    videoPreview: "https://files.catbox.moe/example8.mp4",
                     description: [
                         "✅ HIGH SCHOOL",
                         "✅ 340GB",
@@ -996,15 +962,14 @@
                         "PAY 1 GET 2 FREE🔥."
                     ],
                     popular: true,
-                    purchaseCount: 88,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_XmciDYQgdPtM6" // SUBSTITUIR COM SEU LINK REAL
+                    purchaseCount: 88
                 },
                 {
                     id: 9,
                     name: "IZZY AND DOG🔥‼️",
                     price: 20,
-                    image: "https://i.postimg.cc/6pf1WJkK/Imagem_2.webp",
-                    videoPreview: "https://drive.google.com/file/d/1RhwlZPBbvI_cFyxxx_m7nnfGwXD2JSvp/preview",
+                    image: "https://files.catbox.moe/example9.jpg",
+                    videoPreview: "https://files.catbox.moe/example9.mp4",
                     description: [
                         "✅ BLACKMAIL",
                         "✅ REAL GIRL",
@@ -1012,15 +977,14 @@
                         "✅ Full access",
                         "PAY 1 GET 2 FREE🔥."
                     ],
-                    purchaseCount: 36,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_eBKqLe9FoNiUL" // SUBSTITUIR COM SEU LINK REAL
+                    purchaseCount: 36
                 },
                 {
                     id: 10,
                     name: "DARKZEID🔞",
                     price: 25,
-                    image: "https://i.postimg.cc/YCHsBqyd/Imagem_18.webp",
-                    videoPreview: "https://drive.google.com/file/d/1uU4M755bdeKQlj8hpTKL8U8f9LV3w9Yt/preview",
+                    image: "https://files.catbox.moe/example10.jpg",
+                    videoPreview: "https://files.catbox.moe/example10.mp4",
                     description: [
                         "✅ ALL BM VIDEOS",
                         "✅ ALL CAMERAS UPLOADS",
@@ -1028,8 +992,7 @@
                         "✅ FULL NUDE CONTENT",
                         "PAY 1 GET 2 FREE🔥."
                     ],
-                    purchaseCount: 17,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M" // SUBSTITUIR COM SEU LINK REAL
+                    purchaseCount: 17
                 },
                 
                 // New Products (11-20)
@@ -1037,8 +1000,8 @@
                     id: 11,
                     name: "SNAPCHAT FULL🔥",
                     price: 30,
-                    image: "https://i.postimg.cc/ydVfcF8D/IMG_4444.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1-twFXeZIbY810BNfT2vyE9n7l8TT7SjX/preview",
+                    image: "https://files.catbox.moe/example11.jpg",
+                    videoPreview: "https://files.catbox.moe/example11.mp4",
                     description: [
                         "✅ 500+ VIDEOS",
                         "✅ AGES 16-19",
@@ -1047,15 +1010,14 @@
                         "PAY 1 GET 2 FREE🔥."
                     ],
                     trending: true,
-                    purchaseCount: 29,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_ur7GjWrGF5Nz7" // SUBSTITUIR COM SEU LINK REAL
+                    purchaseCount: 29
                 },
                 {
                     id: 12,
                     name: "INVAKA💀",
                     price: 25,
-                    image: "https://i.postimg.cc/T3JHdMzG/Imagem_1.webp",
-                    videoPreview: "https://drive.google.com/file/d/1hrslDCelRrQbjMH9D28nFSVNYLwfvvYx/preview",
+                    image: "https://files.catbox.moe/example12.jpg",
+                    videoPreview: "https://files.catbox.moe/example12.mp4",
                     description: [
                         "✅ 300+ VIDS",
                         "✅ REAL GIRL",
@@ -1063,15 +1025,14 @@
                         "✅ 15GB TOTAL",
                         "PAY 1 GET 2 FREE🔥."
                     ],
-                    purchaseCount: 41,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M" // SUBSTITUIR COM SEU LINK REAL
+                    purchaseCount: 41
                 },
                 {
                     id: 13,
                     name: "AVA SHIT",
                     price: 30,
-                    image: "https://i.postimg.cc/L8pbF6b9/Imagem_9.webp",
-                    videoPreview: "https://drive.google.com/file/d/1Z1EhUebagrNoC3q2Yzo1ko8szJuDQkEf/preview",
+                    image: "https://files.catbox.moe/example13.jpg",
+                    videoPreview: "https://files.catbox.moe/example13.mp4",
                     description: [
                         "✅ BM VIDEOS",
                         "✅ INCEST",
@@ -1080,15 +1041,14 @@
                         "PAY 1 GET 2 FREE🔥."
                     ],
                     popular: true,
-                    purchaseCount: 37,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_mlMVhDzmXbax0" // SUBSTITUIR COM SEU LINK 
+                    purchaseCount: 37
                 },
                 {
                     id: 15,
                     name: "MONKEYAPP🎓",
                     price: 35,
-                    image: "https://files.catbox.moe/4cy5ej.jpeg",
-                    videoPreview: "https://drive.google.com/file/d/1QgK2zpiQtTsI9UJ83ezvvv6RMs01L7D5/preview",
+                    image: "https://files.catbox.moe/example15.jpg",
+                    videoPreview: "https://files.catbox.moe/example15.mp4",
                     description: [
                         "✅ AGES 13-17",
                         "✅ DORM ROOM VIDEOS",
@@ -1096,15 +1056,14 @@
                         "✅ 20GB COLLECTION",
                         "PAY 1 GET 2 FREE🔥."
                     ],
-                    purchaseCount: 22,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_A5TWEcyU2Iqg4" // SUBSTITUIR COM SEU LINK REAL
+                    purchaseCount: 22
                 },
                 {
                     id: 16,
                     name: "DESIRE GARCIA",
                     price: 30,
-                    image: "https://i.postimg.cc/VkWHfQx8/Imagem_3.webp",
-                    videoPreview: "https://drive.google.com/file/d/1sZ_TPyEhM3L6k8CxfbatLyiO27FmcFjj/preview",
+                    image: "https://files.catbox.moe/example16.jpg",
+                    videoPreview: "https://files.catbox.moe/example16.mp4",
                     description: [
                         "✅ HIGH QUALITY",
                         "✅ RARE CONTENT",
@@ -1113,15 +1072,14 @@
                         "PAY 1 GET 2 FREE🔥."
                     ],
                     trending: true,
-                    purchaseCount: 45,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_ur7GjWrGF5Nz7" // SUBSTITUIR COM SEU LINK REAL
+                    purchaseCount: 45
                 },
                 {
                     id: 17,
                     name: "BLACKMAIIL FULL💦",
                     price: 25,
-                    image: "https://i.postimg.cc/sgrNCD00/Imagem_12.webp",
-                    videoPreview: "https://drive.google.com/file/d/1fo-FVBp2Xx-pWL9RuAj7_VhHhAgEE1LB/preview",
+                    image: "https://files.catbox.moe/example17.jpg",
+                    videoPreview: "https://files.catbox.moe/example17.mp4",
                     description: [
                         "✅ AGES 14-17",
                         "✅ 870+ VIDS",
@@ -1129,15 +1087,14 @@
                         "✅ 200GB COLLECTION",
                         "PAY 1 GET 2 FREE🔥."
                     ],
-                    purchaseCount: 58,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M" // SUBSTITUIR COM SEU LINK 
+                    purchaseCount: 58
                 },
                 {
                     id: 19,
                     name: "BABY ASHLEY",
                     price: 25,
-                    image: "https://i.postimg.cc/vZsNwHNQ/Imagem_10.webp",
-                    videoPreview: "https://drive.google.com/file/d/1TyrngbwlDOGpq3ha0yK4Mi3w387ZyYpP/preview",
+                    image: "https://files.catbox.moe/example19.jpg",
+                    videoPreview: "https://files.catbox.moe/example19.mp4",
                     description: [
                         "✅ 100% YOUNG GIRL",
                         "✅ LOCKER ROOM VIDS",
@@ -1146,15 +1103,14 @@
                         "PAY 1 GET 2 FREE🔥."
                     ],
                     popular: true,
-                    purchaseCount: 49,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M" // SUBSTITUIR COM SEU LINK REAL
+                    purchaseCount: 49
                 },
                 {
                     id: 20,
                     name: "NEW ALL CONTENT 12TB",
                     price: 186,
-                    image: "https://imageshack.com/i/placeholder_20",
-                    videoPreview: "https://drive.google.com/file/d/1IMGYDF4-LnjKNSaNOPEG-1LfS_4b2CLt/preview",
+                    image: "https://files.catbox.moe/example20.jpg",
+                    videoPreview: "https://files.catbox.moe/example20.mp4",
                     description: [
                         "✅ ACCESS TO ALL CONTENT",
                         "✅ LIFETIME UPDATES",
@@ -1164,8 +1120,7 @@
                     ],
                     trending: true,
                     popular: true,
-                    purchaseCount: 27,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_JzNFcWjVK6Mry" // SUBSTITUIR COM SEU LINK REAL
+                    purchaseCount: 27
                 },
                 
                 // Additional Products (21-26)
@@ -1173,8 +1128,8 @@
                     id: 21,
                     name: "AMELIA BLONDE🔥",
                     price: 30,
-                    image: "https://files.catbox.moe/45mzkb.webp",
-                    videoPreview: "https://drive.google.com/file/d/1KBVFr2iFlwPEHCUzNGIienguLCwO2YoE/preview",
+                    image: "https://files.catbox.moe/example21.jpg",
+                    videoPreview: "https://files.catbox.moe/example21.mp4",
                     description: [
                         "✅ 500+ EXCLUSIVE VIDEOS",
                         "✅ AGES 11",
@@ -1185,15 +1140,14 @@
                     ],
                     trending: true,
                     popular: true,
-                    purchaseCount: 38,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_ur7GjWrGF5Nz7"
+                    purchaseCount: 38
                 },
                 {
                     id: 22,
                     name: "CP-1",
                     price: 30,
-                    image: "https://i.postimg.cc/rwkP2FYP/Imagem_cp1.webp",
-                    videoPreview: "https://drive.google.com/file/d/1nv9Y05U0Xv6dTdB7aMkdzEo6Y0O-njYA/preview",
+                    image: "https://files.catbox.moe/example22.jpg",
+                    videoPreview: "https://files.catbox.moe/example22.mp4",
                     description: [
                         "✅ RARE",
                         "✅ AGES 9-11",
@@ -1204,15 +1158,14 @@
                     ],
                     trending: false,
                     popular: true,
-                    purchaseCount: 24,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_ur7GjWrGF5Nz7"
+                    purchaseCount: 24
                 },
                 {
                     id: 23,
                     name: "CP-2",
                     price: 35,
-                    image: "https://i.postimg.cc/Hkgh1sPq/Imagem_cp2.webp",
-                    videoPreview: "https://drive.google.com/file/d/1HC8hgOec40ZJoTSnZBH4TsA92wYFYc7E/preview",
+                    image: "https://files.catbox.moe/example23.jpg",
+                    videoPreview: "https://files.catbox.moe/example23.mp4",
                     description: [
                         "✅ BEST C-P",
                         "✅ HIGH QUALITY",
@@ -1223,15 +1176,14 @@
                     ],
                     trending: true,
                     popular: false,
-                    purchaseCount: 42,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
+                    purchaseCount: 42
                 },
                 {
                     id: 24,
                     name: "ANXIOUS PANDA",
                     price: 25,
-                    image: "https://i.postimg.cc/t4jMGCmz/Imagem_19.webp",
-                    videoPreview: "https://drive.google.com/file/d/1j1y6t6IWend4QFAxMp4nsW25ptwqTAW8/preview",
+                    image: "https://files.catbox.moe/example24.jpg",
+                    videoPreview: "https://files.catbox.moe/example24.mp4",
                     description: [
                         "✅ AGES 13-16 ",
                         "✅ BEST",
@@ -1242,15 +1194,14 @@
                     ],
                     trending: false,
                     popular: false,
-                    purchaseCount: 19,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_eBKqLe9FoNiUL"
+                    purchaseCount: 19
                 },
                 {
                     id: 25,
                     name: "REAL INCEST 💀",
                     price: 25,
-                    image: "https://files.catbox.moe/wronh2.jpeg",
-                    videoPreview: "https://drive.google.com/file/d/1n4NdZ_BEbYTFe-HuSvB8LKa_o0zClYSd/preview",
+                    image: "https://files.catbox.moe/example25.jpg",
+                    videoPreview: "https://files.catbox.moe/example25.mp4",
                     description: [
                         "✅ 1000+ ",
                         "✅ ALL AGES 9y",
@@ -1261,15 +1212,14 @@
                     ],
                     trending: true,
                     popular: true,
-                    purchaseCount: 57,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
+                    purchaseCount: 57
                 },
                 {
                     id: 26,
                     name: "XIMENA TEEN",
                     price: 35,
-                    image: "https://files.catbox.moe/6ec2bu.jpeg",
-                    videoPreview: "https://drive.google.com/file/d/1joQtoWefMs39TvcQGe4bCglJSMzKHAyb/preview",
+                    image: "https://files.catbox.moe/example26.jpg",
+                    videoPreview: "https://files.catbox.moe/example26.mp4",
                     description: [
                         "✅ RARE TEEN",
                         "✅ BEST STUFF",
@@ -1280,26 +1230,25 @@
                     ],
                     trending: true,
                     popular: true,
-                    purchaseCount: 31,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_A5TWEcyU2Iqg4"
+                    purchaseCount: 31
                 }
             ],
             
-            // Recent purchases simulation data - Updated with new products
+            // Recent purchases simulation data
             recentBuyers: [
                 { name: "Alex Johnson", product: "MOM AND SON😋💜", amount: 25, time: "2 min ago" },
-                { name: "Maria Garcia", product: "ALL CP COLLETION", amount: 50, time: "5 min ago" },
-                { name: "David Smith", product: "OMEGLE FULL💜", amount: 30, time: "8 min ago" },
-                { name: "Sarah Wilson", product: "ALL TEENS COLLETION😈", amount: 60, time: "12 min ago" },
+                { name: "Maria Garcia", product: "ALL CP COLLETION", amount: 75, time: "5 min ago" },
+                { name: "David Smith", product: "OMEGLE FULL💜", amount: 35, time: "8 min ago" },
+                { name: "Sarah Wilson", product: "ALL TEENS COLLETION😈", amount: 55, time: "12 min ago" },
                 { name: "James Brown", product: "SNAPGOD FULL EDITION", amount: 35, time: "15 min ago" },
-                { name: "Emma Davis", product: "ALL VIP 9 PYT CHANNELS‼️", amount: 55.00, time: "18 min ago" },
+                { name: "Emma Davis", product: "HIGH SCHOOL THOTS", amount: 35, time: "18 min ago" },
                 { name: "Michael Taylor", product: "LIZZY AND BRO🔥", amount: 25, time: "22 min ago" },
-                { name: "Lisa Martinez", product: "IZZY AND DOG🔥‼️", amount: 25.00, time: "25 min ago" },
-                { name: "Robert Wilson", product: "VIP ALL ACCESS PASS🌟", amount: 150, time: "30 min ago" },
-                { name: "Jennifer Lee", product: "TEEN PREMIUM BUNDLE🔥", amount: 45, time: "35 min ago" },
-                { name: "Kevin Anderson", product: "EXTREME PREMIUM BUNDLE🔥", amount: 75, time: "42 min ago" },
-                { name: "Olivia Parker", product: "FAMILY SECRETS SERIES👨‍👩‍👧‍👦", amount: 55, time: "50 min ago" },
-                { name: "Daniel Clark", product: "ULTIMATE BLACKMAIL ARCHIVE💀", amount: 65, time: "55 min ago" }
+                { name: "Lisa Martinez", product: "IZZY AND DOG🔥‼️", amount: 20, time: "25 min ago" },
+                { name: "Robert Wilson", product: "NEW ALL CONTENT 12TB", amount: 186, time: "30 min ago" },
+                { name: "Jennifer Lee", product: "AMELIA BLONDE🔥", amount: 30, time: "35 min ago" },
+                { name: "Kevin Anderson", product: "REAL INCEST 💀", amount: 25, time: "42 min ago" },
+                { name: "Olivia Parker", product: "XIMENA TEEN", amount: 35, time: "50 min ago" },
+                { name: "Daniel Clark", product: "BLACKMAIIL FULL💦", amount: 25, time: "55 min ago" }
             ]
         };
 
@@ -1545,15 +1494,27 @@
                 `;
                 
                 let mediaHTML = '';
-                // CORREÇÃO: Removi a verificação de 'placeholder' que estava bloqueando as prévias de vídeo
-                if (product.image) {
+                
+                // Check if we have image and video
+                const hasImage = product.image && product.image.trim() !== '';
+                const hasVideo = product.videoPreview && product.videoPreview.trim() !== '';
+                
+                if (hasImage || hasVideo) {
                     mediaHTML = `
                         <div class="media-container">
                             ${mediaTabsHTML}
                             <div class="media-content">
-                                <img src="${product.image}" alt="${product.name}" class="product-image active">
-                                ${product.videoPreview ? 
-                                    `<iframe src="${product.videoPreview}" class="product-video" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen></iframe>` :
+                                ${hasImage ? 
+                                    `<img src="${product.image}" alt="${product.name}" class="product-image active">` : 
+                                    `<div class="media-placeholder active">
+                                        <i class="fas fa-image"></i> No Image Available
+                                    </div>`
+                                }
+                                ${hasVideo ? 
+                                    `<video controls class="product-video">
+                                        <source src="${product.videoPreview}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>` :
                                     `<div class="media-placeholder">
                                         <i class="fas fa-video-slash"></i>
                                         <span>No preview available</span>
@@ -1570,18 +1531,8 @@
                 } else {
                     mediaHTML = `
                         <div class="media-container">
-                            ${mediaTabsHTML}
-                            <div class="media-content">
-                                <div class="media-placeholder active">
-                                    <i class="fas fa-image"></i> No Image Available
-                                </div>
-                                ${product.videoPreview ? 
-                                    `<iframe src="${product.videoPreview}" class="product-video" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen></iframe>` :
-                                    `<div class="media-placeholder">
-                                        <i class="fas fa-video-slash"></i>
-                                        <span>No preview available</span>
-                                    </div>`
-                                }
+                            <div class="media-placeholder" style="display: flex;">
+                                <i class="fas fa-image"></i> No Media Available
                             </div>
                             <div class="adult-badge">
                                 <i class="fas fa-exclamation-triangle"></i> 18+
@@ -1629,20 +1580,10 @@
                 `;
                 
                 container.appendChild(productCard);
-                
-                // Initialize video iframe for products with preview
-                if (product.videoPreview) {
-                    const iframe = productCard.querySelector('.product-video');
-                    if (iframe) {
-                        iframe.addEventListener('load', function() {
-                            console.log(`Video preview loaded for ${product.name}`);
-                        });
-                    }
-                }
             });
         }
 
-        // Function to handle purchase via Whop
+        // Function to handle purchase via Telegram
         function buyProduct(productId) {
             // Double-check age verification
             const ageVerified = localStorage.getItem('ageVerified18plus');
@@ -1656,16 +1597,10 @@
             const product = CONFIG.products.find(p => p.id === productId);
             if (!product) return;
             
-            // Check if Whop checkout link exists
-            if (!product.whopCheckoutLink || product.whopCheckoutLink === "https://whop.com/checkout/") {
-                alert('Checkout link not configured for this product.');
-                return;
-            }
-            
             // Show loading state
             const button = event.target;
             const originalText = button.innerHTML;
-            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Redirecting...';
             button.disabled = true;
             
             // Simulate purchase in activity panel
@@ -1675,9 +1610,14 @@
                 }, 500);
             }
             
-            // Redirect to Whop checkout
+            // Create Telegram message
+            const message = `Hello! I want to buy: ${product.name} - $${product.price}. I'm ready to pay.`;
+            const encodedMessage = encodeURIComponent(message);
+            const telegramUrl = `https://t.me/${CONFIG.telegram.replace('@', '')}?text=${encodedMessage}`;
+            
+            // Redirect to Telegram after short delay
             setTimeout(() => {
-                window.open(product.whopCheckoutLink, '_blank');
+                window.open(telegramUrl, '_blank');
                 
                 // Reset button after 2 seconds
                 setTimeout(() => {
@@ -1695,7 +1635,7 @@
                 window.history.replaceState({}, document.title, window.location.pathname);
                 showNotification(
                     "Purchase Successful!",
-                    `✅ Thank you for your purchase! You will receive your content via secure delivery. Contact @ellyseller on Telegram for support.`,
+                    `✅ Thank you for your purchase! You will receive your content via secure delivery. Contact @${CONFIG.telegram} on Telegram for support.`,
                     "success"
                 );
                 
@@ -1704,15 +1644,6 @@
                     activitySimulator.todayPurchases += 1;
                     activitySimulator.updateDisplay();
                 }
-            }
-            
-            if (urlParams.has('cancelled')) {
-                window.history.replaceState({}, document.title, window.location.pathname);
-                showNotification(
-                    "Purchase Cancelled",
-                    "⚠️ Your purchase was cancelled. No charges were made.",
-                    "warning"
-                );
             }
         }
 
@@ -1770,18 +1701,13 @@
             
             // Log configuration (for debugging)
             console.log('Adult Content Store Configuration:');
-            console.log('- Payment Gateway: Whop (Direct Checkout Links)');
-            console.log('- Currency:', CONFIG.currency);
-            console.log('- Telegram:', 'https://t.me/naysellery');
+            console.log('- Payment Method: Direct Telegram Contact');
+            console.log('- Telegram:', CONFIG.telegram);
             console.log('- Age Restriction:', '18+ Required');
             console.log('- Total Products:', CONFIG.products.length);
-            console.log('- Products with Whop checkout:', CONFIG.products.filter(p => p.whopCheckoutLink).length);
             
-            // Warning for missing checkout links
-            const missingLinks = CONFIG.products.filter(p => !p.whopCheckoutLink || p.whopCheckoutLink === "https://whop.com/checkout/");
-            if (missingLinks.length > 0) {
-                console.warn('Missing Whop checkout links for products:', missingLinks.map(p => p.name));
-            }
+            // Note for user
+            console.log('Note: Replace all catbox example URLs with your actual catbox links');
         });
 
         // Expose functions to global scope for button onclick
