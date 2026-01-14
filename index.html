@@ -3,61 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔥 PREMIUM CONTENT | Whop Checkout</title>
-    
+    <title>PREMIUM FOLDERS😈🔥 - Whop Checkout</title>
     <style>
-        /* RESET E CONFIGURAÇÕES BÁSICAS */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
         
-        /* Age Verification - VISÍVEL POR PADRÃO */
+        /* Age Verification Overlay */
         .age-verification {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: #000000;
-            z-index: 9999;
-            display: flex !important; /* FORÇAR VISIBILIDADE */
-            align-items: center;
+            background: rgba(15, 15, 15, 0.98);
+            z-index: 1000;
+            display: flex;
             justify-content: center;
-            padding: 20px;
+            align-items: center;
+            backdrop-filter: blur(10px);
         }
         
         .verification-box {
             background: #1a1a1a;
-            padding: 30px;
+            border: 2px solid #333;
             border-radius: 12px;
+            padding: 40px;
             max-width: 500px;
-            width: 100%;
+            width: 90%;
             text-align: center;
-            border: 1px solid #333;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        .verification-box h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .verification-box p {
+            color: #aaa;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .age-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
         }
         
         .age-btn {
-            padding: 14px 30px;
+            padding: 12px 30px;
             border: none;
             border-radius: 8px;
-            font-size: 16px;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            margin: 10px;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
         
         .age-confirm {
-            background: #5865F2;
+            background: #5865F2; /* Cor do Whop */
             color: white;
         }
         
         .age-confirm:hover {
             background: #4752C4;
+            transform: translateY(-2px);
         }
         
         .age-deny {
@@ -65,68 +81,362 @@
             color: #aaa;
         }
         
-        /* Main Content - INICIALMENTE ESCONDIDO */
+        .age-deny:hover {
+            background: #444;
+        }
+        
+        .warning-note {
+            color: #5865F2; /* Cor do Whop */
+            font-size: 0.9rem;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #5865F2;
+            border-radius: 6px;
+            background: rgba(88, 101, 242, 0.1);
+        }
+        
+        /* Main content styles */
         body {
-            background: #0a0a0a;
-            color: #ffffff;
+            background: #0f0f0f;
+            color: #e5e5e5;
             line-height: 1.5;
-            min-height: 100vh;
-        }
-        
-        .main-content {
-            display: none; /* Escondido até verificação */
-            max-width: 1200px;
-            margin: 0 auto;
             padding: 20px;
+            font-size: 15px;
         }
         
-        /* Header */
-        .header {
-            text-align: center;
-            padding: 30px 20px;
-            margin-bottom: 30px;
-            background: #111;
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: none; /* Hidden until age verification */
+        }
+        
+        /* Activity Panel */
+        .activity-panel {
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
             border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
             border: 1px solid #333;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
         
-        .header h1 {
-            font-size: 2.2rem;
+        .activity-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .activity-header h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .live-users {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+            padding: 12px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .recent-purchases {
+            margin-top: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .purchase-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            border-bottom: 1px solid #333;
+            transition: background 0.2s ease;
+        }
+        
+        .purchase-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .purchase-item:last-child {
+            border-bottom: none;
+        }
+        
+        .purchase-user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #5865F2, #4752C4); /* Cor do Whop */
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            margin-bottom: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
         }
         
-        .header p {
+        .purchase-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        
+        .user-name {
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .product-name {
             color: #aaa;
+            font-size: 0.8rem;
+        }
+        
+        .purchase-time {
+            color: #666;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .purchase-amount {
+            color: #10b981;
+            font-weight: 600;
             font-size: 1rem;
         }
         
-        /* Products Grid */
+        .refresh-btn {
+            background: #5865F2; /* Cor do Whop */
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.2s ease;
+        }
+        
+        .refresh-btn:hover {
+            background: #4752C4;
+            transform: translateY(-1px);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #5865F2, #4752C4); /* Cor do Whop */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .header p {
+            font-size: 1rem;
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .age-badge {
+            display: inline-block;
+            background: #5865F2; /* Cor do Whop */
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
             margin-bottom: 40px;
         }
         
         .product-card {
-            background: #111;
+            background: #1a1a1a;
             border-radius: 12px;
             overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
             border: 1px solid #333;
-            transition: 0.3s;
         }
         
         .product-card:hover {
-            transform: translateY(-5px);
-            border-color: #5865F2;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            border-color: #444;
         }
         
-        .product-image {
+        /* Media tabs */
+        .media-tabs {
+            display: flex;
+            background: #0f0f0f;
+            border-bottom: 1px solid #333;
+        }
+        
+        .media-tab {
+            flex: 1;
+            padding: 12px 0;
+            background: transparent;
+            border: none;
+            color: #aaa;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .media-tab:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .media-tab.active {
+            color: #10b981;
+        }
+        
+        .media-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #10b981;
+        }
+        
+        .media-container {
             width: 100%;
             height: 200px;
+            position: relative;
+            background: #0f0f0f;
+            overflow: hidden;
+        }
+        
+        .media-content {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .product-image, .product-video {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            display: none;
+        }
+        
+        .product-image.active, .product-video.active {
+            display: block;
+        }
+        
+        .product-video {
             background: #000;
+        }
+        
+        .media-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #666;
+            font-size: 0.9rem;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .trending-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(88, 101, 242, 0.9); /* Cor do Whop */
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 2;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(16, 185, 129, 0.9);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 2;
+        }
+        
+        .adult-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #dc2626;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid #dc2626;
+            z-index: 2;
         }
         
         .product-content {
@@ -134,443 +444,1274 @@
         }
         
         .product-title {
-            font-size: 1.3rem;
-            color: white;
-            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 12px;
             font-weight: 600;
+            line-height: 1.3;
         }
         
-        .desc-item {
+        .product-description {
             color: #aaa;
-            margin-bottom: 8px;
             font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            min-height: 80px;
+        }
+        
+        .description-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+        
+        .description-item i {
+            color: #10b981;
         }
         
         .product-price {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: #10b981;
             font-weight: 700;
             margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
         
-        /* Whop Checkout Button */
-        .whop-btn {
-            display: block;
-            width: 100%;
-            background: #5865F2;
+        .product-price::before {
+            content: '$';
+            font-size: 1.2rem;
+            color: #10b981;
+        }
+        
+        /* WHOP CHECKOUT BUTTON - NOVO */
+        .whop-checkout-btn {
+            background: linear-gradient(135deg, #5865F2, #4752C4); /* Cor do Whop */
             color: white;
             border: none;
-            padding: 14px;
-            font-size: 1rem;
+            padding: 12px 20px;
+            font-size: 0.95rem;
             border-radius: 8px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
             font-weight: 600;
-            text-align: center;
+            position: relative;
+            overflow: hidden;
             text-decoration: none;
-            transition: 0.3s;
-        }
-        
-        .whop-btn:hover {
-            background: #4752C4;
-        }
-        
-        /* Footer */
-        .footer {
+            display: block;
             text-align: center;
-            padding: 30px 20px;
+        }
+        
+        .whop-checkout-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
+            background: linear-gradient(135deg, #4752C4, #3a46c0);
+        }
+        
+        .whop-checkout-btn:active {
+            transform: translateY(0);
+        }
+        
+        .purchase-count {
+            font-size: 0.85rem;
             color: #666;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        /* Payment Section - ATUALIZADA */
+        .payment-section {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 30px;
+            border: 1px solid #333;
+        }
+        
+        .payment-section h3 {
+            color: #fff;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .payment-section h3 i {
+            color: #5865F2; /* Cor do Whop */
+        }
+        
+        .payment-section p {
+            color: #aaa;
             font-size: 0.9rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .payment-section p i {
+            color: #10b981;
+        }
+        
+        /* Telegram Section - APENAS SUPORTE */
+        .telegram-section {
+            background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 24px;
+            text-align: center;
+        }
+        
+        .telegram-section h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .telegram-section a {
+            color: #0088cc;
+            font-weight: 600;
+            text-decoration: none;
+            background: rgba(0, 136, 204, 0.1);
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(0, 136, 204, 0.3);
+        }
+        
+        .telegram-section a:hover {
+            background: rgba(0, 136, 204, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .disclaimer {
+            text-align: center;
+            color: #666;
+            font-size: 0.8rem;
+            margin-top: 30px;
+            padding: 15px;
             border-top: 1px solid #333;
-            margin-top: 50px;
+        }
+        
+        .age-warning {
+            color: #dc2626;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        
+        /* Whop Badge */
+        .whop-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(88, 101, 242, 0.1);
+            color: #5865F2;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+            border: 1px solid rgba(88, 101, 242, 0.3);
         }
         
         @media (max-width: 768px) {
             .products-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            body {
+                padding: 12px;
             }
             
             .header h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+            }
+            
+            .product-title {
+                font-size: 1.1rem;
+            }
+            
+            .product-description {
+                font-size: 0.9rem;
+            }
+            
+            .media-container {
+                height: 180px;
+            }
+            
+            .verification-box {
+                padding: 30px 20px;
+            }
+            
+            .age-buttons {
+                flex-direction: column;
+            }
+            
+            .media-tab {
+                padding: 10px 0;
+                font-size: 0.85rem;
             }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Age Verification - SEMPRE VISÍVEL INICIALMENTE -->
+    <!-- Age Verification Overlay -->
     <div class="age-verification" id="ageVerification">
         <div class="verification-box">
-            <h2 style="color: white; margin-bottom: 20px; font-size: 1.8rem;">⚠️ AGE VERIFICATION</h2>
-            <p style="color: #aaa; margin-bottom: 25px; line-height: 1.6;">
-                This website contains explicit adult content.<br>
-                You must be 18+ to enter.
-            </p>
+            <h2><i class="fas fa-exclamation-triangle"></i> AGE VERIFICATION REQUIRED</h2>
+            <p>This website contains adult content intended for individuals 18 years of age or older.</p>
+            <p>By entering this site, you confirm that:</p>
+            <p>• You are at least 18 years old<br>
+               • You are not offended by adult content<br>
+               • You are accessing this site legally in your jurisdiction</p>
             
-            <div style="margin: 30px 0;">
-                <button class="age-btn age-confirm" id="confirmBtn">
-                    ✅ I AM 18+ - ENTER SITE
+            <div class="age-warning">
+                <i class="fas fa-ban"></i> Under 18? Please leave immediately.
+            </div>
+            
+            <div class="age-buttons">
+                <button class="age-btn age-confirm" id="confirmAge">
+                    <i class="fas fa-check"></i> I AM 18 OR OLDER
                 </button>
-                <button class="age-btn age-deny" id="denyBtn">
-                    ❌ I'M UNDER 18 - LEAVE
+                <button class="age-btn age-deny" id="denyAge">
+                    <i class="fas fa-times"></i> I AM UNDER 18
                 </button>
             </div>
             
-            <p style="color: #666; font-size: 0.9rem; margin-top: 20px;">
-                Payments via Whop • Instant Telegram delivery
-            </p>
+            <div class="warning-note">
+                <i class="fas fa-shield-alt"></i> All payments processed securely via <strong>Whop</strong>
+            </div>
         </div>
     </div>
-
-    <!-- Main Content - APARECE DEPOIS DA VERIFICAÇÃO -->
-    <div class="main-content" id="mainContent">
+    
+    <!-- Main Content (Hidden until age verification) -->
+    <div class="container" id="mainContent">
+        <!-- Activity Panel -->
+        <div class="activity-panel">
+            <div class="activity-header">
+                <h3>
+                    <i class="fas fa-chart-line"></i>
+                    Live Store Activity
+                </h3>
+                <button class="refresh-btn" id="refreshActivity">
+                    <i class="fas fa-sync-alt"></i>
+                    Refresh
+                </button>
+            </div>
+            
+            <div class="live-users">
+                <div class="live-dot"></div>
+                <span id="liveStatus">Live: 12 people viewing products right now</span>
+            </div>
+            
+            <div class="recent-purchases" id="recentPurchases">
+                <!-- Recent purchases will be loaded here -->
+            </div>
+        </div>
+        
         <!-- Header -->
         <div class="header">
-            <h1>🔥 PREMIUM EXCLUSIVE CONTENT</h1>
-            <p>Secure Whop checkout • Instant Telegram delivery • Lifetime access</p>
+            <h1>PREMIUM RARE CONTENTS💎 <span class="age-badge">18+</span> <span class="whop-badge"><i class="fas fa-lock"></i> Whop Secure</span></h1>
+            <p>Secure Whop checkout • Instant delivery after payment • Lifetime access</p>
         </div>
-
+        
         <!-- Products Grid -->
-        <div class="products-grid" id="productsGrid">
-            <!-- Produtos serão carregados aqui -->
+        <div class="products-grid" id="productsContainer">
+            <!-- Products will be loaded here -->
         </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <p>⚠️ You must be 18+ to access this content. All sales are final.</p>
-            <p style="margin-top: 10px; color: #777;">
-                Payments processed via Whop • Telegram: @naysellers
+        
+        <!-- Payment Section - ATUALIZADA -->
+        <div class="payment-section">
+            <h3><i class="fas fa-shield-alt" style="color: #5865F2;"></i> Secure & Private Payment via <strong>Whop</strong></h3>
+            <p><i class="fas fa-check-circle"></i> All payments processed securely via Whop</p>
+            <p><i class="fas fa-check-circle"></i> Accepts credit/debit cards & cryptocurrency</p>
+            <p><i class="fas fa-check-circle"></i> Your privacy is protected - no data sharing</p>
+            <p><i class="fas fa-check-circle"></i> Discreet billing on your statement</p>
+            <p><i class="fas fa-check-circle"></i> Instant delivery after payment confirmation</p>
+            <p><i class="fas fa-check-circle"></i> 24/7 secure payment processing</p>
+        </div>
+        
+        <!-- Telegram Section - APENAS PARA SUPORTE -->
+        <div class="telegram-section">
+            <h3><i class="fab fa-telegram"></i> Telegram Support</h3>
+            <p>For any questions or issues with your purchase, contact me on Telegram.</p>
+            <a href="https://t.me/naysellers" target="_blank">
+                <i class="fab fa-telegram"></i> @naysellers (Support Only)
+            </a>
+            <p style="margin-top: 12px; font-size: 0.9rem; color: #888;">
+                Note: All purchases must be completed via Whop checkout above. This Telegram is for support only.
             </p>
+        </div>
+        
+        <div class="disclaimer">
+            <p><i class="fas fa-info-circle"></i> You must be 18+ to access this content. All sales are final. By purchasing, you confirm you are of legal age in your jurisdiction.</p>
         </div>
     </div>
 
     <script>
-        // ============================================
-        // PRODUTOS CONFIGURADOS (26 PRODUTOS)
-        // ============================================
-        const products = [
-            {
-                id: 1,
-                name: "MOM AND SON😋💜",
-                price: 25,
-                whopLink: "https://whop.com/checkout/pl_nay_momson_1", // SUBSTITUA
-                image: "https://imagizer.imageshack.com/img922/1129/46KdQI.jpg",
-                description: ["REAL GIRLS", "YOUNG BOY", "MOM AND SON", "228 FILES • 12.45 GB"]
-            },
-            {
-                id: 2,
-                name: "LIZZY AND BRO🔥",
-                price: 25,
-                whopLink: "https://whop.com/checkout/pl_nay_lizzybro_2", // SUBSTITUA
-                image: "https://imagizer.imageshack.com/img921/5505/LKytJu.jpg",
-                description: ["BLACKMAIL VIDEOS", "TRAINING VIDEOS", "INCEST"]
-            },
-            {
-                id: 3,
-                name: "ALL CP COLLECTION",
-                price: 100,
-                whopLink: "https://whop.com/checkout/pl_nay_cpall_3", // SUBSTITUA
-                image: "https://files.catbox.moe/v6gcc8.jpeg",
-                description: ["CP 2GB • CP 4GB", "Premium content", "CP VIP 8GB"]
-            },
-            {
-                id: 4,
-                name: "ALL TEENS COLLECTION😈",
-                price: 85,
-                whopLink: "https://whop.com/checkout/pl_nay_teens_4", // SUBSTITUA
-                image: "https://i.postimg.cc/rpGnDhMS/IMG_4450.jpg",
-                description: ["OVER 1867 VIDEOS", "200+ SUBFOLDERS", "INCEST • ALL TEENS"]
-            },
-            {
-                id: 5,
-                name: "SNAPGOD FULL EDITION",
-                price: 35,
-                whopLink: "https://whop.com/checkout/pl_nay_snapgod_5", // SUBSTITUA
-                image: "https://imagizer.imageshack.com/img921/9696/oQEkoe.jpg",
-                description: ["BLACKMAIL VIDEOS", "INCEST TEENS", "40GB"]
-            },
-            {
-                id: 6,
-                name: "OMEGLE FULL💜",
-                price: 35,
-                whopLink: "https://whop.com/checkout/pl_nay_omegle_6", // SUBSTITUA
-                image: "https://imagizer.imageshack.com/img924/1222/5M0MZ5.jpg",
-                description: ["140GB+", "FULL CONTENT", "RARE COLLECTION"]
-            },
-            {
-                id: 7,
-                name: "NEW STUFF PYT",
-                price: 35,
-                whopLink: "https://whop.com/checkout/pl_nay_pyt_7", // SUBSTITUA
-                image: "https://files.catbox.moe/9ub4vc.webp",
-                description: ["Premium folder", "13-17", "32GB"]
-            },
-            {
-                id: 8,
-                name: "HIGH SCHOOL THOTS",
-                price: 35,
-                whopLink: "https://whop.com/checkout/pl_nay_hs_8", // SUBSTITUA
-                image: "https://files.catbox.moe/why1n3.webp",
-                description: ["HIGH SCHOOL", "340GB", "13-17y"]
-            },
-            {
-                id: 9,
-                name: "IZZY AND DOG🔥‼️",
-                price: 25,
-                whopLink: "https://whop.com/checkout/pl_nay_izzy_9", // SUBSTITUA
-                image: "https://files.catbox.moe/4av8s1.webp",
-                description: ["BLACKMAIL", "REAL GIRL", "SOLO STUFF"]
-            },
-            {
-                id: 10,
-                name: "DARKZEID🔞",
-                price: 25,
-                whopLink: "https://whop.com/checkout/pl_nay_darkzeid_10", // SUBSTITUA
-                image: "https://files.catbox.moe/35af27.webp",
-                description: ["ALL BM VIDEOS", "ALL CAMERAS UPLOADS", "20GB"]
-            },
-            {
-                id: 11,
-                name: "SNAPCHAT FULL🔥",
-                price: 30,
-                whopLink: "https://whop.com/checkout/pl_nay_snapchat_11", // SUBSTITUA
-                image: "https://i.postimg.cc/ydVfcF8D/IMG_4444.jpg",
-                description: ["500+ VIDEOS", "AGES 16-19", "EXCLUSIVE CONTENT"]
-            },
-            {
-                id: 12,
-                name: "INVAKA💀",
-                price: 30,
-                whopLink: "https://whop.com/checkout/pl_nay_invaka_12", // SUBSTITUA
-                image: "https://files.catbox.moe/zihl72.webp",
-                description: ["300+ VIDS", "REAL GIRL", "FULL HD QUALITY"]
-            },
-            {
-                id: 13,
-                name: "AVA SHIT",
-                price: 30,
-                whopLink: "https://whop.com/checkout/pl_nay_ava_13", // SUBSTITUA
-                image: "https://files.catbox.moe/xupz6u.webp",
-                description: ["BM VIDEOS", "INCEST", "CP", "350+ VIDEOS"]
-            },
-            {
-                id: 14,
-                name: "MY EYES ONLY💎",
-                price: 30,
-                whopLink: "https://whop.com/checkout/pl_nay_eyes_14", // SUBSTITUA
-                image: "https://files.catbox.moe/m3gtu8.webp",
-                description: ["EXCLUSIVE CONTENT", "HD QUALITY", "LIFETIME ACCESS"]
-            },
-            {
-                id: 15,
-                name: "MONKEYAPP🎓",
-                price: 35,
-                whopLink: "https://whop.com/checkout/pl_nay_monkey_15", // SUBSTITUA
-                image: "https://files.catbox.moe/4cy5ej.jpeg",
-                description: ["AGES 13-17", "DORM ROOM VIDEOS", "400+ FILES"]
-            },
-            {
-                id: 16,
-                name: "DESIRE GARCIA",
-                price: 30,
-                whopLink: "https://whop.com/checkout/pl_nay_desire_16", // SUBSTITUA
-                image: "https://files.catbox.moe/nf0esh.webp",
-                description: ["HIGH QUALITY", "RARE CONTENT", "340+ VIDEOS"]
-            },
-            {
-                id: 17,
-                name: "BLACKMAIIL FULL💦",
-                price: 35,
-                whopLink: "https://whop.com/checkout/pl_nay_blackmail_17", // SUBSTITUA
-                image: "https://files.catbox.moe/dlk7kl.webp",
-                description: ["AGES 14-17", "870+ VIDS", "HD QUALITY"]
-            },
-            {
-                id: 18,
-                name: "SLUTTY TEENS",
-                price: 30,
-                whopLink: "https://whop.com/checkout/pl_nay_slutty_18", // SUBSTITUA
-                image: "https://files.catbox.moe/w7k0cp.webp",
-                description: ["RARE CONTENT", "HIGH QUALITY", "EXCLUSIVE VIDEOS"]
-            },
-            {
-                id: 19,
-                name: "BABY ASHLEY",
-                price: 25,
-                whopLink: "https://whop.com/checkout/pl_nay_ashley_19", // SUBSTITUA
-                image: "https://files.catbox.moe/rz4xqi.webp",
-                description: ["100% YOUNG GIRL", "LOCKER ROOM VIDS", "300+ FILES"]
-            },
-            {
-                id: 20,
-                name: "NEW ALL CONTENT 12TB",
-                price: 185,
-                whopLink: "https://whop.com/checkout/pl_nay_allcontent_20", // SUBSTITUA
-                image: "https://images.unsplash.com/photo-1611605698335-8b1569810432?w=800&q=80",
-                description: ["ACCESS TO ALL CONTENT", "LIFETIME UPDATES", "12TB+ TOTAL"]
-            },
-            {
-                id: 21,
-                name: "AMELIA BLONDE🔥",
-                price: 30,
-                whopLink: "https://whop.com/checkout/pl_nay_amelia_21", // SUBSTITUA
-                image: "https://files.catbox.moe/45mzkb.webp",
-                description: ["500+ EXCLUSIVE VIDEOS", "AGES 11", "30GB TOTAL SIZE"]
-            },
-            {
-                id: 22,
-                name: "CP-1",
-                price: 30,
-                whopLink: "https://whop.com/checkout/pl_nay_cp1_22", // SUBSTITUA
-                image: "https://files.catbox.moe/xkwvfb.webp",
-                description: ["RARE", "AGES 9-11", "300+ VIDEOS"]
-            },
-            {
-                id: 23,
-                name: "CP-2",
-                price: 35,
-                whopLink: "https://whop.com/checkout/pl_nay_cp2_23", // SUBSTITUA
-                image: "https://files.catbox.moe/palmho.webp",
-                description: ["BEST C-P", "HIGH QUALITY", "RARE CONTENT"]
-            },
-            {
-                id: 24,
-                name: "ANXIOUS PANDA",
-                price: 25,
-                whopLink: "https://whop.com/checkout/pl_nay_panda_24", // SUBSTITUA
-                image: "https://files.catbox.moe/p5t7u9.webp",
-                description: ["AGES 13-16", "BEST", "200+ VIDS"]
-            },
-            {
-                id: 25,
-                name: "REAL INCEST 💀",
-                price: 25,
-                whopLink: "https://whop.com/checkout/pl_nay_incest_25", // SUBSTITUA
-                image: "https://files.catbox.moe/wronh2.jpeg",
-                description: ["1000+", "ALL AGES 9y", "50GB MEGA COLLECTION"]
-            },
-            {
-                id: 26,
-                name: "XIMENA TEEN",
-                price: 25,
-                whopLink: "https://whop.com/checkout/pl_nay_ximena_26", // SUBSTITUA
-                image: "https://i.postimg.cc/sXd810P5/IMG-5360.jpg",
-                description: ["RARE TEEN", "BEST STUFF", "12y", "44GB"]
+        // CONFIGURAÇÃO ATUALIZADA
+        const CONFIG = {
+            // Telegram apenas para suporte
+            telegram: "@naysellers",
+            
+            // Configuração WHOP - VOCÊ PRECISA SUBSTITUIR OS LINKS!
+            whopBaseUrl: "https://whop.com/checkout/",
+            
+            // Lista de nomes
+            buyerNames: [
+                "Alex Johnson", "Maria Garcia", "David Smith", "Sarah Wilson", "James Brown", 
+                "Emma Davis", "Michael Taylor", "Lisa Martinez", "Robert Wilson", "Jennifer Lee"
+            ],
+            
+            // Products - COM LINKS WHOP (SUBSTITUA COM SEUS LINKS REAIS!)
+            products: [
+                {
+                    id: 1,
+                    name: "MOM AND SON😋💜",
+                    price: 25,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_1", // SUBSTITUA!
+                    image: "https://imagizer.imageshack.com/img922/1129/46KdQI.jpg",
+                    videoPreview: "https://files.catbox.moe/t71u2k.mp4",
+                    description: [
+                        "✅ REAL GIRLS",
+                        "✅ YOUNG BOY", 
+                        "✅ MOM AND SON",
+                        "✅ 228 FILES",
+                        "✅ 12.45 GB",
+                        "PAY 1 GET 2 FREE🔥."
+                    ],
+                    trending: true,
+                    purchaseCount: 42
+                },
+                {
+                    id: 2,
+                    name: "LIZZY AND BRO🔥",
+                    price: 25,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_2", // SUBSTITUA!
+                    image: "https://imagizer.imageshack.com/img921/5505/LKytJu.jpg",
+                    videoPreview: "https://files.catbox.moe/m67swh.mp4",
+                    description: [
+                        "✅ BLACKMAIL VIDEOS",
+                        "✅ TRAINING VIDEOS",
+                        "✅ INCEST",
+                        "PAY 1 GET 2 FREE🔥."
+                    ],
+                    popular: true,
+                    purchaseCount: 28
+                },
+                {
+                    id: 3,
+                    name: "ALL CP COLLETION",
+                    price: 100,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_3", // SUBSTITUA!
+                    image: "https://files.catbox.moe/v6gcc8.jpeg",
+                    videoPreview: "https://files.catbox.moe/kmybnf.mp4",
+                    description: [
+                        "✅ CP 2GB",
+                        "✅ CP 4GB",
+                        "✅ Premium content",
+                        "✅ CP VIP 8GB",
+                        "🔥."
+                    ],
+                    purchaseCount: 56
+                },
+                {
+                    id: 4,
+                    name: "ALL TEENS COLLETION😈",
+                    price: 85,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_4", // SUBSTITUA!
+                    image: "https://i.postimg.cc/rpGnDhMS/IMG_4450.jpg",
+                    videoPreview: "https://files.catbox.moe/fbzp37.mp4",
+                    description: [
+                        "✅ OVER 1867 VIDEOS",
+                        "✅ MORE THAN 200 SUBFOLDERS",
+                        "✅ INCEST",
+                        "✅ ALL TEENS",
+                        "🔥."
+                    ],
+                    trending: true,
+                    purchaseCount: 73
+                },
+                {
+                    id: 5,
+                    name: "SNAPGOD FULL EDITION",
+                    price: 35,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_5", // SUBSTITUA!
+                    image: "https://imagizer.imageshack.com/img921/9696/oQEkoe.jpg",
+                    videoPreview: "https://files.catbox.moe/aighkz.mp4",
+                    description: [
+                        "✅ BLACKMAIL VIDEOS",
+                        "✅ INCEST TEENS",
+                        "✅ 40GB",
+                        "✅ TRAINING AND SEXY",
+                        "PAY 1 GET 2 FREE🔥."
+                    ],
+                    purchaseCount: 19
+                },
+                {
+                    id: 6,
+                    name: "OMEGLE FULL💜",
+                    price: 35,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_6", // SUBSTITUA!
+                    image: "https://imagizer.imageshack.com/img924/1222/5M0MZ5.jpg",
+                    videoPreview: "https://files.catbox.moe/cs6il8.mp4",
+                    description: [
+                        "✅ 140GB+",
+                        "✅ FULL CONTENT",
+                        "✅ RARE NEW COLLETION",
+                        "✅ OMEGLE VIDEOS UPDATE",
+                        "PAY 1 GET 2 FREE🔥."
+                    ],
+                    purchaseCount: 31
+                },
+                {
+                    id: 7,
+                    name: "NEW STUFF PYT",
+                    price: 35,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_7", // SUBSTITUA!
+                    image: "https://files.catbox.moe/9ub4vc.webp",
+                    videoPreview: "https://files.catbox.moe/3005yz.mp4",
+                    description: [
+                        "✅ Premium folder",
+                        "✅ 13-17",
+                        "✅ 32GB",
+                        "PAY 1 GET 2 FREE🔥."
+                    ],
+                    purchaseCount: 24
+                },
+                {
+                    id: 8,
+                    name: "HIGH SCHOOL THOTS",
+                    price: 35,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_8", // SUBSTITUA!
+                    image: "https://files.catbox.moe/why1n3.webp",
+                    videoPreview: "https://files.catbox.moe/ehv39q.mp4",
+                    description: [
+                        "✅ HIGH SCHOOL",
+                        "✅ 340GB",
+                        "✅ 13-17y",
+                        "✅ LIGHTSKIN and more...",
+                        "PAY 1 GET 2 FREE🔥."
+                    ],
+                    popular: true,
+                    purchaseCount: 88
+                },
+                {
+                    id: 9,
+                    name: "IZZY AND DOG🔥‼️",
+                    price: 25,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_9", // SUBSTITUA!
+                    image: "https://files.catbox.moe/4av8s1.webp",
+                    videoPreview: "https://files.catbox.moe/fjih2t.mp4",
+                    description: [
+                        "✅ BLACKMAIL",
+                        "✅ REAL GIRL",
+                        "✅ SOLO STUFF",
+                        "✅ Full access",
+                        "PAY 1 GET 2 FREE🔥."
+                    ],
+                    purchaseCount: 36
+                },
+                {
+                    id: 10,
+                    name: "DARKZEID🔞",
+                    price: 25,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_10", // SUBSTITUA!
+                    image: "https://files.catbox.moe/35af27.webp",
+                    videoPreview: "https://files.catbox.moe/r03guy.mp4",
+                    description: [
+                        "✅ ALL BM VIDEOS",
+                        "✅ ALL CAMERAS UPLOADS",
+                        "✅ 20GB",
+                        "✅ FULL NUDE CONTENT",
+                        "PAY 1 GET 2 FREE🔥."
+                    ],
+                    purchaseCount: 17
+                },
+                {
+                    id: 11,
+                    name: "SNAPCHAT FULL🔥",
+                    price: 30,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_11", // SUBSTITUA!
+                    image: "https://i.postimg.cc/ydVfcF8D/IMG_4444.jpg",
+                    videoPreview: "https://files.catbox.moe/6a6glj.mp4",
+                    description: [
+                        "✅ 500+ VIDEOS",
+                        "✅ AGES 16-19",
+                        "✅ EXCLUSIVE CONTENT",
+                        "✅ 25GB COLLECTION",
+                        "PAY 1 GET 2 FREE🔥."
+                    ],
+                    trending: true,
+                    purchaseCount: 29
+                },
+                {
+                    id: 12,
+                    name: "INVAKA💀",
+                    price: 30,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_12", // SUBSTITUA!
+                    image: "https://files.catbox.moe/zihl72.webp",
+                    videoPreview: "https://files.catbox.moe/qjg3gu.mp4",
+                    description: [
+                        "✅ 300+ VIDS",
+                        "✅ REAL GIRL",
+                        "✅ FULL HD QUALITY",
+                        "✅ 15GB TOTAL",
+                        "PAY 1 GET 2 FREE🔥."
+                    ],
+                    purchaseCount: 41
+                },
+                {
+                    id: 13,
+                    name: "AVA SHIT",
+                    price: 30,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_13", // SUBSTITUA!
+                    image: "https://files.catbox.moe/xupz6u.webp",
+                    videoPreview: "https://files.catbox.moe/yzb7jo.mp4",
+                    description: [
+                        "✅ BM VIDEOS",
+                        "✅ INCEST",
+                        "✅ CP",
+                        "✅ MORE THAN 350+ VIDEOS HIGH QUALITY",
+                        "PAY 1 GET 2 FREE🔥."
+                    ],
+                    popular: true,
+                    purchaseCount: 37
+                },
+                {
+                    id: 14,
+                    name: "MY EYES ONLY💎",
+                    price: 30,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_14", // SUBSTITUA!
+                    image: "https://files.catbox.moe/m3gtu8.webp",
+                    description: [
+                        "✅ EXCLUSIVE CONTENT",
+                        "✅ HD QUALITY",
+                        "✅ LIFETIME ACCESS"
+                    ],
+                    purchaseCount: 22
+                },
+                {
+                    id: 15,
+                    name: "MONKEYAPP🎓",
+                    price: 35,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_15", // SUBSTITUA!
+                    image: "https://files.catbox.moe/4cy5ej.jpeg",
+                    videoPreview: "https://files.catbox.moe/as6vwa.mp4",
+                    description: [
+                        "✅ AGES 13-17",
+                        "✅ DORM ROOM VIDEOS",
+                        "✅ 400+ FILES",
+                        "✅ 20GB COLLECTION",
+                        "PAY 1 GET 2 FREE🔥."
+                    ],
+                    purchaseCount: 22
+                },
+                {
+                    id: 16,
+                    name: "DESIRE GARCIA",
+                    price: 30,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_16", // SUBSTITUA!
+                    image: "https://files.catbox.moe/nf0esh.webp",
+                    videoPreview: "https://files.catbox.moe/mqt4dn.mp4",
+                    description: [
+                        "✅ HIGH QUALITY",
+                        "✅ RARE CONTENT",
+                        "✅ 340+ VIDEOS",
+                        "✅ 56GB CONTENT",
+                        "PAY 1 GET 2 FREE🔥."
+                    ],
+                    trending: true,
+                    purchaseCount: 45
+                },
+                {
+                    id: 17,
+                    name: "BLACKMAIIL FULL💦",
+                    price: 35,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_17", // SUBSTITUA!
+                    image: "https://files.catbox.moe/dlk7kl.webp",
+                    videoPreview: "https://files.catbox.moe/nuegam.mp4",
+                    description: [
+                        "✅ AGES 14-17",
+                        "✅ 870+ VIDS",
+                        "✅ HD QUALITY",
+                        "✅ 200GB COLLECTION",
+                        "PAY 1 GET 2 FREE🔥."
+                    ],
+                    purchaseCount: 58
+                },
+                {
+                    id: 18,
+                    name: "SLUTTY TEENS",
+                    price: 30,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_18", // SUBSTITUA!
+                    image: "https://files.catbox.moe/w7k0cp.webp",
+                    description: [
+                        "✅ RARE CONTENT",
+                        "✅ HIGH QUALITY",
+                        "✅ EXCLUSIVE VIDEOS"
+                    ],
+                    purchaseCount: 33
+                },
+                {
+                    id: 19,
+                    name: "BABY ASHLEY",
+                    price: 25,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_19", // SUBSTITUA!
+                    image: "https://files.catbox.moe/rz4xqi.webp",
+                    videoPreview: "https://files.catbox.moe/qhve7i.mp4",
+                    description: [
+                        "✅ 100% YOUNG GIRL",
+                        "✅ LOCKER ROOM VIDS",
+                        "✅ 300+ FILES",
+                        "✅ 12GB CONTENT",
+                        "PAY 1 GET 2 FREE🔥."
+                    ],
+                    popular: true,
+                    purchaseCount: 49
+                },
+                {
+                    id: 20,
+                    name: "NEW ALL CONTENT 12TB",
+                    price: 185,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_20", // SUBSTITUA!
+                    image: "https://images.unsplash.com/photo-1611605698335-8b1569810432?w=800&q=80",
+                    videoPreview: "https://files.catbox.moe/s7c5b0.mp4",
+                    description: [
+                        "✅ ACCESS TO ALL CONTENT",
+                        "✅ LIFETIME UPDATES",
+                        "✅ 12TB+ TOTAL",
+                        "✅ PRIORITY SUPPORT",
+                        "ACESS ALL CONTENT IN MY MENU."
+                    ],
+                    trending: true,
+                    popular: true,
+                    purchaseCount: 27
+                },
+                {
+                    id: 21,
+                    name: "AMELIA BLONDE🔥",
+                    price: 30,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_21", // SUBSTITUA!
+                    image: "https://files.catbox.moe/45mzkb.webp",
+                    videoPreview: "https://files.catbox.moe/7tffl2.mp4",
+                    description: [
+                        "✅ 500+ EXCLUSIVE VIDEOS",
+                        "✅ AGES 11",
+                        "✅ 30GB TOTAL SIZE",
+                        "✅ REAL GIRLS",
+                        "✅ HIGH QUALITY",
+                        "PAY 1 GET 2 FREE🔥"
+                    ],
+                    trending: true,
+                    popular: true,
+                    purchaseCount: 38
+                },
+                {
+                    id: 22,
+                    name: "CP-1",
+                    price: 30,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_22", // SUBSTITUA!
+                    image: "https://files.catbox.moe/xkwvfb.webp",
+                    videoPreview: "https://files.catbox.moe/ado484.mp4",
+                    description: [
+                        "✅ RARE",
+                        "✅ AGES 9-11",
+                        "✅ 300+ VIDEOS",
+                        "✅ 38GB COLLECTION",
+                        "✅ NEVER BEFORE SEEN",
+                        "PAY 1 GET 2 FREE🔥"
+                    ],
+                    trending: false,
+                    popular: true,
+                    purchaseCount: 24
+                },
+                {
+                    id: 23,
+                    name: "CP-2",
+                    price: 35,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_23", // SUBSTITUA!
+                    image: "https://files.catbox.moe/palmho.webp",
+                    videoPreview: "https://files.catbox.moe/fysysq.mp4",
+                    description: [
+                        "✅ BEST C-P",
+                        "✅ HIGH QUALITY",
+                        "✅ RARE CONTENT",
+                        "✅ 350+ VIDEOS",
+                        "✅ 20GB HIGH QUALITY",
+                        "PAY 1 GET 2 FREE🔥"
+                    ],
+                    trending: true,
+                    popular: false,
+                    purchaseCount: 42
+                },
+                {
+                    id: 24,
+                    name: "ANXIOUS PANDA",
+                    price: 25,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_24", // SUBSTITUA!
+                    image: "https://files.catbox.moe/p5t7u9.webp",
+                    videoPreview: "https://files.catbox.moe/nvpys0.mp4",
+                    description: [
+                        "✅ AGES 13-16 ",
+                        "✅ BEST",
+                        "✅ 200+ VIDS",
+                        "✅ BEHIND THE SCENES",
+                        "✅ 35GB TOTAL",
+                        "PAY 1 GET 2 FREE🔥"
+                    ],
+                    trending: false,
+                    popular: false,
+                    purchaseCount: 19
+                },
+                {
+                    id: 25,
+                    name: "REAL INCEST 💀",
+                    price: 25,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_25", // SUBSTITUA!
+                    image: "https://files.catbox.moe/wronh2.jpeg",
+                    videoPreview: "https://files.catbox.moe/ef13ye.mp4",
+                    description: [
+                        "✅ 1000+ ",
+                        "✅ ALL AGES 9y",
+                        "✅ 50GB MEGA COLLECTION",
+                        "✅ ORGANIZED BY CATEGORY",
+                        "✅ HD",
+                        "PAY 1 GET 2 FREE🔥"
+                    ],
+                    trending: true,
+                    popular: true,
+                    purchaseCount: 57
+                },
+                {
+                    id: 26,
+                    name: "XIMENA TEEN",
+                    price: 25,
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_HERE_26", // SUBSTITUA!
+                    image: "https://i.postimg.cc/sXd810P5/IMG-5360.jpg",
+                    videoPreview: "https://files.catbox.moe/yn5iuk.mp4",
+                    description: [
+                        "✅ RARE TEEN",
+                        "✅ BEST STUFF",
+                        "✅ 12y",
+                        "✅ HIGH QUALITY",
+                        "✅ 44GB",
+                        "PAY 1 GET 2 FREE🔥"
+                    ],
+                    trending: true,
+                    popular: true,
+                    purchaseCount: 31
+                }
+            ]
+        };
+
+        // Age Verification System
+        const ageVerification = document.getElementById('ageVerification');
+        const mainContent = document.getElementById('mainContent');
+        const confirmBtn = document.getElementById('confirmAge');
+        const denyBtn = document.getElementById('denyAge');
+
+        // Check if age is already verified
+        function checkAgeVerification() {
+            const ageVerified = localStorage.getItem('ageVerified18plus');
+            const verificationTime = localStorage.getItem('verificationTime');
+            const now = Date.now();
+            
+            // If verified within last 24 hours, show content
+            if (ageVerified === 'true' && verificationTime && (now - parseInt(verificationTime)) < 24 * 60 * 60 * 1000) {
+                showContent();
+                return true;
             }
-        ];
-
-        // ============================================
-        // FUNÇÕES PRINCIPAIS - SIMPLES E FUNCIONAIS
-        // ============================================
-
-        // 1. CONFIRMAR IDADE
-        function confirmAge() {
-            console.log("✅ Age confirmed");
-            localStorage.setItem('ageVerified', 'true');
-            
-            // Esconder verificação, mostrar conteúdo
-            document.getElementById('ageVerification').style.display = 'none';
-            document.getElementById('mainContent').style.display = 'block';
-            
-            // Carregar produtos
-            loadProducts();
+            return false;
         }
 
-        // 2. NEGAR IDADE
-        function denyAge() {
-            window.location.href = 'https://www.google.com';
+        // Show main content
+        function showContent() {
+            ageVerification.style.display = 'none';
+            mainContent.style.display = 'block';
+            renderProducts();
+            checkURLParameters();
+            initializeActivitySimulation();
         }
 
-        // 3. CARREGAR PRODUTOS
-        function loadProducts() {
-            const grid = document.getElementById('productsGrid');
+        // Handle age confirmation
+        confirmBtn.addEventListener('click', function() {
+            localStorage.setItem('ageVerified18plus', 'true');
+            localStorage.setItem('verificationTime', Date.now().toString());
+            showContent();
+        });
+
+        // Handle age denial
+        denyBtn.addEventListener('click', function() {
+            alert('You must be 18 or older to access this content. Redirecting...');
+            setTimeout(() => {
+                window.location.href = 'https://www.google.com';
+            }, 2000);
+        });
+
+        // Activity Simulation System
+        class ActivitySimulator {
+            constructor() {
+                this.lastUpdate = new Date();
+                this.purchaseInterval = null;
+                this.nameRotationInterval = null;
+                this.currentBuyers = this.generateRandomBuyers();
+                this.nameRotationCounter = 0;
+            }
             
-            products.forEach(product => {
-                const card = document.createElement('div');
-                card.className = 'product-card';
+            randomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            
+            generateRandomBuyers() {
+                const buyers = [];
+                const productCount = CONFIG.products.length;
                 
-                card.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}" class="product-image" 
-                         onerror="this.src='https://images.unsplash.com/photo-1611605698335-8b1569810432?w=800&q=80'">
+                for (let i = 0; i < 8; i++) {
+                    const randomName = CONFIG.buyerNames[this.randomInt(0, CONFIG.buyerNames.length - 1)];
+                    const randomProduct = CONFIG.products[this.randomInt(0, productCount - 1)];
+                    const timeOptions = ["just now", "1 min ago", "2 min ago", "3 min ago", "4 min ago", "5 min ago"];
                     
+                    buyers.push({
+                        name: randomName,
+                        product: randomProduct.name,
+                        amount: randomProduct.price,
+                        time: timeOptions[this.randomInt(0, timeOptions.length - 1)]
+                    });
+                }
+                
+                return buyers;
+            }
+            
+            rotateBuyerNames() {
+                this.nameRotationCounter++;
+                
+                const productCount = CONFIG.products.length;
+                const timeOptions = ["just now", "1 min ago", "2 min ago", "3 min ago", "4 min ago", "5 min ago"];
+                
+                for (let i = 0; i < this.currentBuyers.length; i++) {
+                    if (Math.random() > 0.5) {
+                        this.currentBuyers[i].name = CONFIG.buyerNames[this.randomInt(0, CONFIG.buyerNames.length - 1)];
+                        this.currentBuyers[i].time = timeOptions[this.randomInt(0, timeOptions.length - 1)];
+                    }
+                }
+                
+                this.renderRecentPurchases();
+            }
+            
+            initialize() {
+                this.renderRecentPurchases();
+                this.startSimulation();
+                
+                this.nameRotationInterval = setInterval(() => {
+                    this.rotateBuyerNames();
+                }, 10 * 60 * 1000);
+                
+                document.getElementById('refreshActivity').addEventListener('click', () => {
+                    this.refreshActivity();
+                });
+                
+                this.updateLiveStatus();
+            }
+            
+            updateLiveStatus() {
+                const viewingProducts = this.randomInt(8, 20);
+                document.getElementById('liveStatus').textContent = 
+                    `Live: ${viewingProducts} people viewing products right now`;
+            }
+            
+            startSimulation() {
+                setInterval(() => {
+                    this.updateLiveStatus();
+                }, this.randomInt(15000, 30000));
+                
+                this.purchaseInterval = setInterval(() => {
+                    this.addNewPurchase();
+                }, this.randomInt(45000, 90000));
+            }
+            
+            addNewPurchase() {
+                const products = CONFIG.products;
+                const timeOptions = ["just now", "1 min ago", "2 min ago", "3 min ago"];
+                
+                const randomName = CONFIG.buyerNames[this.randomInt(0, CONFIG.buyerNames.length - 1)];
+                const randomProduct = products[this.randomInt(0, products.length - 1)];
+                
+                const newPurchase = {
+                    name: randomName,
+                    product: randomProduct.name,
+                    amount: randomProduct.price,
+                    time: timeOptions[this.randomInt(0, timeOptions.length - 1)]
+                };
+                
+                const container = document.getElementById('recentPurchases');
+                const purchaseItem = document.createElement('div');
+                purchaseItem.className = 'purchase-item';
+                purchaseItem.innerHTML = `
+                    <div class="purchase-user">
+                        <div class="user-avatar">${newPurchase.name.charAt(0)}</div>
+                        <div class="purchase-info">
+                            <div class="user-name">${newPurchase.name}</div>
+                            <div class="product-name">${newPurchase.product}</div>
+                            <div class="purchase-time">
+                                <i class="far fa-clock"></i> ${newPurchase.time}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase-amount">$${newPurchase.amount.toFixed(2)}</div>
+                `;
+                
+                if (container.firstChild) {
+                    container.insertBefore(purchaseItem, container.firstChild);
+                } else {
+                    container.appendChild(purchaseItem);
+                }
+                
+                if (container.children.length > 8) {
+                    container.removeChild(container.lastChild);
+                }
+                
+                this.currentBuyers.unshift(newPurchase);
+                if (this.currentBuyers.length > 8) {
+                    this.currentBuyers.pop();
+                }
+            }
+            
+            renderRecentPurchases() {
+                const container = document.getElementById('recentPurchases');
+                container.innerHTML = '';
+                
+                this.currentBuyers.forEach(purchase => {
+                    const purchaseItem = document.createElement('div');
+                    purchaseItem.className = 'purchase-item';
+                    purchaseItem.innerHTML = `
+                        <div class="purchase-user">
+                            <div class="user-avatar">${purchase.name.charAt(0)}</div>
+                            <div class="purchase-info">
+                                <div class="user-name">${purchase.name}</div>
+                                <div class="product-name">${purchase.product}</div>
+                                <div class="purchase-time">
+                                    <i class="far fa-clock"></i> ${purchase.time}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="purchase-amount">$${purchase.amount.toFixed(2)}</div>
+                    `;
+                    container.appendChild(purchaseItem);
+                });
+            }
+            
+            refreshActivity() {
+                this.currentBuyers = this.generateRandomBuyers();
+                this.renderRecentPurchases();
+                this.updateLiveStatus();
+                
+                const btn = document.getElementById('refreshActivity');
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Updated';
+                btn.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '#5865F2';
+                }, 2000);
+            }
+        }
+
+        // Initialize activity simulation
+        let activitySimulator;
+        function initializeActivitySimulation() {
+            activitySimulator = new ActivitySimulator();
+            activitySimulator.initialize();
+        }
+
+        // Function to handle tab switching
+        function switchMediaTab(productId, tabType) {
+            const image = document.querySelector(`#product-${productId} .product-image`);
+            const video = document.querySelector(`#product-${productId} .product-video`);
+            const imageTab = document.querySelector(`#product-${productId} .media-tab[data-tab="image"]`);
+            const videoTab = document.querySelector(`#product-${productId} .media-tab[data-tab="video"]`);
+            
+            if (tabType === 'image') {
+                image.classList.add('active');
+                video.classList.remove('active');
+                imageTab.classList.add('active');
+                videoTab.classList.remove('active');
+            } else {
+                image.classList.remove('active');
+                video.classList.add('active');
+                imageTab.classList.remove('active');
+                videoTab.classList.add('active');
+            }
+        }
+
+        // Function to render products with WHOP CHECKOUT
+        function renderProducts() {
+            const container = document.getElementById('productsContainer');
+            container.innerHTML = '';
+            
+            CONFIG.products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.id = `product-${product.id}`;
+                
+                // Create media tabs
+                let mediaTabsHTML = `
+                    <div class="media-tabs">
+                        <button class="media-tab active" data-tab="image" onclick="switchMediaTab(${product.id}, 'image')">
+                            <i class="fas fa-image"></i> Image
+                        </button>
+                        <button class="media-tab" data-tab="video" onclick="switchMediaTab(${product.id}, 'video')">
+                            <i class="fas fa-video"></i> Preview
+                        </button>
+                    </div>
+                `;
+                
+                let mediaHTML = '';
+                
+                const hasImage = product.image && product.image.trim() !== '';
+                const hasVideo = product.videoPreview && product.videoPreview.trim() !== '';
+                
+                if (hasImage || hasVideo) {
+                    mediaHTML = `
+                        <div class="media-container">
+                            ${mediaTabsHTML}
+                            <div class="media-content">
+                                ${hasImage ? 
+                                    `<img src="${product.image}" alt="${product.name}" class="product-image active">` : 
+                                    `<div class="media-placeholder active">
+                                        <i class="fas fa-image"></i> No Image Available
+                                    </div>`
+                                }
+                                ${hasVideo ? 
+                                    `<video controls class="product-video">
+                                        <source src="${product.videoPreview}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>` :
+                                    `<div class="media-placeholder">
+                                        <i class="fas fa-video-slash"></i>
+                                        <span>No preview available</span>
+                                    </div>`
+                                }
+                            </div>
+                            <div class="adult-badge">
+                                <i class="fas fa-exclamation-triangle"></i> 18+
+                            </div>
+                            ${product.trending ? '<div class="trending-badge"><i class="fas fa-fire"></i> TRENDING</div>' : ''}
+                            ${product.popular ? '<div class="popular-badge"><i class="fas fa-star"></i> POPULAR</div>' : ''}
+                        </div>
+                    `;
+                } else {
+                    mediaHTML = `
+                        <div class="media-container">
+                            <div class="media-placeholder" style="display: flex;">
+                                <i class="fas fa-image"></i> No Media Available
+                            </div>
+                            <div class="adult-badge">
+                                <i class="fas fa-exclamation-triangle"></i> 18+
+                            </div>
+                            ${product.trending ? '<div class="trending-badge"><i class="fas fa-fire"></i> TRENDING</div>' : ''}
+                            ${product.popular ? '<div class="popular-badge"><i class="fas fa-star"></i> POPULAR</div>' : ''}
+                        </div>
+                    `;
+                }
+                
+                let descriptionHTML = '';
+                if (Array.isArray(product.description)) {
+                    product.description.forEach(line => {
+                        if (line.startsWith('✅')) {
+                            descriptionHTML += `
+                                <div class="description-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>${line.substring(2)}</span>
+                                </div>
+                            `;
+                        } else {
+                            descriptionHTML += `<p style="margin-top: 10px;">${line}</p>`;
+                        }
+                    });
+                } else {
+                    descriptionHTML = `<p>${product.description}</p>`;
+                }
+                
+                // WHOP CHECKOUT LINK (verifica se tem link)
+                let whopButtonHTML = '';
+                if (product.whopLink && product.whopLink.includes('whop.com')) {
+                    whopButtonHTML = `
+                        <a href="${product.whopLink}" target="_blank" class="whop-checkout-btn" onclick="trackWhopPurchase(${product.id})">
+                            <i class="fas fa-shopping-cart"></i> Buy Now on Whop - $${product.price.toFixed(2)}
+                        </a>
+                    `;
+                } else {
+                    whopButtonHTML = `
+                        <div class="whop-checkout-btn" style="background: #666; cursor: not-allowed;">
+                            <i class="fas fa-exclamation-triangle"></i> Checkout Coming Soon
+                        </div>
+                        <p style="color: #ff6b6b; font-size: 0.9rem; text-align: center; margin-top: 8px;">
+                            Add Whop link in CONFIG.products
+                        </p>
+                    `;
+                }
+                
+                productCard.innerHTML = `
+                    ${mediaHTML}
                     <div class="product-content">
                         <h3 class="product-title">${product.name}</h3>
-                        
-                        ${product.description.map(item => 
-                            `<div class="desc-item">✓ ${item}</div>`
-                        ).join('')}
-                        
-                        <div class="product-price">$${product.price}</div>
-                        
-                        <a href="${product.whopLink}" target="_blank" class="whop-btn">
-                            🛒 BUY NOW - $${product.price}
-                        </a>
-                        
-                        <div style="color: #666; font-size: 0.9rem; text-align: center; margin-top: 10px;">
-                            ✅ Instant delivery via Telegram
+                        <div class="product-description">
+                            ${descriptionHTML}
+                        </div>
+                        <div class="product-price">${product.price.toFixed(2)}</div>
+                        ${whopButtonHTML}
+                        <div class="purchase-count">
+                            <i class="fas fa-shopping-cart"></i> ${product.purchaseCount} recent purchases
                         </div>
                     </div>
                 `;
                 
-                grid.appendChild(card);
+                container.appendChild(productCard);
             });
         }
 
-        // 4. VERIFICAR SE JÁ FOI VERIFICADO ANTERIORMENTE
-        function checkPreviousVerification() {
-            const verified = localStorage.getItem('ageVerified');
+        // Function to handle WHOP purchase
+        function trackWhopPurchase(productId) {
+            const product = CONFIG.products.find(p => p.id === productId);
+            if (!product) return;
             
-            if (verified === 'true') {
-                console.log("✅ Previously verified, showing content");
-                document.getElementById('ageVerification').style.display = 'none';
-                document.getElementById('mainContent').style.display = 'block';
-                loadProducts();
-            } else {
-                console.log("❌ Not verified, showing age gate");
-                // Manter age verification visível
+            // Double-check age verification
+            const ageVerified = localStorage.getItem('ageVerified18plus');
+            if (ageVerified !== 'true') {
+                alert('Please verify your age before making a purchase.');
+                ageVerification.style.display = 'flex';
+                mainContent.style.display = 'none';
+                return;
+            }
+            
+            console.log(`🛒 WHOP Purchase initiated: ${product.name} - $${product.price}`);
+            
+            // Simulate purchase in activity panel
+            if (activitySimulator) {
+                setTimeout(() => {
+                    activitySimulator.addNewPurchase();
+                }, 500);
+            }
+            
+            // Increment purchase count
+            product.purchaseCount++;
+            
+            // Show notification
+            showNotification(
+                "Opening Whop Checkout",
+                `Redirecting to secure Whop checkout for ${product.name}`,
+                "info"
+            );
+        }
+
+        // Function to check URL parameters
+        function checkURLParameters() {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            if (urlParams.has('success')) {
+                window.history.replaceState({}, document.title, window.location.pathname);
+                showNotification(
+                    "Purchase Successful!",
+                    `✅ Thank you for your purchase! Your content will be delivered automatically via Telegram.`,
+                    "success"
+                );
             }
         }
 
-        // ============================================
-        // INICIALIZAÇÃO QUANDO A PÁGINA CARREGA
-        // ============================================
+        // Show notification
+        function showNotification(title, message, type) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#1a1a1a' : type === 'error' ? '#dc2626' : '#1a1a1a'};
+                border-left: 4px solid ${type === 'success' ? '#10b981' : type === 'error' ? '#dc2626' : '#5865F2'};
+                padding: 16px;
+                border-radius: 8px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+                z-index: 1000;
+                max-width: 400px;
+                animation: slideIn 0.3s ease;
+                color: #fff;
+                border: 1px solid #333;
+            `;
+            
+            notification.innerHTML = `
+                <div style="font-weight: 600; margin-bottom: 6px; color: #fff;">${title}</div>
+                <div style="color: #aaa; font-size: 0.9rem; margin-bottom: 12px;">${message}</div>
+                <button onclick="this.parentElement.remove()" style="background: #444; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-size: 0.85rem; cursor: pointer;">
+                    Close
+                </button>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 10000);
+        }
+
+        // Initialize
         document.addEventListener('DOMContentLoaded', function() {
-            console.log("🚀 Page loaded");
+            // Add CSS animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
             
-            // Configurar botões
-            document.getElementById('confirmBtn').addEventListener('click', confirmAge);
-            document.getElementById('denyBtn').addEventListener('click', denyAge);
+            // Check age verification on load
+            checkAgeVerification();
             
-            // Verificar verificação prévia
-            checkPreviousVerification();
+            // Log configuration
+            console.log('🚀 Premium Store Configuration:');
+            console.log('- Payment Method: Whop Checkout');
+            console.log('- Support Telegram:', CONFIG.telegram);
+            console.log('- Total Products:', CONFIG.products.length);
+            console.log('- Whop Links: Remember to replace with your actual Whop links!');
             
-            // Log para debug
-            console.log("📦 Products ready:", products.length);
-            console.log("🔗 Whop links need to be replaced with your actual links");
+            // Show instruction alert
+            setTimeout(() => {
+                console.log(`
+                ⚠️ IMPORTANTE - CONFIGURAÇÃO DO WHOP:
+                
+                1. Vá para https://dashboard.whop.com
+                2. Crie um produto para cada item
+                3. Em "Access Control" → Escolha "Redirect"
+                4. URL de redirecionamento: https://t.me/naysellers?start=produto_entregue
+                5. Copie o link de checkout
+                6. Substitua no código acima cada "YOUR_WHOP_LINK_HERE_X" pelo seu link real
+                
+                Faça isso para todos os 26 produtos!
+                `);
+            }, 3000);
         });
 
-        // ============================================
-        // INSTRUÇÕES PARA SUBSTITUIR LINKS DO WHOP
-        // ============================================
-        /*
-        COMO CONFIGURAR:
-        
-        1. Vá para https://dashboard.whop.com
-        2. Para CADA produto (26 produtos):
-           - Crie um novo produto
-           - Preço: defina conforme lista acima
-           - Access Control: escolha "Redirect"
-           - Redirect URL: https://t.me/naysellers?start=produto_entregue
-           - Salve e copie o link de checkout
-        
-        3. No código acima, substitua CADA "whopLink" pelo seu link real
-           Exemplo: mudar "https://whop.com/checkout/pl_nay_momson_1"
-           Para: "https://whop.com/checkout/pl_abc123xyz" (seu link real)
-        
-        4. Faça isso para TODOS os 26 produtos
-        
-        5. Salve o arquivo como index.html e faça upload no Vercel
-        
-        6. Teste comprando um produto barato primeiro
-        */
+        // Expose functions to global scope
+        window.trackWhopPurchase = trackWhopPurchase;
+        window.switchMediaTab = switchMediaTab;
     </script>
 </body>
 </html>
