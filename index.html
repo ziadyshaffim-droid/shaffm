@@ -439,22 +439,6 @@
             z-index: 2;
         }
         
-        .whop-badge {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(139, 92, 246, 0.9);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            z-index: 2;
-        }
-        
         .product-content {
             padding: 20px;
         }
@@ -515,7 +499,6 @@
             font-weight: 600;
             position: relative;
             overflow: hidden;
-            margin-bottom: 8px;
         }
         
         .buy-btn:hover {
@@ -525,28 +508,6 @@
         
         .buy-btn:active {
             transform: translateY(0);
-        }
-        
-        .telegram-btn {
-            background: #0088cc;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 0.9rem;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        
-        .telegram-btn:hover {
-            background: #0077b3;
-            transform: translateY(-1px);
         }
         
         .purchase-count {
@@ -577,35 +538,6 @@
             color: #aaa;
             font-size: 0.9rem;
             margin-bottom: 8px;
-        }
-        
-        .telegram-section {
-            background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 24px;
-            text-align: center;
-        }
-        
-        .telegram-section a {
-            color: #0088cc;
-            font-weight: 600;
-            text-decoration: none;
-            background: rgba(0, 136, 204, 0.1);
-            padding: 10px 20px;
-            border-radius: 8px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 10px;
-            transition: all 0.2s ease;
-            border: 1px solid rgba(0, 136, 204, 0.3);
-        }
-        
-        .telegram-section a:hover {
-            background: rgba(0, 136, 204, 0.2);
-            transform: translateY(-2px);
         }
         
         .disclaimer {
@@ -723,7 +655,7 @@
         <!-- Header -->
         <div class="header">
             <h1>PREMIUM RARE CONTENTS💎 <span class="age-badge">18+</span></h1>
-            <p>Secure checkout via Whop • Instant delivery • Telegram support</p>
+            <p>Secure checkout via Whop • Instant delivery • Lifetime access</p>
         </div>
         
         <!-- Products Grid -->
@@ -733,24 +665,12 @@
         
         <!-- Payment Section -->
         <div class="payment-section">
-            <h3><i class="fas fa-lock"></i> Secure & Private Payment</h3>
-            <p>• Instant checkout via Whop (Crypto & Cards)</p>
-            <p>• Telegram support for custom orders</p>
-            <p>• Your privacy is protected - no data sharing</p>
+            <h3><i class="fas fa-lock"></i> Secure Checkout via Whop</h3>
+            <p>• Instant checkout with credit card & crypto</p>
+            <p>• Secure & encrypted payments</p>
             <p>• Instant delivery after payment</p>
             <p>• Discreet billing on your statement</p>
-        </div>
-        
-        <!-- Telegram Section -->
-        <div class="telegram-section">
-            <h3><i class="fab fa-telegram"></i> Contact for Support & Custom Orders</h3>
-            <p>For questions, support, or custom orders, contact me on Telegram.</p>
-            <a href="https://t.me/naysellers" target="_blank">
-                <i class="fab fa-telegram"></i> @naysellers
-            </a>
-            <p style="margin-top: 12px; font-size: 0.9rem; color: #888;">
-                Click "Buy via Telegram" button for custom orders or bulk discounts
-            </p>
+            <p>• 24/7 customer support via Whop</p>
         </div>
         
         <div class="disclaimer">
@@ -761,9 +681,6 @@
     <script>
         // CONFIGURATION
         const CONFIG = {
-            // Telegram configuration
-            telegram: "@naysellers",
-            
             // Lista de nomes para rotação a cada 10 minutos
             buyerNames: [
                 "Alex Johnson", "Maria Garcia", "David Smith", "Sarah Wilson", "James Brown", 
@@ -776,16 +693,16 @@
                 "Avery Phillips", "Samuel Campbell", "Ella Parker", "Benjamin Evans", "Scarlett Edwards"
             ],
             
-            // Products - Com imagens e vídeos via Pixeldrain
+            // Products com links do Whop
             products: [
                 // Original Products (1-10)
                 {
                     id: 1,
                     name: "MOM AND SON😋💜",
                     price: 25,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM", // Substitua pelo ID da imagem no Pixeldrain
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO", // Substitua pelo ID do vídeo no Pixeldrain
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP", // Link do Whop
+                    image: "https://imagizer.imageshack.com/img922/1129/46KdQI.jpg",
+                    videoPreview: "https://files.catbox.moe/t71u2k.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_1", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ REAL GIRLS",
                         "✅ YOUNG BOY", 
@@ -801,9 +718,9 @@
                     id: 2,
                     name: "LIZZY AND BRO🔥",
                     price: 25,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://imagizer.imageshack.com/img921/5505/LKytJu.jpg",
+                    videoPreview: "https://files.catbox.moe/m67swh.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_2", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ BLACKMAIL VIDEOS",
                         "✅ TRAINING VIDEOS",
@@ -817,9 +734,9 @@
                     id: 3,
                     name: "ALL CP COLLETION",
                     price: 100,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://files.catbox.moe/v6gcc8.jpeg",
+                    videoPreview: "https://files.catbox.moe/kmybnf.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_3", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ CP 2GB",
                         "✅ CP 4GB",
@@ -833,9 +750,9 @@
                     id: 4,
                     name: "ALL TEENS COLLETION😈",
                     price: 85,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://i.postimg.cc/rpGnDhMS/IMG_4450.jpg",
+                    videoPreview: "https://files.catbox.moe/fbzp37.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_4", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ OVER 1867 VIDEOS",
                         "✅ MORE THAN 200 SUBFOLDERS",
@@ -850,9 +767,9 @@
                     id: 5,
                     name: "SNAPGOD FULL EDITION",
                     price: 35,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://imagizer.imageshack.com/img921/9696/oQEkoe.jpg",
+                    videoPreview: "https://files.catbox.moe/aighkz.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_5", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ BLACKMAIL VIDEOS",
                         "✅ INCEST TEENS",
@@ -866,9 +783,9 @@
                     id: 6,
                     name: "OMEGLE FULL💜",
                     price: 35,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://imagizer.imageshack.com/img924/1222/5M0MZ5.jpg",
+                    videoPreview: "https://files.catbox.moe/cs6il8.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_6", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ 140GB+",
                         "✅ FULL CONTENT",
@@ -882,9 +799,9 @@
                     id: 7,
                     name: "NEW STUFF PYT",
                     price: 35,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://files.catbox.moe/9ub4vc.webp",
+                    videoPreview: "https://files.catbox.moe/3005yz.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_7", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ Premium folder",
                         "✅ 13-17",
@@ -897,9 +814,9 @@
                     id: 8,
                     name: "HIGH SCHOOL THOTS",
                     price: 35,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://files.catbox.moe/why1n3.webp",
+                    videoPreview: "https://files.catbox.moe/ehv39q.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_8", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ HIGH SCHOOL",
                         "✅ 340GB",
@@ -914,9 +831,9 @@
                     id: 9,
                     name: "IZZY AND DOG🔥‼️",
                     price: 25,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://files.catbox.moe/4av8s1.webp",
+                    videoPreview: "https://files.catbox.moe/fjih2t.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_9", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ BLACKMAIL",
                         "✅ REAL GIRL",
@@ -930,9 +847,9 @@
                     id: 10,
                     name: "DARKZEID🔞",
                     price: 25,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://files.catbox.moe/35af27.webp",
+                    videoPreview: "https://files.catbox.moe/r03guy.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_10", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ ALL BM VIDEOS",
                         "✅ ALL CAMERAS UPLOADS",
@@ -948,9 +865,9 @@
                     id: 11,
                     name: "SNAPCHAT FULL🔥",
                     price: 30,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://i.postimg.cc/ydVfcF8D/IMG_4444.jpg",
+                    videoPreview: "https://files.catbox.moe/6a6glj.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_11", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ 500+ VIDEOS",
                         "✅ AGES 16-19",
@@ -965,9 +882,9 @@
                     id: 12,
                     name: "INVAKA💀",
                     price: 30,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://files.catbox.moe/zihl72.webp",
+                    videoPreview: "https://files.catbox.moe/qjg3gu.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_12", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ 300+ VIDS",
                         "✅ REAL GIRL",
@@ -981,9 +898,9 @@
                     id: 13,
                     name: "AVA SHIT",
                     price: 30,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://files.catbox.moe/xupz6u.webp",
+                    videoPreview: "https://files.catbox.moe/yzb7jo.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_13", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ BM VIDEOS",
                         "✅ INCEST",
@@ -998,9 +915,9 @@
                     id: 15,
                     name: "MONKEYAPP🎓",
                     price: 35,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://files.catbox.moe/4cy5ej.jpeg",
+                    videoPreview: "https://files.catbox.moe/as6vwa.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_15", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ AGES 13-17",
                         "✅ DORM ROOM VIDEOS",
@@ -1014,9 +931,9 @@
                     id: 16,
                     name: "DESIRE GARCIA",
                     price: 30,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://files.catbox.moe/nf0esh.webp",
+                    videoPreview: "https://files.catbox.moe/mqt4dn.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_16", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ HIGH QUALITY",
                         "✅ RARE CONTENT",
@@ -1031,9 +948,9 @@
                     id: 17,
                     name: "BLACKMAIIL FULL💦",
                     price: 35,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://files.catbox.moe/dlk7kl.webp",
+                    videoPreview: "https://files.catbox.moe/nuegam.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_17", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ AGES 14-17",
                         "✅ 870+ VIDS",
@@ -1047,9 +964,9 @@
                     id: 19,
                     name: "BABY ASHLEY",
                     price: 25,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://files.catbox.moe/rz4xqi.webp",
+                    videoPreview: "https://files.catbox.moe/qhve7i.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_19", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ 100% YOUNG GIRL",
                         "✅ LOCKER ROOM VIDS",
@@ -1064,9 +981,9 @@
                     id: 20,
                     name: "NEW ALL CONTENT 12TB",
                     price: 185,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://imageshack.com/i/placeholder_20",
+                    videoPreview: "https://files.catbox.moe/s7c5b0.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_20", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ ACCESS TO ALL CONTENT",
                         "✅ LIFETIME UPDATES",
@@ -1084,9 +1001,9 @@
                     id: 21,
                     name: "AMELIA BLONDE🔥",
                     price: 30,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://files.catbox.moe/45mzkb.webp",
+                    videoPreview: "https://files.catbox.moe/7tffl2.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_21", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ 500+ EXCLUSIVE VIDEOS",
                         "✅ AGES 11",
@@ -1103,9 +1020,9 @@
                     id: 22,
                     name: "CP-1",
                     price: 30,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://files.catbox.moe/xkwvfb.webp",
+                    videoPreview: "https://files.catbox.moe/ado484.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_22", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ RARE",
                         "✅ AGES 9-11",
@@ -1122,9 +1039,9 @@
                     id: 23,
                     name: "CP-2",
                     price: 35,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://files.catbox.moe/palmho.webp",
+                    videoPreview: "https://files.catbox.moe/fysysq.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_23", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ BEST C-P",
                         "✅ HIGH QUALITY",
@@ -1141,9 +1058,9 @@
                     id: 24,
                     name: "ANXIOUS PANDA",
                     price: 25,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://files.catbox.moe/p5t7u9.webp",
+                    videoPreview: "https://files.catbox.moe/nvpys0.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_24", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ AGES 13-16 ",
                         "✅ BEST",
@@ -1160,9 +1077,9 @@
                     id: 25,
                     name: "REAL INCEST 💀",
                     price: 25,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://files.catbox.moe/wronh2.jpeg",
+                    videoPreview: "https://files.catbox.moe/ef13ye.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_25", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ 1000+ ",
                         "✅ ALL AGES 9y",
@@ -1179,9 +1096,9 @@
                     id: 26,
                     name: "XIMENA TEEN",
                     price: 25,
-                    image: "https://pixeldrain.com/api/file/SEU_ID_DA_IMAGEM",
-                    videoPreview: "https://pixeldrain.com/api/file/SEU_ID_DO_VIDEO",
-                    whopLink: "https://whop.com/SEU_LINK_DO_WHOP",
+                    image: "https://i.postimg.cc/sXd810P5/IMG-5360.jpg",
+                    videoPreview: "https://files.catbox.moe/yn5iuk.mp4",
+                    whopLink: "https://whop.com/checkout/YOUR_WHOP_LINK_26", // ADICIONE SEU LINK DO WHOP AQUI
                     description: [
                         "✅ RARE TEEN",
                         "✅ BEST STUFF",
@@ -1505,7 +1422,6 @@
                             <div class="adult-badge">
                                 <i class="fas fa-exclamation-triangle"></i> 18+
                             </div>
-                            ${product.whopLink ? '<div class="whop-badge"><i class="fas fa-shopping-cart"></i> WHOP CHECKOUT</div>' : ''}
                             ${product.trending ? '<div class="trending-badge"><i class="fas fa-fire"></i> TRENDING</div>' : ''}
                             ${product.popular ? '<div class="popular-badge"><i class="fas fa-star"></i> POPULAR</div>' : ''}
                         </div>
@@ -1519,7 +1435,6 @@
                             <div class="adult-badge">
                                 <i class="fas fa-exclamation-triangle"></i> 18+
                             </div>
-                            ${product.whopLink ? '<div class="whop-badge"><i class="fas fa-shopping-cart"></i> WHOP CHECKOUT</div>' : ''}
                             ${product.trending ? '<div class="trending-badge"><i class="fas fa-fire"></i> TRENDING</div>' : ''}
                             ${product.popular ? '<div class="popular-badge"><i class="fas fa-star"></i> POPULAR</div>' : ''}
                         </div>
@@ -1553,20 +1468,9 @@
                             ${descriptionHTML}
                         </div>
                         <div class="product-price">${product.price.toFixed(2)}</div>
-                        
-                        ${product.whopLink ? 
-                            `<button class="buy-btn" onclick="buyViaWhop(${product.id})">
-                                <i class="fas fa-shopping-cart"></i> Buy via Whop - $${product.price.toFixed(2)}
-                            </button>` :
-                            `<button class="buy-btn" onclick="buyViaTelegram(${product.id})">
-                                <i class="fas fa-shopping-cart"></i> Buy via Telegram - $${product.price.toFixed(2)}
-                            </button>`
-                        }
-                        
-                        <button class="telegram-btn" onclick="contactViaTelegram(${product.id})">
-                            <i class="fab fa-telegram"></i> Buy via Telegram (Custom Orders)
+                        <button class="buy-btn" onclick="buyProduct(${product.id})">
+                            <i class="fas fa-shopping-cart"></i> Buy Now - $${product.price.toFixed(2)}
                         </button>
-                        
                         <div class="purchase-count">
                             <i class="fas fa-shopping-cart"></i> ${product.purchaseCount} recent purchases
                         </div>
@@ -1578,7 +1482,7 @@
         }
 
         // Function to handle purchase via Whop
-        function buyViaWhop(productId) {
+        function buyProduct(productId) {
             // Double-check age verification
             const ageVerified = localStorage.getItem('ageVerified18plus');
             if (ageVerified !== 'true') {
@@ -1589,7 +1493,7 @@
             }
             
             const product = CONFIG.products.find(p => p.id === productId);
-            if (!product || !product.whopLink) return;
+            if (!product) return;
             
             // Show loading state
             const button = event.target;
@@ -1606,7 +1510,11 @@
             
             // Redirect to Whop
             setTimeout(() => {
-                window.open(product.whopLink, '_blank');
+                if (product.whopLink && product.whopLink.includes('whop.com')) {
+                    window.open(product.whopLink, '_blank');
+                } else {
+                    alert('Checkout link not available. Please try another product.');
+                }
                 
                 // Reset button after 2 seconds
                 setTimeout(() => {
@@ -1614,62 +1522,6 @@
                     button.disabled = false;
                 }, 2000);
             }, 300);
-        }
-
-        // Function to handle purchase via Telegram
-        function buyViaTelegram(productId) {
-            // Double-check age verification
-            const ageVerified = localStorage.getItem('ageVerified18plus');
-            if (ageVerified !== 'true') {
-                alert('Please verify your age before making a purchase.');
-                ageVerification.style.display = 'flex';
-                mainContent.style.display = 'none';
-                return;
-            }
-            
-            const product = CONFIG.products.find(p => p.id === productId);
-            if (!product) return;
-            
-            // Show loading state
-            const button = event.target;
-            const originalText = button.innerHTML;
-            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Redirecting...';
-            button.disabled = true;
-            
-            // Simulate purchase in activity panel
-            if (activitySimulator) {
-                setTimeout(() => {
-                    activitySimulator.addNewPurchase();
-                }, 500);
-            }
-            
-            // Create Telegram message
-            const message = `Hello! I want to buy: ${product.name} - $${product.price}. I'm ready to pay.`;
-            const encodedMessage = encodeURIComponent(message);
-            const telegramUrl = `https://t.me/${CONFIG.telegram.replace('@', '')}?text=${encodedMessage}`;
-            
-            // Redirect to Telegram after short delay
-            setTimeout(() => {
-                window.open(telegramUrl, '_blank');
-                
-                // Reset button after 2 seconds
-                setTimeout(() => {
-                    button.innerHTML = originalText;
-                    button.disabled = false;
-                }, 2000);
-            }, 300);
-        }
-
-        // Function to contact via Telegram for custom orders
-        function contactViaTelegram(productId) {
-            const product = CONFIG.products.find(p => p.id === productId);
-            if (!product) return;
-            
-            const message = `Hello! I'm interested in: ${product.name} - $${product.price}. I want to discuss custom order/bulk discount.`;
-            const encodedMessage = encodeURIComponent(message);
-            const telegramUrl = `https://t.me/${CONFIG.telegram.replace('@', '')}?text=${encodedMessage}`;
-            
-            window.open(telegramUrl, '_blank');
         }
 
         // Function to check URL parameters
@@ -1680,7 +1532,7 @@
                 window.history.replaceState({}, document.title, window.location.pathname);
                 showNotification(
                     "Purchase Successful!",
-                    `✅ Thank you for your purchase! You will receive your content via secure delivery. Contact @${CONFIG.telegram} on Telegram for support.`,
+                    "✅ Thank you for your purchase! You will receive your content via Whop delivery.",
                     "success"
                 );
             }
@@ -1740,16 +1592,13 @@
             
             // Log configuration (for debugging)
             console.log('Adult Content Store Configuration:');
-            console.log('- Payment Method: Whop + Telegram');
-            console.log('- Telegram:', CONFIG.telegram);
+            console.log('- Payment Method: Whop Checkout');
             console.log('- Age Restriction:', '18+ Required');
             console.log('- Total Products:', CONFIG.products.length);
         });
 
         // Expose functions to global scope for button onclick
-        window.buyViaWhop = buyViaWhop;
-        window.buyViaTelegram = buyViaTelegram;
-        window.contactViaTelegram = contactViaTelegram;
+        window.buyProduct = buyProduct;
         window.switchMediaTab = switchMediaTab;
     </script>
 </body>
