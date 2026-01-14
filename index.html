@@ -973,7 +973,7 @@
         <!-- Header -->
         <div class="header">
             <h1>PREMIUM RARE CONTENTS💎 <span class="age-badge">18+</span></h1>
-            <p>Secure Whop checkout • Instant delivery • Lifetime access</p>
+            <p>Secure Telegram checkout • Instant delivery • Lifetime access</p>
         </div>
         
         <!-- All Content Preview Section -->
@@ -985,7 +985,6 @@
             </div>
             
             <p class="preview-description">
-                <!-- EDITAR AQUI: Descrição do ALL CONTENT -->
                 Get FULL ACCESS to our entire exclusive collection! Over 12TB+ of premium content including exclusive videos, rare collections, and lifetime updates. This is a limited-time offer - get ALL folders at a special discount price!
             </p>
             
@@ -1000,13 +999,11 @@
             </div>
             
             <div class="preview-video-container">
-                <!-- EDITAR AQUI: Vídeo 1 da prévia -->
                 <video autoplay muted loop playsinline class="preview-video active" id="previewVideo1">
                     <source src="https://files.catbox.moe/s7c5b0.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 
-                <!-- EDITAR AQUI: Vídeo 2 da prévia -->
                 <video controls loop playsinline class="preview-video" id="previewVideo2">
                     <source src="https://files.catbox.moe/aighkz.mp4" type="video/mp4">
                     Your browser does not support the video tag.
@@ -1024,10 +1021,9 @@
                 <span>$150</span>
             </div>
             
-            <!-- EDITAR AQUI: Link do checkout da Whop para ALL CONTENT -->
-            <a href="https://whop.com/checkout/plan_OhZRZrhorRDdc" target="_blank" class="preview-btn">
+            <button onclick="redirectToTelegramAllContent()" class="preview-btn">
                 <i class="fas fa-shopping-cart"></i> BUY FULL ACCESS NOW - $150
-            </a>
+            </button>
             
             <div class="preview-stats">
                 <div class="stat-item">
@@ -1056,18 +1052,18 @@
         
         <!-- Payment Section -->
         <div class="payment-section">
-            <h3><i class="fas fa-lock"></i> Secure & Private Payment via Whop</h3>
-            <p>• All payments processed securely through Whop</p>
+            <h3><i class="fas fa-lock"></i> Secure & Private Payment via Telegram</h3>
+            <p>• All orders processed securely through Telegram</p>
             <p>• Your privacy is protected - no data sharing</p>
-            <p>• Discreet billing on your statement</p>
+            <p>• Discreet payment methods</p>
             <p>• Instant delivery after payment confirmation</p>
             <p>• Multiple payment methods accepted</p>
         </div>
         
         <!-- Telegram Section -->
         <div class="telegram-section">
-            <h3><i class="fab fa-telegram"></i> Contact for Support</h3>
-            <p>For any questions or issues with your purchase, contact me directly on Telegram.</p>
+            <h3><i class="fab fa-telegram"></i> Contact for Purchase & Support</h3>
+            <p>Click "Buy Now" on any product to automatically message me on Telegram with your order request.</p>
             <a href="https://t.me/naysellers" target="_blank">
                 <i class="fab fa-telegram"></i> @naysellers
             </a>
@@ -1085,9 +1081,9 @@
         // CONFIGURATION
         const CONFIG = {
             // Telegram configuration
-            telegram: "@naysellers",
+            telegram: "naysellers",
             
-            // Lista de nomes para rotação a cada 10 minutos
+            // List of names for rotation every 10 minutes
             buyerNames: [
                 "Alex Johnson", "Maria Garcia", "David Smith", "Sarah Wilson", "James Brown", 
                 "Emma Davis", "Michael Taylor", "Lisa Martinez", "Robert Wilson", "Jennifer Lee",
@@ -1106,8 +1102,6 @@
                     id: 1,
                     name: "MOM AND SON😋💜",
                     price: 25,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_HhDfO44qAx9Lh",
                     image: "https://imagizer.imageshack.com/img922/1129/46KdQI.jpg",
                     videoPreview: "https://files.catbox.moe/t71u2k.mp4",
                     description: [
@@ -1125,8 +1119,6 @@
                     id: 2,
                     name: "LIZZY AND BRO🔥",
                     price: 25,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl:"https://whop.com/checkout/plan_HhDfO44qAx9Lh",
                     image: "https://imagizer.imageshack.com/img921/5505/LKytJu.jpg",
                     videoPreview: "https://files.catbox.moe/m67swh.mp4",
                     description: [
@@ -1142,8 +1134,6 @@
                     id: 3,
                     name: "ALL CP COLLETION",
                     price: 100,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_RIiSfNzLHjLYE",
                     image: "https://files.catbox.moe/v6gcc8.jpeg",
                     videoPreview: "https://files.catbox.moe/kmybnf.mp4",
                     description: [
@@ -1159,8 +1149,6 @@
                     id: 4,
                     name: "ALL TEENS COLLETION😈",
                     price: 85,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_OevFO6SmjimJE",
                     image: "https://i.postimg.cc/rpGnDhMS/IMG_4450.jpg",
                     videoPreview: "https://files.catbox.moe/fbzp37.mp4",
                     description: [
@@ -1177,8 +1165,6 @@
                     id: 5,
                     name: "SNAPGOD FULL EDITION",
                     price: 35,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_fb1Lc6zQ337hU",
                     image: "https://imagizer.imageshack.com/img921/9696/oQEkoe.jpg",
                     videoPreview: "https://files.catbox.moe/aighkz.mp4",
                     description: [
@@ -1194,8 +1180,6 @@
                     id: 6,
                     name: "OMEGLE FULL💜",
                     price: 35,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_fb1Lc6zQ337hU",
                     image: "https://imagizer.imageshack.com/img924/1222/5M0MZ5.jpg",
                     videoPreview: "https://files.catbox.moe/cs6il8.mp4",
                     description: [
@@ -1211,8 +1195,6 @@
                     id: 7,
                     name: "NEW STUFF PYT",
                     price: 35,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_fb1Lc6zQ337hU",
                     image: "https://files.catbox.moe/9ub4vc.webp",
                     videoPreview: "https://files.catbox.moe/3005yz.mp4",
                     description: [
@@ -1227,8 +1209,6 @@
                     id: 8,
                     name: "HIGH SCHOOL THOTS",
                     price: 35,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_fb1Lc6zQ337hU",
                     image: "https://files.catbox.moe/why1n3.webp",
                     videoPreview: "https://files.catbox.moe/ehv39q.mp4",
                     description: [
@@ -1245,8 +1225,6 @@
                     id: 9,
                     name: "IZZY AND DOG🔥‼️",
                     price: 25,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_HhDfO44qAx9Lh",
                     image: "https://files.catbox.moe/4av8s1.webp",
                     videoPreview: "https://files.catbox.moe/fjih2t.mp4",
                     description: [
@@ -1262,8 +1240,6 @@
                     id: 10,
                     name: "DARKZEID🔞",
                     price: 25,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_HhDfO44qAx9Lh",
                     image: "https://files.catbox.moe/35af27.webp",
                     videoPreview: "https://files.catbox.moe/r03guy.mp4",
                     description: [
@@ -1281,8 +1257,6 @@
                     id: 11,
                     name: "SNAPCHAT FULL🔥",
                     price: 30,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_0VWZHXNtBHVSr",
                     image: "https://i.postimg.cc/ydVfcF8D/IMG_4444.jpg",
                     videoPreview: "https://files.catbox.moe/6a6glj.mp4",
                     description: [
@@ -1299,8 +1273,6 @@
                     id: 12,
                     name: "INVAKA💀",
                     price: 30,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_0VWZHXNtBHVSr",
                     image: "https://files.catbox.moe/zihl72.webp",
                     videoPreview: "https://files.catbox.moe/qjg3gu.mp4",
                     description: [
@@ -1316,8 +1288,6 @@
                     id: 13,
                     name: "AVA SHIT",
                     price: 30,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_0VWZHXNtBHVSr",
                     image: "https://files.catbox.moe/xupz6u.webp",
                     videoPreview: "https://files.catbox.moe/yzb7jo.mp4",
                     description: [
@@ -1334,8 +1304,6 @@
                     id: 15,
                     name: "MONKEYAPP🎓",
                     price: 35,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_fb1Lc6zQ337hU",
                     image: "https://files.catbox.moe/4cy5ej.jpeg",
                     videoPreview: "https://files.catbox.moe/as6vwa.mp4",
                     description: [
@@ -1351,8 +1319,6 @@
                     id: 16,
                     name: "DESIRE GARCIA",
                     price: 30,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_0VWZHXNtBHVSr",
                     image: "https://files.catbox.moe/nf0esh.webp",
                     videoPreview: "https://files.catbox.moe/mqt4dn.mp4",
                     description: [
@@ -1369,8 +1335,6 @@
                     id: 17,
                     name: "BLACKMAIIL FULL💦",
                     price: 35,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_fb1Lc6zQ337hU",
                     image: "https://files.catbox.moe/dlk7kl.webp",
                     videoPreview: "https://files.catbox.moe/nuegam.mp4",
                     description: [
@@ -1386,8 +1350,6 @@
                     id: 19,
                     name: "BABY ASHLEY",
                     price: 25,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_HhDfO44qAx9Lh",
                     image: "https://files.catbox.moe/rz4xqi.webp",
                     videoPreview: "https://files.catbox.moe/qhve7i.mp4",
                     description: [
@@ -1406,8 +1368,6 @@
                     id: 21,
                     name: "AMELIA BLONDE🔥",
                     price: 30,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_0VWZHXNtBHVSr",
                     image: "https://files.catbox.moe/45mzkb.webp",
                     videoPreview: "https://files.catbox.moe/7tffl2.mp4",
                     description: [
@@ -1426,8 +1386,6 @@
                     id: 22,
                     name: "CP-1",
                     price: 30,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_0VWZHXNtBHVSr",
                     image: "https://files.catbox.moe/xkwvfb.webp",
                     videoPreview: "https://files.catbox.moe/ado484.mp4",
                     description: [
@@ -1446,8 +1404,6 @@
                     id: 23,
                     name: "CP-2",
                     price: 35,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_fb1Lc6zQ337hU",
                     image: "https://files.catbox.moe/palmho.webp",
                     videoPreview: "https://files.catbox.moe/fysysq.mp4",
                     description: [
@@ -1466,8 +1422,6 @@
                     id: 24,
                     name: "ANXIOUS PANDA",
                     price: 25,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_HhDfO44qAx9Lh",
                     image: "https://files.catbox.moe/p5t7u9.webp",
                     videoPreview: "https://files.catbox.moe/nvpys0.mp4",
                     description: [
@@ -1486,8 +1440,6 @@
                     id: 25,
                     name: "REAL INCEST 💀",
                     price: 25,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_HhDfO44qAx9Lh",
                     image: "https://files.catbox.moe/wronh2.jpeg",
                     videoPreview: "https://files.catbox.moe/ef13ye.mp4",
                     description: [
@@ -1506,8 +1458,6 @@
                     id: 26,
                     name: "XIMENA TEEN",
                     price: 25,
-                    // EDITAR: Link do checkout da Whop para este produto
-                    whopCheckoutUrl: "https://whop.com/checkout/plan_HhDfO44qAx9Lh",
                     image: "https://i.postimg.cc/sXd810P5/IMG-5360.jpg",
                     videoPreview: "https://files.catbox.moe/yn5iuk.mp4",
                     description: [
@@ -1598,6 +1548,46 @@
             }
         }
 
+        // Function to redirect to Telegram for individual products
+        function redirectToTelegram(productId) {
+            const product = CONFIG.products.find(p => p.id === productId);
+            if (!product) return;
+            
+            // Encode message for URL
+            const message = encodeURIComponent(`Hello! I'm interested in purchasing the product: "${product.name}" for $${product.price}. Please send me payment instructions.`);
+            
+            // Create Telegram URL
+            const telegramUrl = `https://t.me/${CONFIG.telegram}?text=${message}`;
+            
+            // Open Telegram in new tab
+            window.open(telegramUrl, '_blank');
+            
+            // Show notification
+            showNotification(
+                "Redirecting to Telegram",
+                `You will be redirected to chat with @${CONFIG.telegram}. Please send the pre-filled message to place your order.`,
+                "info"
+            );
+        }
+
+        // Function to redirect to Telegram for ALL CONTENT
+        function redirectToTelegramAllContent() {
+            const message = encodeURIComponent(`Hello! I'm interested in purchasing the COMPLETE "ALL CONTENT ACCESS" package for $150. Please send me payment instructions.`);
+            
+            // Create Telegram URL
+            const telegramUrl = `https://t.me/${CONFIG.telegram}?text=${message}`;
+            
+            // Open Telegram in new tab
+            window.open(telegramUrl, '_blank');
+            
+            // Show notification
+            showNotification(
+                "Redirecting to Telegram",
+                `You will be redirected to chat with @${CONFIG.telegram}. Please send the pre-filled message to place your order for the complete package.`,
+                "info"
+            );
+        }
+
         // Activity Simulation System
         class ActivitySimulator {
             constructor() {
@@ -1612,7 +1602,7 @@
                 return Math.floor(Math.random() * (max - min + 1)) + min;
             }
             
-            // Gerar compradores aleatórios iniciais
+            // Generate initial random buyers
             generateRandomBuyers() {
                 const buyers = [];
                 const productCount = CONFIG.products.length;
@@ -1633,7 +1623,7 @@
                 return buyers;
             }
             
-            // Rotacionar nomes a cada 10 minutos
+            // Rotate names every 10 minutes
             rotateBuyerNames() {
                 this.nameRotationCounter++;
                 console.log(`Rotating buyer names (rotation #${this.nameRotationCounter})`);
@@ -1641,9 +1631,9 @@
                 const productCount = CONFIG.products.length;
                 const timeOptions = ["just now", "1 min ago", "2 min ago", "3 min ago", "4 min ago", "5 min ago"];
                 
-                // Atualizar alguns compradores com novos nomes
+                // Update some buyers with new names
                 for (let i = 0; i < this.currentBuyers.length; i++) {
-                    if (Math.random() > 0.5) { // 50% de chance de mudar cada nome
+                    if (Math.random() > 0.5) { // 50% chance to change each name
                         this.currentBuyers[i].name = CONFIG.buyerNames[this.randomInt(0, CONFIG.buyerNames.length - 1)];
                         this.currentBuyers[i].time = timeOptions[this.randomInt(0, timeOptions.length - 1)];
                     }
@@ -1656,10 +1646,10 @@
                 this.renderRecentPurchases();
                 this.startSimulation();
                 
-                // Iniciar rotação de nomes a cada 10 minutos
+                // Start name rotation every 10 minutes
                 this.nameRotationInterval = setInterval(() => {
                     this.rotateBuyerNames();
-                }, 10 * 60 * 1000); // 10 minutos
+                }, 10 * 60 * 1000); // 10 minutes
                 
                 // Add refresh button event
                 document.getElementById('refreshActivity').addEventListener('click', () => {
@@ -1764,7 +1754,7 @@
             }
             
             refreshActivity() {
-                // Gerar novos compradores aleatórios
+                // Generate new random buyers
                 this.currentBuyers = this.generateRandomBuyers();
                 this.renderRecentPurchases();
                 this.updateLiveStatus();
@@ -1908,9 +1898,9 @@
                             ${descriptionHTML}
                         </div>
                         <div class="product-price">${product.price.toFixed(2)}</div>
-                        <a href="${product.whopCheckoutUrl}" target="_blank" class="buy-btn">
+                        <button onclick="redirectToTelegram(${product.id})" class="buy-btn">
                             <i class="fas fa-shopping-cart"></i> Buy Now $${product.price.toFixed(2)}
-                        </a>
+                        </button>
                         <div class="purchase-count">
                             <i class="fas fa-shopping-cart"></i> ${product.purchaseCount} recent purchases
                         </div>
@@ -1989,7 +1979,7 @@
             
             // Log configuration (for debugging)
             console.log('Adult Content Store Configuration:');
-            console.log('- Payment Method: Whop Checkout');
+            console.log('- Payment Method: Telegram Direct Message');
             console.log('- Telegram:', CONFIG.telegram);
             console.log('- Age Restriction:', '18+ Required');
             console.log('- Total Products:', CONFIG.products.length);
@@ -2000,6 +1990,8 @@
         // Expose functions to global scope for button onclick
         window.switchMediaTab = switchMediaTab;
         window.switchPreviewVideo = switchPreviewVideo;
+        window.redirectToTelegram = redirectToTelegram;
+        window.redirectToTelegramAllContent = redirectToTelegramAllContent;
     </script>
 </body>
 </html>
