@@ -293,6 +293,168 @@
             vertical-align: middle;
         }
         
+        /* All Content Preview Section */
+        .all-content-preview {
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border: 1px solid #333;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .all-content-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #dc2626);
+        }
+        
+        .preview-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .preview-header h2 {
+            color: #fff;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #dc2626);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .preview-header i {
+            font-size: 2.5rem;
+            color: #dc2626;
+        }
+        
+        .preview-description {
+            color: #aaa;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .preview-video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 3px solid #333;
+            background: #000;
+        }
+        
+        .preview-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .preview-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        
+        .preview-badge {
+            background: rgba(220, 38, 38, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .preview-price {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .preview-old-price {
+            color: #999;
+            font-size: 1.2rem;
+            text-decoration: line-through;
+            margin-right: 10px;
+        }
+        
+        .preview-btn {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .preview-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.4);
+        }
+        
+        .preview-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            color: #10b981;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .stat-label {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -622,6 +784,58 @@
                 padding: 10px 0;
                 font-size: 0.85rem;
             }
+            
+            .all-content-preview {
+                padding: 20px;
+            }
+            
+            .preview-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .preview-video-container {
+                height: 250px;
+            }
+            
+            .preview-overlay {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .preview-stats {
+                gap: 20px;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            .preview-price {
+                font-size: 1.2rem;
+                padding: 10px 20px;
+            }
+            
+            .preview-btn {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .preview-video-container {
+                height: 200px;
+            }
+            
+            .preview-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .preview-badge, .preview-btn {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -684,7 +898,63 @@
         <!-- Header -->
         <div class="header">
             <h1>PREMIUM RARE CONTENTS💎 <span class="age-badge">18+</span></h1>
-            <p>IF YOU WANT TO SEE THE MENU DM • Secure purchases • Instant delivery</p>
+            <p>Secure Whop checkout • Instant delivery • Lifetime access</p>
+        </div>
+        
+        <!-- All Content Preview Section -->
+        <div class="all-content-preview">
+            <div class="preview-header">
+                <i class="fas fa-crown"></i>
+                <h2>ALL CONTENT ACCESS 🔥</h2>
+                <i class="fas fa-crown"></i>
+            </div>
+            
+            <p class="preview-description">
+                Get FULL ACCESS to our entire exclusive collection with over 12TB+ of premium content.
+                This is a limited-time offer - get ALL folders at a special discount price!
+            </p>
+            
+            <div class="preview-video-container">
+                <video autoplay muted loop playsinline class="preview-video" id="allContentVideo">
+                    <!-- SUBSTITUA ESTE LINK PELO SEU LINK DE VÍDEO DA WHOP PARA ALL CONTENT -->
+                    <source src="https://files.catbox.moe/s7c5b0.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="preview-overlay">
+                    <div class="preview-badge">
+                        <i class="fas fa-fire"></i> LIMITED TIME OFFER
+                    </div>
+                </div>
+            </div>
+            
+            <div class="preview-price">
+                <span class="preview-old-price">$185</span>
+                <span>$150</span>
+            </div>
+            
+            <!-- SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ALL CONTENT -->
+            <a href="https://whop.com/checkout/YOUR_ALL_CONTENT_CHECKOUT_LINK" target="_blank" class="preview-btn">
+                <i class="fas fa-shopping-cart"></i> BUY FULL ACCESS NOW - $150
+            </a>
+            
+            <div class="preview-stats">
+                <div class="stat-item">
+                    <span class="stat-number">12TB+</span>
+                    <span class="stat-label">Total Content</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2000+</span>
+                    <span class="stat-label">Videos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Access</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Lifetime</span>
+                    <span class="stat-label">Updates</span>
+                </div>
+            </div>
         </div>
         
         <!-- Products Grid -->
@@ -694,22 +964,23 @@
         
         <!-- Payment Section -->
         <div class="payment-section">
-            <h3><i class="fas fa-lock"></i> Secure & Private Payment</h3>
-            <p>• All payments processed directly via Telegram</p>
+            <h3><i class="fas fa-lock"></i> Secure & Private Payment via Whop</h3>
+            <p>• All payments processed securely through Whop</p>
             <p>• Your privacy is protected - no data sharing</p>
             <p>• Discreet billing on your statement</p>
-            <p>• Instant delivery after payment</p>
+            <p>• Instant delivery after payment confirmation</p>
+            <p>• Multiple payment methods accepted</p>
         </div>
         
         <!-- Telegram Section -->
         <div class="telegram-section">
-            <h3><i class="fab fa-telegram"></i> Contact for Purchase & Support</h3>
-            <p>Click any "Buy Now" button to contact me directly on Telegram for purchase.</p>
+            <h3><i class="fab fa-telegram"></i> Contact for Support</h3>
+            <p>For any questions or issues with your purchase, contact me directly on Telegram.</p>
             <a href="https://t.me/naysellers" target="_blank">
                 <i class="fab fa-telegram"></i> @naysellers
             </a>
             <p style="margin-top: 12px; font-size: 0.9rem; color: #888;">
-                Click "Buy Now" on any product to message me for purchase
+                Support available 24/7 via Telegram
             </p>
         </div>
         
@@ -736,13 +1007,15 @@
                 "Avery Phillips", "Samuel Campbell", "Ella Parker", "Benjamin Evans", "Scarlett Edwards"
             ],
             
-            // Products - Com imagens originais e vídeos com catbox
+            // Products - Sem o produto "NEW ALL CONTENT 12TB" (id:20)
             products: [
                 // Original Products (1-10)
                 {
                     id: 1,
                     name: "MOM AND SON😋💜",
                     price: 25,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_1",
                     image: "https://imagizer.imageshack.com/img922/1129/46KdQI.jpg",
                     videoPreview: "https://files.catbox.moe/t71u2k.mp4",
                     description: [
@@ -760,6 +1033,8 @@
                     id: 2,
                     name: "LIZZY AND BRO🔥",
                     price: 25,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_2",
                     image: "https://imagizer.imageshack.com/img921/5505/LKytJu.jpg",
                     videoPreview: "https://files.catbox.moe/m67swh.mp4",
                     description: [
@@ -775,6 +1050,8 @@
                     id: 3,
                     name: "ALL CP COLLETION",
                     price: 100,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_3",
                     image: "https://files.catbox.moe/v6gcc8.jpeg",
                     videoPreview: "https://files.catbox.moe/kmybnf.mp4",
                     description: [
@@ -790,6 +1067,8 @@
                     id: 4,
                     name: "ALL TEENS COLLETION😈",
                     price: 85,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_4",
                     image: "https://i.postimg.cc/rpGnDhMS/IMG_4450.jpg",
                     videoPreview: "https://files.catbox.moe/fbzp37.mp4",
                     description: [
@@ -806,6 +1085,8 @@
                     id: 5,
                     name: "SNAPGOD FULL EDITION",
                     price: 35,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_5",
                     image: "https://imagizer.imageshack.com/img921/9696/oQEkoe.jpg",
                     videoPreview: "https://files.catbox.moe/aighkz.mp4",
                     description: [
@@ -821,6 +1102,8 @@
                     id: 6,
                     name: "OMEGLE FULL💜",
                     price: 35,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_6",
                     image: "https://imagizer.imageshack.com/img924/1222/5M0MZ5.jpg",
                     videoPreview: "https://files.catbox.moe/cs6il8.mp4",
                     description: [
@@ -836,6 +1119,8 @@
                     id: 7,
                     name: "NEW STUFF PYT",
                     price: 35,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_7",
                     image: "https://files.catbox.moe/9ub4vc.webp",
                     videoPreview: "https://files.catbox.moe/3005yz.mp4",
                     description: [
@@ -850,6 +1135,8 @@
                     id: 8,
                     name: "HIGH SCHOOL THOTS",
                     price: 35,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_8",
                     image: "https://files.catbox.moe/why1n3.webp",
                     videoPreview: "https://files.catbox.moe/ehv39q.mp4",
                     description: [
@@ -866,6 +1153,8 @@
                     id: 9,
                     name: "IZZY AND DOG🔥‼️",
                     price: 25,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_9",
                     image: "https://files.catbox.moe/4av8s1.webp",
                     videoPreview: "https://files.catbox.moe/fjih2t.mp4",
                     description: [
@@ -881,6 +1170,8 @@
                     id: 10,
                     name: "DARKZEID🔞",
                     price: 25,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_10",
                     image: "https://files.catbox.moe/35af27.webp",
                     videoPreview: "https://files.catbox.moe/r03guy.mp4",
                     description: [
@@ -893,11 +1184,13 @@
                     purchaseCount: 17
                 },
                 
-                // New Products (11-20)
+                // New Products (11-19)
                 {
                     id: 11,
                     name: "SNAPCHAT FULL🔥",
                     price: 30,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_11",
                     image: "https://i.postimg.cc/ydVfcF8D/IMG_4444.jpg",
                     videoPreview: "https://files.catbox.moe/6a6glj.mp4",
                     description: [
@@ -914,6 +1207,8 @@
                     id: 12,
                     name: "INVAKA💀",
                     price: 30,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_12",
                     image: "https://files.catbox.moe/zihl72.webp",
                     videoPreview: "https://files.catbox.moe/qjg3gu.mp4",
                     description: [
@@ -929,6 +1224,8 @@
                     id: 13,
                     name: "AVA SHIT",
                     price: 30,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_13",
                     image: "https://files.catbox.moe/xupz6u.webp",
                     videoPreview: "https://files.catbox.moe/yzb7jo.mp4",
                     description: [
@@ -945,6 +1242,8 @@
                     id: 15,
                     name: "MONKEYAPP🎓",
                     price: 35,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_15",
                     image: "https://files.catbox.moe/4cy5ej.jpeg",
                     videoPreview: "https://files.catbox.moe/as6vwa.mp4",
                     description: [
@@ -960,6 +1259,8 @@
                     id: 16,
                     name: "DESIRE GARCIA",
                     price: 30,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_16",
                     image: "https://files.catbox.moe/nf0esh.webp",
                     videoPreview: "https://files.catbox.moe/mqt4dn.mp4",
                     description: [
@@ -976,6 +1277,8 @@
                     id: 17,
                     name: "BLACKMAIIL FULL💦",
                     price: 35,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_17",
                     image: "https://files.catbox.moe/dlk7kl.webp",
                     videoPreview: "https://files.catbox.moe/nuegam.mp4",
                     description: [
@@ -991,6 +1294,8 @@
                     id: 19,
                     name: "BABY ASHLEY",
                     price: 25,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_19",
                     image: "https://files.catbox.moe/rz4xqi.webp",
                     videoPreview: "https://files.catbox.moe/qhve7i.mp4",
                     description: [
@@ -1003,29 +1308,14 @@
                     popular: true,
                     purchaseCount: 49
                 },
-                {
-                    id: 20,
-                    name: "NEW ALL CONTENT 12TB",
-                    price: 185,
-                    image: "https://imageshack.com/i/placeholder_20",
-                    videoPreview: "https://files.catbox.moe/s7c5b0.mp4",
-                    description: [
-                        "✅ ACCESS TO ALL CONTENT",
-                        "✅ LIFETIME UPDATES",
-                        "✅ 12TB+ TOTAL",
-                        "✅ PRIORITY SUPPORT",
-                        "ACESS ALL CONTENT IN MY MENU."
-                    ],
-                    trending: true,
-                    popular: true,
-                    purchaseCount: 27
-                },
                 
                 // Additional Products (21-26)
                 {
                     id: 21,
                     name: "AMELIA BLONDE🔥",
                     price: 30,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_21",
                     image: "https://files.catbox.moe/45mzkb.webp",
                     videoPreview: "https://files.catbox.moe/7tffl2.mp4",
                     description: [
@@ -1044,6 +1334,8 @@
                     id: 22,
                     name: "CP-1",
                     price: 30,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_22",
                     image: "https://files.catbox.moe/xkwvfb.webp",
                     videoPreview: "https://files.catbox.moe/ado484.mp4",
                     description: [
@@ -1062,6 +1354,8 @@
                     id: 23,
                     name: "CP-2",
                     price: 35,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_23",
                     image: "https://files.catbox.moe/palmho.webp",
                     videoPreview: "https://files.catbox.moe/fysysq.mp4",
                     description: [
@@ -1080,6 +1374,8 @@
                     id: 24,
                     name: "ANXIOUS PANDA",
                     price: 25,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_24",
                     image: "https://files.catbox.moe/p5t7u9.webp",
                     videoPreview: "https://files.catbox.moe/nvpys0.mp4",
                     description: [
@@ -1098,6 +1394,8 @@
                     id: 25,
                     name: "REAL INCEST 💀",
                     price: 25,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_25",
                     image: "https://files.catbox.moe/wronh2.jpeg",
                     videoPreview: "https://files.catbox.moe/ef13ye.mp4",
                     description: [
@@ -1116,6 +1414,8 @@
                     id: 26,
                     name: "XIMENA TEEN",
                     price: 25,
+                    // SUBSTITUA ESTE LINK PELO SEU LINK DE CHECKOUT DA WHOP PARA ESTE PRODUTO
+                    whopCheckoutUrl: "https://whop.com/checkout/YOUR_CHECKOUT_LINK_26",
                     image: "https://i.postimg.cc/sXd810P5/IMG-5360.jpg",
                     videoPreview: "https://files.catbox.moe/yn5iuk.mp4",
                     description: [
@@ -1388,7 +1688,7 @@
             }
         }
 
-        // Function to render products with video preview support
+        // Function to render products
         function renderProducts() {
             const container = document.getElementById('productsContainer');
             container.innerHTML = '';
@@ -1487,9 +1787,9 @@
                             ${descriptionHTML}
                         </div>
                         <div class="product-price">${product.price.toFixed(2)}</div>
-                        <button class="buy-btn" onclick="buyProduct(${product.id})">
+                        <a href="${product.whopCheckoutUrl}" target="_blank" class="buy-btn">
                             <i class="fas fa-shopping-cart"></i> Buy Now - $${product.price.toFixed(2)}
-                        </button>
+                        </a>
                         <div class="purchase-count">
                             <i class="fas fa-shopping-cart"></i> ${product.purchaseCount} recent purchases
                         </div>
@@ -1500,7 +1800,7 @@
             });
         }
 
-        // Function to handle purchase via Telegram
+        // Function to handle purchase via Whop
         function buyProduct(productId) {
             // Double-check age verification
             const ageVerified = localStorage.getItem('ageVerified18plus');
@@ -1527,14 +1827,9 @@
                 }, 500);
             }
             
-            // Create Telegram message
-            const message = `Hello! I want to buy: ${product.name} - $${product.price}. I'm ready to pay.`;
-            const encodedMessage = encodeURIComponent(message);
-            const telegramUrl = `https://t.me/${CONFIG.telegram.replace('@', '')}?text=${encodedMessage}`;
-            
-            // Redirect to Telegram after short delay
+            // Redirect to Whop checkout
             setTimeout(() => {
-                window.open(telegramUrl, '_blank');
+                window.open(product.whopCheckoutUrl, '_blank');
                 
                 // Reset button after 2 seconds
                 setTimeout(() => {
@@ -1610,9 +1905,17 @@
             // Check age verification on load
             checkAgeVerification();
             
+            // Start video autoplay
+            const video = document.getElementById('allContentVideo');
+            if (video) {
+                video.play().catch(e => {
+                    console.log("Video autoplay prevented, will play on user interaction");
+                });
+            }
+            
             // Log configuration (for debugging)
             console.log('Adult Content Store Configuration:');
-            console.log('- Payment Method: Direct Telegram Contact');
+            console.log('- Payment Method: Whop Checkout');
             console.log('- Telegram:', CONFIG.telegram);
             console.log('- Age Restriction:', '18+ Required');
             console.log('- Total Products:', CONFIG.products.length);
